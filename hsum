@@ -1,0 +1,18 @@
+#!/usr/bin/perl -w
+
+use strict;
+use HTML::Summary;
+use HTML::TreeBuilder;
+use Getopt::Long;
+
+my $document = join( "", <> );
+
+my $tree = new HTML::TreeBuilder;
+$tree->parse( $document );
+
+my $summarizer = new HTML::Summary(
+    LENGTH      => 1000,
+    USE_META    => 1,
+);
+
+print $summarizer->generate( $tree ), "\n";

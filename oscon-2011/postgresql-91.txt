@@ -1,0 +1,32 @@
+Slides: http://chesnok.com/u/3u
+
+https://github.com/selenamarie/pg91demo
+
+New replication tools
+
+SE-Linux security label support.  Extends SE stuff into the database
+to the column level.
+
+Writable CTE: Common Table Expressions
+A temporary table or VIEW that exists just for a single query.
+Makes writing partitions easier.
+Find blog post "Upserting via writable CTE"
+
+Per-column collation orders
+
+Extensions: Postgres-specfiic package management for contrib/,
+PgFoundry projects, tools.  Like Oracle "packages".
+
+K-nearest Neighbor Indexes
+
+Unlogged tables: Only living in memory.
+
+Serializable snapshot isolation: No more "select for update".  No more blocking on table locks.
+
+Foreign data wrappers
+* Remote datasource access
+* Initially implemented text, CSV data sources
+* Underway currently: Oracle & MySQL sources
+* Good for imports and things that would otherwise fail if you just used COPY
+* Nothing other than sequential scans are possible.
+* Expect tons of FDWs to be implemented once we get 9.1 to production

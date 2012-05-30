@@ -1,0 +1,31 @@
+MVCC in Postgres and how to minimize the downsides
+
+http://momjian.us/presentations
+
+* Predict concurrent query behavior
+* Managed MVCC performance effects
+* Understand storage space reuse
+
+"readers never block writers, and writers never block readers"
+
+Cre 40
+Exp        INSERT
+
+Cre 40
+Exp 47     DELETE
+
+Cre 64
+Exp 78     old (delete)
+------
+Cre 78
+Exp        new (insert)
+
+xmin: creation trx set by INSERT and UPDATE
+
+xmax: expire transaction number, set by UPDATE and DELETE, also
+used for explicit row locks
+
+cmin/cmas; used to identify the command number that created or
+expired the tupild; also used to store combo command IDs when the
+tuple is created and expired in the same trnasaction, and for
+explicit row locks.

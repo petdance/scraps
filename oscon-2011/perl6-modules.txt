@@ -1,0 +1,39 @@
+Damian
+
+Perl isn't a programming language.  It's a life support system for CPAN.
+
+Collective Program Assimilation Node
+
+Acme::Don't: Syntax check your code without executing it.
+
+"No questions, Uri." ++
+
+
+module Acme::Don't;
+use v6;
+sub don't (&) is export {}
+
+Lessons:
+* No homonyms in Perl 6
+* No cargo-cult vestigials
+* Fewer implicit behaviours
+* A little more typing required
+* Still obviously Perlish
+
+IO::Insitu
+Lessons:
+* Parameter lists really help
+* Smarter open() helps too
+* Roles let you mix in behviours
+* A lot less typing required
+* Mainly because of better builtins
+
+Smart::Comments
+Lessons:
+* Macros kick source filters' butt
+* Mutate grammar, not source
+* Still room for cleverness
+* No implementation yet has full macro support
+* No implementation yet has STD grammar
+
+Perl 6 is solid enough now.  Start thinking about porting modules.

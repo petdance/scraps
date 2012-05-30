@@ -1,0 +1,12 @@
+#!/usr/bin/perl -l -n
+
+BEGIN { @ARGV = '/usr/share/dict/words' }
+
+# Skip words that are too short
+next unless length >= 4;
+
+# Make a new version of the word with all letters sorted and lowercased
+my $l = join '', sort split //, lc;
+
+# Print anything that matches the letters in molly's nick
+print if $l =~ /^ a? c? e? k? l{0,2} m? o{0,2} r? y? $/x;

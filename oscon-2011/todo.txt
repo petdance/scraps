@@ -1,0 +1,11 @@
+* Crash course in ack
+
+* Expand about the patch process.
+
+* Install File::Next
+
+* Install a mini CPAN
+
+* Look at todo.txt
+
+* How can I use the "Lester's Mad Lab" picture?  Any other pictures I can put in 

@@ -1,0 +1,29 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+use 5.10.0;
+
+my (undef,$meat) = <>; # Skip XML doc line
+while ( $meat =~ m{<envelope([^>]*)>(.*?)</envelope>}gsm ) {
+    my $package = $2;
+
+
+    $package =~ s{<sender([^>]*)>(.+?)</sender>}{};
+    my $sender = $2;
+    say "* **$sender**";
+
+    while ( $package =~ m{<message id=".+?" received="(.+?)">(.+?)</message>}g ) {
+        my ($stamp,$message) = ($1,$2);
+
+        my ($date,$time,$tz) = split / /, $stamp;
+
+        $message =~ s{<span.+?>(.+?)</span>}{$1}g;
+        $message =~ s{<samp>(.+?)</samp>}{`$1`}g;
+        $message =~ s{<a href="(.+?)">(.+?)</a>}{[$2]($1)}g;
+
+        $message =~ s{([_*])}{\\$1}g; # Escape markdown specials
+        #$message =~ s{&gt;}{>}g;    # Change HTML entities back
+        say "    * $time: $message";
+    }
+}

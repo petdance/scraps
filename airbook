@@ -1,0 +1,50 @@
+#!/usr/bin/env perl
+
+# http://www.davidrobins.net/?idx=4178
+
+use strict;
+use warnings;
+
+use Perl6::Say;
+
+use OAuth::Lite;
+use OAuth::Lite::Consumer;
+
+my ($key,$secret) = get_key_and_secret();
+
+my $oalc = OAuth::Lite::Consumer->new(
+    consumer_key       => $key,
+    consumer_secret    => $secret,
+    site               => 'http://www.goodreads.com',
+    request_token_path => '/oauth/request_token',
+    access_token_path  => '/oauth/access_token',
+    authorize_path     => '/oauth/authorize',
+);
+
+{use Data::Dumper; local $Data::Dumper::Sortkeys=1;
+    print Dumper( $oalc )}
+
+my $req = $oalc->get_request_token;
+{use Data::Dumper; local $Data::Dumper::Sortkeys=1;
+    print Dumper( $req )}
+
+my $url = $oalc->url_to_authorize(token => $req->token);
+say $url;
+
+
+
+sub get_key_and_secret {
+    open( my $fh, '<', '/home/andy/vault/goodreads.txt' ) or die $!;
+    my $line = <$fh>;
+    $line =~ /key: (.+)/ or die;
+    my $key = $1;
+
+    $line = <$fh>;
+    $line =~ /secret: (.+)/ or die;
+    my $secret = $1;
+
+    return ($key, $secret);
+}
+
+
+

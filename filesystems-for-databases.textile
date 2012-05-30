@@ -1,0 +1,35 @@
+Selena's Pg FS talk
+
+http://www.oscon.com/oscon2009/public/schedule/detail/8432
+
+* ext3 gives much faster random writes throughput than ext2.
+** Maybe because the seek bundling is faster?
+
+* But adding a disk to ext2 makes sequential writes much faster.
+
+Only have 4 disks?  What should you do?
+
+* RAID 5 outperforms everything else for random writes.
+
+Make your readahead buffer about 1MB.
+
+# Conventional wisdom
+
+"Raid 5 is the worst choice for a database." Fast for dsequential
+writes in our tests.
+
+"Turning off atime is a big performance gain." Not in our tests,
+but 2-3% for free.
+
+"Journaling FSes have worse performance than non-jounraling."
+Turning it off improves perfornance, but there are edges cases and
+differenes we could not explain.
+
+"Striping doubles performance."  Performance is better, but nowhere
+near double.
+
+Your reader-ahead buffer is not big enough.  Make it 8MB.
+
+http://wiki.postgresql.org/wiki/HP_ProLiant_DL380_G5_Tuning_Guide
+
+"JFS was pretty awesome."

@@ -1,0 +1,682 @@
+<p>
+Two months after <a href="http://oscon.com/2011/">OSCON 2011</a>, here's a dump of my notes from the more tech-heavy sessions I attended.  Some of it is narrative, and some of it is just barely-formatted notes.
+</p>
+
+<p id="toc">
+This post is long and ugly, so here's a table of contents:
+</p>
+
+<ul>
+    <li><a href="#api">API Design Anti-patterns, by Alex Martelli of Google</a></li>
+    <li><a href="#conway">The Conway Channel</a></li>
+    <li><a href="#cornac">Cornac, the PHP static analysis tool</a></li>
+    <li><a href="#jenkins">Using Jenkins</a></li>
+    <li><a href="#jquery">Learning Jquery</a></li>
+    <li><a href="#mvcc">MVCC in Postgres and how to minimize the downsides</a></li>
+    <li><a href="#perl6modules">Perl 6 modules</a></li>
+    <li><a href="#pg91">PostgreSQL 9.1 overview</a></li>
+    <li><a href="#propg">Pro PostgreSQL 9</a></li>
+    <li><a href="#unicode">Perl Unicode Essentials, Tom Christiansen</a></li>
+</ul>
+
+
+<a href="#toc">Back to table of contents</a>
+<h1 id="api">API Design Anti-patterns, by Alex Martelli of Google</h1>
+<p>
+<a href="http://www.oscon.com/oscon2011/public/schedule/detail/18826">Abstract</a>
+</p>
+
+<p>
+Martelli's talk was about providing public-facing web APIs, not code-level APIs.  He said that public-facing websites providing must provide an API.  "They're going to scrape to get the data if you don't," so you might as well create an API that is less load on your site.
+</p>
+
+<p>
+API design anti-patterns
+</p>
+<ul>
+    <li>Worst issue: no API</li>
+    <li>2nd-worst API design issue: no design</li>
+    <li>Too many APIs spoil the broth</li>
+    <li>"fear of commitment"</li>
+    <li>Inconsistency in APIs</li>
+    <li>Extremes: No balance between concerns
+    <ul>
+        <li>what languages to support?
+        <ul>
+            <li>excessive language dependence or independence</li>
+        </ul>
+        <li>what about standard protocols/formats?</li>
+    </ul>
+    <li>Inadequate debugging, error messages, documentation</li>
+</ul>
+
+<p>
+Everyone wants an API.  Take a look at the most common questions on <a href="http://stackoverflow.com/">StackOverflow</a>.  They're about spidering and scraping websites, or simulating keystroke and mouse gestures.  Sometimes these questions are about system testing, but most of them point to missing APIs for a site.  The APIs may actually be there, or they may be undocumented.
+</p>
+
+<p>
+You should be offering an API, and it should be easy.  You are in the shoes of your users.  You need this API just like they do.  Even a simple, weak API is better than none.  Follow the path of least resistance: REST and JSON.
+</p>
+
+<p>
+Document your API, or at least consider examples which may be easier than text to programmers.  Keep your docs and especially the code examples in them tested.  Use <a href="https://secure.wikimedia.org/wikipedia/en/wiki/Doctest">doctest</a> or a similar system for testing the documentation.
+</p>
+
+<a href="#toc">Back to table of contents</a>
+<h1 id="conway">The Conway Channel</h1>
+
+<p>
+The Conway Channel is Damian Conway's annual discussion of new tools that he's created in the past year.
+</p>
+
+<p>
+<a href="http://search.cpan.org/dist/Regexp-Grammars">Regexp::Grammars</a> is all sorts of parsing stuff for Perl 5.10 regexes, and it went entirely over my head.
+</p>
+
+<p>
+<a href="http://search.cpan.org/dist/IO-Prompter">IO::Prompter</a> is an updated version of <a href="http://search.cpan.org/dist/IO-Prompt">IO::Prompt</a> which is pretty cool already.  It only works Perl with 5.10+.  IO::Prompt makes it easy to prompt the user for input, and the new IO::Prompter adds more options and data validation.
+
+<pre>
+# Get a number
+my $n = prompt -num 'Enter a number';
+
+# Get a password with asterisks
+my $passwd = prompt 'Enter your password', -echo=&gt;'*';
+
+# Menu with nested options
+my $selection
+    = prompt 'Choose wisely...', -menu =&gt; {
+            wealth =&gt; [ 'moderate', 'vast', 'incalculable' ],
+            health =&gt; [ 'hale', 'hearty', 'rude' ],
+            wisdom =&gt; [ 'cosmic', 'folk' ],
+        }, '&gt;';
+</pre>
+
+<p>
+<a href="http://search.cpan.org/dist/Data-Show">Data::Show</a> is like <a href="http://search.cpan.org/dist/Data-Dumper">Data::Dumper</a> but also shows helpful debug tips like variable names and origin of the statement.  It doesn't try to serialize your output like Data::Dumper does, which is a good thing.  Data::Show is now my default data debug tool.
+</p>
+
+<pre>
+my $person = {
+    name =&gt; 'Quinn',
+    preferred_games =&gt; {
+        wii =&gt; 'Mario Party 8',
+        board =&gt; 'Life: Spongebob Squarepants Edition',
+    },
+    aliases =&gt; [ 'Shmoo', 'Monkeybutt' ],
+    greeter =&gt; sub { my $name = shift; say "Hello $name" },
+};
+show $person;
+
+======(  $person  )====================[ 'data-show.pl', line 20 ]======
+
+    {
+      aliases =&gt; ["Shmoo", "Monkeybutt"],
+      greeter =&gt; sub { ... },
+      name =&gt; "Quinn",
+      preferred_games =&gt; {
+        board =&gt; "Life: Spongebob Squarepants Edition",
+        wii =&gt; "Mario Party 8",
+      },
+    }
+</pre>
+
+<a href="http://search.cpan.org/dist/Acme-Crap">Acme::Crap</a> is a joke module that adds a <tt>crap</tt> function that also lets you use exclamation points to show severity of the error.
+
+<pre>
+use Acme::Crap;
+
+crap    'This broke';
+crap!   'This other thing broke';
+crap!!  'A third thing broke';
+crap!!! 'A four thing broke';
+
+This broke at acme-crap.pl line 10
+This other thing broke! at acme-crap.pl line 11
+A Third Thing Broke!! at acme-crap.pl line 12
+A FOUR THING BROKE!!! at acme-crap.pl line 13
+</pre>
+
+<p>
+As with most of Damian's joke modules, you're not likely to use this in a real program, but to learn from how it works internally.  In Acme::Crap's case, the lesson is in overloading the <tt>!</tt> operator.
+</p>
+
+<a href="#toc">Back to table of contents</a>
+<h1 id="cornac">Cornac, the PHP static analysis tool</h1>
+<p>
+<a href="http://www.cornac.info/">Cornac</a> is a static analysis tool for PHP by Damien Seguy.  A cornac is someone who drives an elephant.
+</p>
+
+<p>
+Cornac is both static audit and an application inventory:
+
+<ul>
+    <li>Static audit
+    <ul>
+        <li>Process large quantities of code</li>
+        <li>Process the same code over and over</li>
+        <li>Depends on auditor expert level</li>
+        <li>Automates searches</li>
+        <li>Make search systematic</li>
+        <li>Produces false positives</li>
+    </ul>
+    </li>
+    <li>Application inventory
+    <ul>
+        <li>Taking a global look at the appliction</li>
+        <li>List of structures names</li>
+        <li>List of used functionalities</li>
+    </ul>
+    </li>
+</ul>
+
+<p>
+Migrating to PHP 5.3
+</p>
+<ul>
+    <li>Incomplete evolutions</li>
+    <li>Obsolete functions</li>
+    <li>Reference handling</li>
+    <li>References with the "new" operator</li>
+    <li>mktime() doesn't take 7 parameters any more</li>
+</ul>
+
+<p>
+Gives a list of extensions.  Maybe Perl::Critic should include an inventory of modules used?  Elliot points out that you can give <tt>perlcritic</tt> the <tt>--statistics</tt> argument for some similar stats.
+</p>
+
+<p>
+Found three different classes with the same name, but three different source files.
+</p>
+
+<p>
+Summary of classes and properties makes it easy to see inconsistencies.
+</p>
+
+<p>
+Has an inclusion network, like my homemade <tt>xreq</tt> tool, but graphical:
+</p>
+<ul>
+    <li>include, include_once, require and require_once</li>
+    <li>Ignores variables</li>
+    <li>Circles represent files, arrows represent inclusions</li>
+</ul>
+
+<p>
+Most interesting of all was finding out about two other PHP static analysis tools: <a href="http://phpmd.org/">PMD (PHP Mess Detector)</a> and <a href="http://pdepend.org/">PHP_Depends</a>.
+</p>
+
+<a href="#toc">Back to table of contents</a>
+<h1 id="jenkins">Using Jenkins</h1>
+<p>Andrew Bayer, @abayer</p>
+<a href="http://www.slideshare.net/andrewbayer/7-habits-of-highly-effective-jenkins-users">Slides</a>
+
+<p>
+Andrew was clearly aiming at people who had many Jenkins instances, which we certainly won't be at work, but he had lots of good solid details to discuss.
+</p>
+
+<h2>#1 Use plugins productively</h2>
+
+<ul>
+    <li>Search for plugins to fit your needs.  Organized by category on the wiki and in the update center.</li>
+    <li>If you're not using a plugin any more, disable it.
+
+    <ul>
+        <li>Save memory and reduce clutter on job configuration pages.</li>
+    </ul>
+    </li>
+    <li>Favorite plugins:
+
+    <ul>
+        <li>
+        JobConfigHistory: See the difference between job configuations now and then.  With authentication enabled, you get to see who changed it and how.</li>
+        <li>Disk Usage</li>
+        <li>Build Timeout: Can set a timeout to abort a build if it takes longer than a set time.</li>
+        <li>Email-ext: Better control of when emails get sent and who they get sent to.  Format the emails ythe way you want using infromation from your builds.</li>
+        <li>Parametereized Trigger: Kick off downstream builds with information from upstream.</li>
+    </ul>
+    </li>
+</ul>
+
+<h2>#2 Standardize your slaves</h2>
+
+<p>
+If you've got more than a couple builds, you've probably got multiple slaves.  Ad hoc slaves my be convenient, but you're in for trouble if they have different environments.
+</p>
+
+<p>
+Use Puppet or Chef to standardize what goes on the machines.  Have Jenkins or your job install the tools.  Or, you can use a VM to spawn your slaves.
+</p>
+
+<p>
+Whatever method you choose, just make sure your slaves are consistent.
+</p>
+
+<p>
+Don't build on master.  Always build on slaves.
+</p>
+
+<ul>
+    <li>No conflict on memory/CPU/IO between master and builds.</li>
+    <li>Easier to add slaves than to beef up master.</li>
+    <li>Mixing build on master with builds on slaves means inconsistencies between builds.</li>
+</ul>
+
+<h2>#3 Use incremental builds if possible</h2>
+
+<p>
+If your build takes 4-8 hours, you can't do real CI on every change.
+</p>
+
+<p>
+If you're integrating with code review or other pre-tested commit processes, you want to verify changes as fast as possible.
+</p>
+
+<p>
+Incremental builds are complementary to full builds, not replacements.
+</p>
+
+<h2>#4 Integrate with other tools</h2>
+
+<ul>
+    <li>Pre-tested commits with Gerrit (git code review)</li>
+    <li>Sonar
+    <ul>
+        <li>Code metrics, code coverage, unit test results, etc, all in one place</li>
+        <li>Great graphs, charts, etc -- fantastic manager candy!</li>
+    </ul>
+    </li>
+    <li>Chat/IM notifications</li>
+</ul>
+
+<h2>#5 Break up bloat</h2>
+
+<ul>
+    <li>Too many builds makes it hard to navigate the Jenkins UI and hurt performance.</li>
+    <li>Builds that try to do too much take too long and make it impossible to restart a build process partway through.</li>
+    <li>Don't be afraid to spread your jobs across multiple Jenkins masters.</li>
+    <li>Split jobs in a logical way -- separate instances per group, per product, per physical location, etc.</li>
+</ul>
+
+<h2>#6 Stick with stable releases</h2>
+
+<ul>
+    <li>Jenkins releases weekly.  Rapid turnaround for features &amp; fixes, but not 100% stability for every release.</li>
+    <li>Plugins release whenever the developers want to.</li>
+    <li>Update center makes it easy to upgrade core &amp; plugins, but that's not always best.</li>
+    <li>Use the Jenkins core LTS releases, every 3 months or so.</li>
+</ul>
+
+<h2>#7 Join the community</h2>
+
+<a href="#toc">Back to table of contents</a>
+<h1 id="jquery">Learning Jquery</h1>
+
+<p>
+I was only in the jquery talk for a little bit, and I was just trying to get a high-level feel for it.  Still, some of the notes made things much clearer to my reading of jquery code.
+</p>
+
+<p>
+<tt>$</tt> is a function, the "bling" function.  It is the dispatcher for everything in jquery.
+</p>
+
+<pre>
+// Sets the alternate rows to be odd
+$('table tr:nth-child(odd)').addClass('odd');
+</pre>
+
+<p>
+jQuery should get loaded last on your page.  Prototype uses the <tt>$</tt> function, and will eat jQuery's <tt>$</tt>.  But jQuery
+won't stomp on the Prototype <tt>$</tt> function.
+</p>
+
+<p>
+Put your Javascript last on the page, because the &lt;script&gt; tag blocks the rendering of the web page.
+</p>
+
+<a href="#toc">Back to table of contents</a>
+<h1 id="mvcc">MVCC in Postgres and how to minimize the downsides</h1>
+
+<p>
+Bruce Momjian, <a href="http://momjian.us/presentations">Presentations</a>
+</p>
+
+<p>
+This turned out to be 100% theory and no actual "minimize the downsides".  It was good to see illustrations of how MVCC works, but there was nothing I could use directly.
+</p>
+
+<p>
+Why learn MVCC?
+</p>
+<ul>
+    <li>Predict concurrent query behavior</li>
+    <li>Manage MVCC performance effects</li>
+    <li>Understand storage space reuse</li>
+</ul>
+
+<p>
+Core principle: Readers never block writers, and writers never block readers.
+</p>
+
+<p>
+(Chart below is an attempt at reproducing his charts, which was a pointless exercise. Better to look at his presentation directly.)
+</p>
+<pre>
+Cre 40
+Exp        INSERT
+
+Cre 40
+Exp 47     DELETE
+
+Cre 64
+Exp 78     old (delete)
+------
+Cre 78
+Exp        new (insert)
+</pre>
+
+<p>
+Four different numbers on each table drive MVCC:
+</p>
+
+<ul>
+    <li>
+    <b>xmin</b>: creation trx set by INSERT and UPDATE
+    </li>
+
+    <li>
+    <b>xmax</b>: expire transaction number, set by UPDATE and DELETE, also used for explicit row locks
+    </li>
+
+    <li>
+    <b>cmin/cmax</b>: used to identify the command number that created or expired the tupleid; also used to store combo command IDs when the tuple is created and expired in the same trnasaction, and for explicit row locks.
+    </li>
+</ul>
+
+<a href="#toc">Back to table of contents</a>
+<h1 id="perl6modules">Perl 6 modules</h1>
+
+<p>
+Damian Conway
+</p>
+
+<p>
+Perl isn't a programming language.  It's a life support system for <a href="http://search.cpan.org/">CPAN</a>.
+</p>
+
+<p>
+Damian ported some of his Perl 5 modules to Perl 6 as a learning exercise.
+</p>
+
+<h2>Acme::Don't</h2>
+
+<p>
+Makes a block of code not get executed, so it gets syntax checked but not run.
+</p>
+
+<pre>
+# Usage example
+use Acme::Don't;
+
+don't { blah(); blah(); blah();
+</pre>
+
+<p>
+Perl 6 implementation
+</p>
+<pre>
+module Acme::Don't;
+use v6;
+sub don't (&amp;) is export {}
+</pre>
+
+<p>
+Lessons:
+</p>
+<ul>
+    <li>No homonyms in Perl 6</li>
+    <li>No cargo-cult vestigials</li>
+    <li>Fewer implicit behaviours</li>
+    <li>A little more typing required</li>
+    <li>Still obviously Perlish</li>
+</ul>
+
+<h2>IO::Insitu</h2>
+
+<p>
+Modifies files in place.
+</p>
+
+<ul>
+    <li>Parameter lists really help</li>
+    <li>Smarter <tt>open()</tt> helps too</li>
+    <li>Roles let you mix in behviours</li>
+    <li>A lot less typing required</li>
+    <li>Mainly because of better builtins</li>
+</ul>
+
+<h2>Smart::Comments</h2>
+<ul>
+    <li>Perl 6's macros kick source filters' butt</li>
+    <li>Mutate grammar, not source</li>
+    <li>Still room for cleverness</li>
+    <li>No Perl 6 implementation yet has full macro support</li>
+    <li>No Perl 6 implementation yet has STD grammar</li>
+</ul>
+
+<p>
+Perl 6 is solid enough now.  Start thinking about porting modules.
+</p>
+
+<a href="#toc">Back to table of contents</a>
+<h1 id="pg91">PostgreSQL 9.1 overview</h1>
+Selena Deckelmann<br />
+
+<a href="http://chesnok.com/u/3u">Slides</a>
+
+<p>
+New replication tools
+<p>
+SE-Linux security label support.  Extends SE stuff into the database to the column level.
+
+<p>
+Writable CTE: Common Table Expressions:<br />
+A temporary table or VIEW that exists just for a single query.  There have been CTEs since 8.4, but not writable ones until now.
+
+<p>
+This query deletes old posts, and returns a summary of what was deleted by user_id.
+
+<pre>
+WITH deleted_posts AS (
+    DELETE FROM posts
+    WHERE created &lt; now() - '6 months'::INTERVAL
+    RETURNING *
+)
+SELECT user_id, count(*) FROM deleted_posts group BY 1;
+</pre>
+
+<p>
+Per-column collation orders
+
+<p>
+Extensions: Postgres-specfiic package management for contrib/, PgFoundry projects, tools.  Like Oracle "packages" or CPAN modules.  The <a href="http://pgxn.org/">PGXN</a> is the Postgres Extension Network.
+
+<p>
+K-nearest Neighbor Indexes: Geographical nearness helper
+
+<p>
+Unlogged tables: Only living in memory, for tables where it's OK if they disappear after a crash.  Much faster, but potentially ephemeral.
+
+<p>
+Serializable snapshot isolation: No more "select for update".  No more blocking on table locks.
+
+<p>
+Foreign data wrappers
+<ul>
+    <li>Remote datasource access</li>
+    <li>Initially implemented text, CSV data sources</li>
+    <li>Underway currently: Oracle &amp; MySQL sources</li>
+    <li>Good for imports and things that would otherwise fail if you just used COPY</li>
+    <li>Nothing other than sequential scans are possible.</li>
+    <li>Expect tons of FDWs to be implemented once we get 9.1 to production</li>
+</ul>
+
+<a href="#toc">Back to table of contents</a>
+<h1 id="propg">Pro PostgreSQL 9</h1>
+<p>Robert Treat, OmniTI, who are basically scalability consultants</p>
+
+<p>pgfoundry.org is other stuff around postgres.</p>
+
+<p>pgxn.org is for 9.1+ extensions</p>
+
+<p>Use package management rather than build from source</p>
+
+<ul>
+    <li>Consistent</li>
+    <li>Standardized</li>
+    <li>Simple</li>
+</ul>
+
+<p>Versions</p>
+
+<ul>
+    <li>Production level work, use 9.0</li>
+    <li>Any project not due to launch for 3 months from today, use 9.1</li>
+</ul>
+
+<p><code>pg_controldata</code> gives you all sorts of awesome details</p>
+
+<p>recovery.conf is in the PGDATA dir for standby machines</p>
+
+<p><code>pg_clog</code>, <code>pg_log</code> and <code>pg_xlog</code> are the main data logging files.
+You can delete under <code>pg_log</code> and that's OK.</p>
+
+<p>Trust contrib modules more than your own code from scratch.  Try
+to install contrib modules into their own schemas.</p>
+
+<h2>Configuration</h2>
+
+<ul>
+    <li><p><code>work_mem</code></p>
+
+    <ul>
+        <li>How much memory for each individual query</li>
+        <li>Mostly for large analytical queries</li>
+        <li>OLTP is probably fine with the defaults</li>
+        <li>2M is good for most people</li>
+    </ul></li>
+    <li><p><code>checkpoint_segments</code></p>
+
+    <ul>
+        <li>Number of WAL files emitted before a checkpoint.</li>
+        <li>Smaller = more flushing to disk</li>
+        <li>Minimum of 10, more like 30</li>
+    </ul></li>
+    <li><p><code>maintenance_work_mem</code></p>
+
+    <ul>
+        <li>1G is probably fine</li>
+    </ul></li>
+    <li><p><code>max_prepared_transactions</code></p>
+
+    <ul>
+        <li>Is NOT prepared statements</li>
+        <li>Set to zero unless you are on two-phase commit</li>
+    </ul></li>
+    <li><p><code>wal_buffers</code></p>
+
+    <ul>
+        <li>Always set to 16M and be done with it.</li>
+    </ul></li>
+    <li><p><code>checkpoint_completion_target</code></p>
+
+    <ul>
+        <li>default is .5</li>
+        <li>Set to .9.  Avoid hard checkpoint spikes at the expense of some overall IO being higher.</li>
+    </ul></li>
+</ul>
+
+<h2>Hardware for Postgres</h2>
+
+<ul>
+    <li>Multiple CPUs work wonders, up to 32 processors.  See http://tweakers.net</li>
+    <li>Put WAL on its own disk, RAID 1</li>
+    <li>Put DATA on its own disk, RAID 10</li>
+    <li>More spindles is good</li>
+    <li>More controllers even gooder.</li>
+    <li>Go with SSDs over more spindles.</li>
+    <li>No NFS, no RAID 5</li>
+</ul>
+
+<p>Don't replace multiple spindles with a single SSD.  You still want redundancy.</p>
+
+<h2>Backups</h2>
+
+<p>Logical backups</p>
+
+<ul>
+    <li>slow to create and restore</li>
+    <li>"pure", no system-level corruption</li>
+    <li>susceptible to database-level corruption</li>
+    <li><code>pg_dump</code> is your friend, and <code>pg_dumpall</code> for global settings</li>
+</ul>
+
+<p>Physical backups</p>
+
+<ul>
+    <li>replication/failover machine</li>
+    <li>tarball (pitr)</li>
+    <li>filesystem snapshots (pitr)</li>
+</ul>
+
+<p>Tarball</p>
+
+<ul>
+    <li>Basic idea is to copy all database files and relevant xlogs</li>
+    <li>Use multiple machines if able</li>
+    <li>Use rsync if able</li>
+    <li>Copy the slave if able</li>
+</ul>
+
+
+<a href="#toc">Back to table of contents</a>
+<h1 id="unicode">Perl Unicode Essentials, Tom Christiansen</h1>
+<p><a href="http://98.245.80.27/tcpc/OSCON2011/index.html">http://98.245.80.27/tcpc/OSCON2011/index.html</a></p>
+<p>Perl has best Unicode suport of any language.</p>
+<p>Unicode::Tussle is a bundle of Unicode tools tchrist wrote.</p>
+<p>5.12 is minimal for using <code>unicode_strings</code> feature.  5.14 is optimal.</p>
+<p>Recommendations:</p>
+<pre>
+    use strict;
+    use warnings;
+    use warnings qw( FATAL utf8 ); # Fatalize utf8</pre>
+<p>21 bits for a Unicode character.</p>
+<p>Enable named cahracters via \N{CHARNAME}</p>
+<pre>
+    use charnames qw( :full );</pre>
+<p>If you have a DATA handle, you must explicitly set its encoding.  If you want this to be UTF-8, then say:</p>
+<pre>
+    binmode( DATA, ':encoding(UTF-8)' );</pre>
+<p>Tom's programs start this way.</p>
+<pre>
+    use v5.14;
+    use utf8;</pre>
+<pre>
+    use strict;
+    use autodie;
+    use warnings;</pre>
+<pre>
+    use warnings  qw&lt; FATAL utf8 &gt;;
+    use open      qw&lt; :std :encoding(UTF-8) &gt;;
+    use charnames qw&lt; :full &gt;;
+    use feature   qw&lt; unicode_strings &gt;;</pre>
+    <p>Explicitly <code>close</code> your files.  Implicit <code>close</code> never checks for errors.</p>
+    <p>Up until 5.12, there was &quot;The Unicode Bug&quot;.  The fix that makes it work right is</p>
+<pre>
+    use feature &quot;unicode_strings&quot;;</pre>
+    <p>Key core pragmas for Unicode are: v5.14, utf8, feature, charnames, open, re&quot;/flags&quot;, encoding::warnings.</p>
+    <p>Stay away from bytes, encoding and locale.</p>
+    <p>For the programmer, it's easier to do NFD (&quot;o\x{304}\x{303}&quot;) instead of NFC (&quot;\x{22D}&quot;)</p>
+    <p>NFD is required to, for example, match <code>/^o/</code> to know that something starts with &quot;o&quot;.</p>
+    <p>String comparisons on Unicode are pretty much always the wrong way to go.  That includes <code>eq</code>, <code>ne</code>, <code>le</code>, <code>gt</code>, <code>cmp</code>, <code>sort</code>, etc.  Use Unicode::Collate.  Get a taste of it by playing with <em class="file">ucsort</em> utility.</p>
+

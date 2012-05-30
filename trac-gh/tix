@@ -1,0 +1,216 @@
+#!/usr/local/bin/perl
+
+use strict;
+use warnings;
+
+use Carp::Always;
+
+use 5.10.0;
+
+use constant TICKET_MAX => 2500;
+use constant BATCH_SIZE => 500;
+
+use JSON;
+
+use File::Slurp qw( write_file );
+use LWP::Simple;
+
+use lib '.';
+
+use GH;
+
+use Net::Trac;
+
+exit main();
+
+sub main {
+    my $trac = Net::Trac::Connection->new(
+        url      => 'http://trac.parrot.org/parrot',
+        user     => $ENV{TRAC_USER},
+        password => $ENV{TRAC_PASSWORD},
+    );
+
+    my @ids = 1..TICKET_MAX;
+
+    my $search = Net::Trac::TicketSearch->new( connection => $trac );
+
+    my $json = JSON->new->pretty->utf8;
+
+    mkdir( 'issues' );
+
+    unlink( glob( 'issues/*' ) );
+
+    my %unmatched_trac;
+    my %statuses;
+
+    while ( @ids ) {
+        my @id_batch = splice( @ids, 0, BATCH_SIZE );
+
+        $search->query(
+            id     => [ @id_batch ],
+            status => { not => [ 'closed' ] },
+        );
+
+        say "Starting with ", $id_batch[0];
+        say "Here's one batch of ", scalar @{$search->results};
+        for my $ticket ( @{$search->results} ) {
+            my @labels;
+
+            if ( my $sev = $ticket->severity ) {
+                push( @labels, "Sev-$sev" );
+            }
+            if ( my $pri = $ticket->priority ) {
+                push( @labels, "Pri-$pri" );
+            }
+            if ( my $type = $ticket->type ) {
+                push( @labels, $type );
+            }
+            if ( my $component = $ticket->component ) {
+                $component = 'embed_extend' if $component =~ m{embed/extend}i;
+                push( @labels, $component ) unless $component eq 'none';
+            }
+
+            my $title = $ticket->summary;
+
+            my $body = $ticket->description;
+
+            # Replace Trac's literal format with Github's
+            $body =~ s/\{\{\{(.+?)\}\}\}/\r\n```$1```\r\n/smg;
+
+            my $trac_name = $ticket->reporter;
+            $trac_name =~ s/\@\x{2026}//;
+            my $gh_name   = username_translate( $trac_name );
+
+            # Embed some trails
+            $body .= "\r\n\r\nOriginally http://trac.parrot.org/parrot/ticket/" . $ticket->id;
+            my $creator;
+            if ( $gh_name ) {
+                $creator = $gh_name;
+            }
+            else {
+                $body .= " by $trac_name";
+                $creator = { email => $trac_name };
+                ++$unmatched_trac{ $trac_name };
+            }
+
+            # Create basic ticket
+            my $created_at = $ticket->created; # DateTime object
+            $created_at = "$created_at"; # Force a stringify
+            my $issue = {
+                title      => $title,
+                body       => $body,
+                labels     => [ @labels ],
+                creator    => $creator,
+                created_at => $created_at,
+            };
+
+            my $tracid = $ticket->id;
+            my $ghid = next_ghid();
+
+            my $filename = "issues/$ghid.json";
+            write_file( $filename, $json->encode( $issue ) );
+
+            say $tracid, ' -> ', $filename, ' ', $title;
+
+            # http://developer.github.com/v3/issues/comments/
+            # http://search.cpan.org/dist/Net-Trac/lib/Net/Trac/TicketHistoryEntry.pm
+            # https://gist.github.com/7f75ced1fa7576412901
+
+            # Now do comments
+
+            my $history = Net::Trac::TicketHistory->new( connection => $trac );
+            $history->load( $ticket );
+
+            # Print the authors of all the changes to ticket #13
+            my @comments;
+            for my $entry ( @{ $history->entries } ) {
+                my $body = $entry->content;
+
+                $body =~ s/\bclass="ext-link"/ /g;
+                next if $body eq '';
+                next if $body eq 'Ticket created';
+
+                my $date = $entry->date; # DateTime object
+                $date = "$date"; # Force a stringify
+                my $author = $entry->author;
+                $author =~ s/\@\x{2026}//;
+
+                my $commenter;
+                my $gh_name = username_translate( $author );
+                if ( $gh_name ) {
+                    $commenter = $gh_name;
+                }
+                else {
+                    $body = "Trac commenter: $trac_name\r\n\r\n$body";
+                    $commenter = { email => $author };
+                    ++$unmatched_trac{ $author };
+                }
+
+                my $comment = {
+                    created_at => $date,
+                    user       => $commenter,
+                    body       => $body,
+                };
+                push( @comments, $comment );
+            }
+
+            # Turn attachments into comments
+            my @attachments = $ticket->attachments;
+            for my $attachment ( @attachments ) {
+                my $size = $attachment->size;
+                my $author = $attachment->author;
+                $author =~ s/\@\x{2026}//;
+                my $gh_name = username_translate( $author );
+                my $date = $attachment->date;
+                $date = "$date"; # Force a stringify
+                my $body;
+                my $attacher;
+                if ( $gh_name ) {
+                    $attacher = $gh_name;
+                    $body = "$size byte attachment from $gh_name";
+                }
+                else {
+                    $body = "$size byte attachment from $trac_name";
+                    $attacher = { email => $author };
+                    ++$unmatched_trac{ $author };
+                }
+                my $url = 'http://trac.parrot.org/parrot' . $attachment->url;
+                $body .= "\r\nat $url";
+                if ( $size < 80_000 ) {
+                    my $content = get( $url );
+                    die unless $content;
+                    $body .= "\r\n\r\n```$content```";
+                    say '    Encoded attachment of ', $size, ' bytes';
+                }
+                else {
+                    $body .= "\r\nis too big for GitHub.";
+                    say '    SKIPPED attachment of ', $size, ' bytes';
+                }
+                my $comment = {
+                    created_at => $date,
+                    user       => $attacher,
+                    body       => $body,
+                };
+                push( @comments, $comment );
+            }
+
+            if ( my $ncomments = @comments ) {
+                @comments = sort { $a->{created_at} cmp $b->{created_at} } @comments;
+                my $filename = "issues/$ghid.comments.json";
+                say '    ', $ncomments, ' comments in ', $filename;
+                write_file( $filename, $json->encode( \@comments ) );
+            }
+            say '';
+        }
+    }
+
+    # {use Data::Show; show( \%unmatched_trac )}
+
+    return 0;
+}
+
+sub next_ghid {
+    state $id = 0;
+
+    return ++$id;
+}

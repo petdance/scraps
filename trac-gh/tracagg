@@ -1,0 +1,41 @@
+#!/usr/local/bin/perl
+
+use strict;
+use warnings;
+
+use 5.10.0;
+
+use constant TICKET_MAX => 2500;
+use constant BATCH_SIZE => 500;
+
+use Net::Trac;
+
+my $trac = Net::Trac::Connection->new(
+    url      => 'http://trac.parrot.org/parrot',
+    user     => 'petdance',
+    password => $ENV{TRAC_PASSWORD},
+);
+
+my @ids = 1..TICKET_MAX;
+
+my $search = Net::Trac::TicketSearch->new( connection => $trac );
+
+my %counts;
+
+while ( @ids ) {
+    my @id_batch = splice( @ids, 0, BATCH_SIZE );
+    say 'Reading from ', $id_batch[0];
+
+    $search->query(
+        id     => [ @id_batch ],
+        status => { not => [ 'closed' ] },
+    );
+
+    for my $ticket ( @{$search->results} ) {
+        for my $field ( qw( status severity type component reporter owner cc resolution priority milestone version ) ) {
+            ++$counts{$field}{ $ticket->$field };
+        }
+    }
+}
+
+{use Data::Show; show( \%counts )}

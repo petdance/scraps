@@ -1,0 +1,720 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- from http://en.wikibooks.org/wiki/Ruby_Programming/Unit_testing -->
+<html class="client-firefox client-firefox-6 client-gecko client-mac" dir="ltr" xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+<title>Ruby Programming/Unit testing - Wikibooks, open books for an open world</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="generator" content="MediaWiki 1.17wmf1">
+<link rel="alternate" type="application/x-wiki" title="Edit" href="http://en.wikibooks.org/w/index.php?title=Ruby_Programming/Unit_testing&amp;action=edit">
+<link rel="edit" title="Edit" href="http://en.wikibooks.org/w/index.php?title=Ruby_Programming/Unit_testing&amp;action=edit">
+<link rel="shortcut icon" href="http://en.wikibooks.org/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="http://en.wikibooks.org/w/opensearch_desc.php" title="Wikibooks (en)">
+<link rel="EditURI" type="application/rsd+xml" href="http://en.wikibooks.org/w/api.php?action=rsd">
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/">
+<link rel="alternate" type="application/atom+xml" title="Wikibooks Atom feed" href="http://en.wikibooks.org/w/index.php?title=Special:RecentChanges&amp;feed=atom">
+<link rel="stylesheet" href="ruby-unit-testing_files/load_002.css" type="text/css" media="all">
+<link rel="stylesheet" href="ruby-unit-testing_files/flaggedrevs.css" type="text/css" media="all">
+<link rel="stylesheet" href="ruby-unit-testing_files/readerfeedback.css" type="text/css" media="all"><style type="text/css" media="all">.suggestions{overflow:hidden;position:absolute;top:0px;left:0px;width:0px;border:none;z-index:99;padding:0;margin:-1px -1px 0 0} html > body .suggestions{margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:Window;font-size:0.8em;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:white;background-color:Window;font-size:0.8em;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0}.suggestions-result{color:black;color:WindowText;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left}.suggestions-result-current{background-color:#4C59A6;background-color:Highlight;color:white;color:HighlightText}.suggestions-special .special-label{font-size:0.8em;color:gray;text-align:left}.suggestions-special .special-query{color:black;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:silver}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:white;color:HighlightText}.autoellipsis-matched,.highlight{font-weight:bold}
+
+/* cache key: enwikibooks:resourceloader:filter:minify-css:5:8d395f27880b6ffcab73b1c74b0217ea */</style><style type="text/css" media="all">#mw-panel.collapsible-nav div.portal{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIwAAAABCAMAAAA7MLYKAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAEtQTFRF29vb2tra4ODg6urq5OTk4uLi6+vr7e3t7Ozs8PDw5+fn4+Pj4eHh3d3d39/f6Ojo5eXl6enp8fHx8/Pz8vLy7+/v3Nzc2dnZ2NjYnErj7QAAAD1JREFUeNq0wQUBACAMALDj7hf6JyUFGxzEnYhC9GaNPG1xVffGDErk/iCigLl1XV2xM49lfAxEaSM+AQYA9HMKuv4liFQAAAAASUVORK5CYII=);background-image:url(http://bits.wikimedia.org/w/extensions-1.17/Vector/modules/./images/portal-break.png?2011-02-12T21:25:00Z)!ie;background-position:left top;background-repeat:no-repeat;padding:0.25em 0 !important;margin:-11px 9px 10px 11px}#mw-panel.collapsible-nav div.portal h5{color:#4D4D4D;font-weight:normal;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA9QTFRFeXl53d3dmpqasbGx////GU0iEgAAAAV0Uk5T/////wD7tg5TAAAAK0lEQVQI12NwgQIG0hhCDAwMTCJAhqMCA4MiWEoIJABiOCooQhULi5BqMgB2bh4svs8t+QAAAABJRU5ErkJggg==) left center no-repeat;background:url(http://bits.wikimedia.org/w/extensions-1.17/Vector/modules/./images/open.png?2011-02-12T21:25:00Z) left center no-repeat!ie;padding:4px 0 3px 1.5em;margin-bottom:0px}#mw-panel.collapsible-nav div.collapsed h5{color:#0645AD;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAxQTFRF3d3deXl5////nZ2dQA6SoAAAAAN0Uk5T//8A18oNQQAAADNJREFUeNpiYEIDDMQKMKALMDOgCTDCRWACcBG4AEwEIcDITEAFuhnotmC4g4EEzwEEGAADqgHmQSPJKgAAAABJRU5ErkJggg==) left center no-repeat;background:url(http://bits.wikimedia.org/w/extensions-1.17/Vector/modules/./images/closed-ltr.png?2011-02-12T21:25:00Z) left center no-repeat!ie;margin-bottom:0px}#mw-panel.collapsible-nav div h5:hover{cursor:pointer;text-decoration:none}#mw-panel.collapsible-nav div.collapsed h5:hover{text-decoration:underline}#mw-panel.collapsible-nav div.portal div.body{background:none !important;padding-top:0px;display:none}#mw-panel.collapsible-nav div.persistent div.body{display:block}#mw-panel.collapsible-nav div.first h5{display:none}#mw-panel.collapsible-nav div.persistent h5{background:none !important;padding-left:0.7em;cursor:default}#mw-panel.collapsible-nav div.portal div.body ul li{padding:0.25em 0}#mw-panel.collapsible-nav div.first{background-image:none;margin-top:0px}#mw-panel.collapsible-nav div.persistent div.body{margin-left:0.5em}
+
+/* cache key: enwikibooks:resourceloader:filter:minify-css:5:c5cca4c308b0b64d12b1147b6871e86e */</style><meta name="ResourceLoaderDynamicStyles" content=""><link rel="stylesheet" href="ruby-unit-testing_files/load.css" type="text/css" media="all">
+<style type="text/css" media="all">a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: enwikibooks:resourceloader:filter:minify-css:5:f2a9127573a22335c2a9102b208c73e7 */</style>
+<script src="ruby-unit-testing_files/load_002.js" type="text/javascript"></script><script src="ruby-unit-testing_files/load_003.js" type="text/javascript"></script>
+<script type="text/javascript">if ( window.mediaWiki ) {
+	mediaWiki.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "Ruby_Programming/Unit_testing", "wgTitle": "Ruby Programming/Unit testing", "wgAction": "view", "wgArticleId": 68668, "wgIsArticle": true, "wgUserName": null, "wgUserGroups": ["*"], "wgCurRevisionId": 2091125, "wgCategories": ["Ruby Programming"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": [], "wgSearchNamespaces": [0, 4, 112], "wgFlaggedRevsParams": {"tags": {"value": {"levels": 3, "quality": 2, "pristine": 3}}}, "wgStableRevisionId": 0, "wgRevContents": {"error": "Unable to get content.", "waiting": "Waiting for content"}, "wgVectorEnabledModules": {"collapsiblenav": true, "collapsibletabs": true, "editwarning": true, "expandablesearch": false, "footercleanup": false, "sectioneditlinks": false, "simplesearch": true, "experiments": true}, "wgWikiEditorEnabledModules": {"toolbar": true, "dialogs": true, "templateEditor": false, "templates": false, "addMediaWizard": false, "preview": false, "previewDialog": false, "publish": false, "toc": false}, "wgFeedbackParams": {"tags": {"reliability": 3, "completeness": 2, "npov": 2, "presentation": 1}}, "wgAjaxFeedback": {"sendingMsg": "Submitting …", "sentMsg": "Thank you!"}, "Geo": {"city": "", "country": ""}, "wgNoticeProject": "wikibooks"});
+}
+</script>
+
+<style type="text/css">/*<![CDATA[*/
+.source-ruby {line-height: normal;}
+.source-ruby li, .source-ruby pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for ruby
+ * CSS class: source-ruby, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.ruby.source-ruby .de1, .ruby.source-ruby .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.ruby.source-ruby  {font-family:monospace;}
+.ruby.source-ruby .imp {font-weight: bold; color: red;}
+.ruby.source-ruby li, .ruby.source-ruby .li1 {font-weight: normal; vertical-align:top;}
+.ruby.source-ruby .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.ruby.source-ruby .li2 {font-weight: bold; vertical-align:top;}
+.ruby.source-ruby .kw1 {color:#9966CC; font-weight:bold;}
+.ruby.source-ruby .kw2 {color:#0000FF; font-weight:bold;}
+.ruby.source-ruby .kw3 {color:#CC0066; font-weight:bold;}
+.ruby.source-ruby .kw4 {color:#CC00FF; font-weight:bold;}
+.ruby.source-ruby .co1 {color:#008000; font-style:italic;}
+.ruby.source-ruby .co4 {color: #cc0000; font-style: italic;}
+.ruby.source-ruby .coMULTI {color:#000080; font-style:italic;}
+.ruby.source-ruby .es0 {color:#000099;}
+.ruby.source-ruby .br0 {color:#006600; font-weight:bold;}
+.ruby.source-ruby .sy0 {color:#006600; font-weight:bold;}
+.ruby.source-ruby .st0 {color:#996600;}
+.ruby.source-ruby .nu0 {color:#006666;}
+.ruby.source-ruby .me1 {color:#9900CC;}
+.ruby.source-ruby .re0 {color:#ff6633; font-weight:bold;}
+.ruby.source-ruby .re1 {color:#0066ff; font-weight:bold;}
+.ruby.source-ruby .re2 {color:#6666ff; font-weight:bold;}
+.ruby.source-ruby .re3 {color:#ff3333; font-weight:bold;}
+.ruby.source-ruby .ln-xtra, .ruby.source-ruby li.ln-xtra, .ruby.source-ruby div.ln-xtra {background-color: #ffc;}
+.ruby.source-ruby span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Geshi.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+/*]]>*/
+</style><style type="text/css">/*<![CDATA[*/
+.source-text {line-height: normal;}
+.source-text li, .source-text pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for text
+ * CSS class: source-text, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.text.source-text .de1, .text.source-text .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.text.source-text  {font-family:monospace;}
+.text.source-text .imp {font-weight: bold; color: red;}
+.text.source-text li, .text.source-text .li1 {font-weight: normal; vertical-align:top;}
+.text.source-text .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.text.source-text .li2 {font-weight: bold; vertical-align:top;}
+.text.source-text .ln-xtra, .text.source-text li.ln-xtra, .text.source-text div.ln-xtra {background-color: #ffc;}
+.text.source-text span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Geshi.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/w/skins-1.17/vector/csshover.min.htc")}</style><![endif]--><link href="ruby-unit-testing_files/index_003.css" rel="stylesheet" type="text/css"><link href="ruby-unit-testing_files/index_002.css" rel="stylesheet" type="text/css"><script type="text/javascript" src="ruby-unit-testing_files/index_014.js"></script><script type="text/javascript" src="ruby-unit-testing_files/index_004.js"></script><script type="text/javascript" src="ruby-unit-testing_files/index_006.js"></script><script type="text/javascript" src="ruby-unit-testing_files/index_003.js"></script><script type="text/javascript" src="ruby-unit-testing_files/index_013.js"></script><script type="text/javascript" src="ruby-unit-testing_files/index_010.js"></script><script type="text/javascript" src="ruby-unit-testing_files/index_007.js"></script><script type="text/javascript" src="ruby-unit-testing_files/index_012.js"></script><script type="text/javascript" src="ruby-unit-testing_files/index_009.js"></script><script type="text/javascript" src="ruby-unit-testing_files/index.js"></script><script type="text/javascript" src="ruby-unit-testing_files/index_008.js"></script><script type="text/javascript" src="ruby-unit-testing_files/index_005.js"></script><script type="text/javascript" src="ruby-unit-testing_files/index_011.js"></script><link href="ruby-unit-testing_files/index.css" rel="stylesheet" type="text/css"><script type="text/javascript" src="ruby-unit-testing_files/index_002.js"></script></head>
+<body class="mediawiki ltr ns-0 ns-subject page-Ruby_Programming_Unit_testing skin-vector">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<!-- content -->
+		<div id="content">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<!-- sitenotice -->
+			<div id="siteNotice"><!-- centralNotice loads here --></div>
+			<!-- /sitenotice -->
+						<!-- firstHeading -->
+			<h1 id="firstHeading" class="firstHeading">Ruby Programming/Unit testing</h1>
+			<!-- /firstHeading -->
+			<!-- bodyContent -->
+			<div id="bodyContent"><span id="top-navigation" class="subpages noprint"><a href="http://en.wikibooks.org/wiki/Ruby_Programming/Exceptions" title="Ruby Programming/Exceptions">← Exceptions</a> | <a href="http://en.wikibooks.org/wiki/Ruby_Programming/RubyDoc" title="Ruby Programming/RubyDoc">RubyDoc →</a></span>
+				<!-- tagline -->
+				<div id="siteSub">From Wikibooks, open books for an open world</div>
+				<!-- /tagline -->
+				<!-- subtitle -->
+				<div id="contentSub"><span class="subpages">&lt; <a href="http://en.wikibooks.org/wiki/Ruby_Programming" title="Ruby Programming">Ruby Programming</a></span><div id="mw-fr-revisiontag" class="flaggedrevs_notice plainlinks noprint"><img class="flaggedrevs-icon" src="ruby-unit-testing_files/1.png" alt="Unreviewed changes are displayed on this page" title="Unreviewed changes are displayed on this page">This page may need to be <a href="http://en.wikibooks.org/wiki/Wikibooks:REVIEW" title="Wikibooks:REVIEW" class="mw-redirect">reviewed</a> for quality.</div></div>
+				<!-- /subtitle -->
+																<!-- jumpto -->
+				<div id="jump-to-nav">
+					Jump to: <a href="#mw-head">navigation</a>,
+					<a href="#p-search">search</a>
+				</div>
+				<!-- /jumpto -->
+								<!-- bodytext -->
+				<p><a href="http://en.wikipedia.org/wiki/Unit_test" class="extiw" title="w:Unit test">Unit testing</a>
+ is a great way to catch errors early in the development process, if you
+ dedicate time to writing appropriate and useful tests. As in other 
+languages, Ruby provides a framework in its standard library for setting
+ up, organizing, and running tests called Test::Unit.</p>
+<p>There are other very popular testing frameworks, rspec and cucumber come to mind.</p>
+<p>Specifically, Test::Unit provides three basic functionalities:</p>
+<ol>
+<li>A way to define basic pass/fail tests.</li>
+<li>A way to gather like tests together and run them as a group.</li>
+<li>Tools for running single tests or whole groups of tests.</li>
+</ol>
+<table id="toc" class="toc">
+<tbody><tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+ <span class="toctoggle">[<a href="#" class="internal" id="togglelink">hide</a>]</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#A_Simple_Introduction"><span class="tocnumber">1</span> <span class="toctext">A Simple Introduction</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Available_Assertions"><span class="tocnumber">2</span> <span class="toctext">Available Assertions</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Structuring_and_Organizing_Tests"><span class="tocnumber">3</span> <span class="toctext">Structuring and Organizing Tests</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#Naming_Conventions"><span class="tocnumber">3.1</span> <span class="toctext">Naming Conventions</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Running_Specific_Tests"><span class="tocnumber">3.2</span> <span class="toctext">Running Specific Tests</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Setup_and_Teardown"><span class="tocnumber">3.3</span> <span class="toctext">Setup and Teardown</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#Exercises"><span class="tocnumber">4</span> <span class="toctext">Exercises</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="#Radius_of_a_bike_tire"><span class="tocnumber">4.1</span> <span class="toctext">Radius of a bike tire</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#External_Links"><span class="tocnumber">5</span> <span class="toctext">External Links</span></a></li>
+</ul>
+</td>
+</tr>
+</tbody></table>
+<h2><span class="editsection">[<a href="http://en.wikibooks.org/w/index.php?title=Ruby_Programming/Unit_testing&amp;action=edit&amp;section=1" title="Edit section: A Simple Introduction">edit</a>]</span> <span class="mw-headline" id="A_Simple_Introduction">A Simple Introduction</span></h2>
+<p>First create a new class.</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;">
+<div class="ruby source-ruby">
+<pre class="de1"><span class="kw1">class</span> SimpleNumber
+ 
+  <span class="kw1">def</span> initialize<span class="br0">(</span> num <span class="br0">)</span>
+    <span class="kw3">raise</span> <span class="kw1">unless</span> num.<span class="me1">is_a</span>?<span class="br0">(</span><span class="kw4">Numeric</span><span class="br0">)</span>
+    <span class="re1">@x</span> = num
+  <span class="kw1">end</span>
+ 
+  <span class="kw1">def</span> add<span class="br0">(</span> y <span class="br0">)</span>
+    <span class="re1">@x</span> <span class="sy0">+</span> y
+  <span class="kw1">end</span>
+ 
+  <span class="kw1">def</span> multiply<span class="br0">(</span> y <span class="br0">)</span>
+    <span class="re1">@x</span> <span class="sy0">*</span> y
+  <span class="kw1">end</span>
+ 
+<span class="kw1">end</span>
+</pre></div>
+</div>
+<p>Let's start with an example to test the SimpleNumber class.</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;">
+<div class="ruby source-ruby">
+<pre class="de1"><span class="kw3">require</span> <span class="st0">"simpleNumber"</span>
+<span class="kw3">require</span> <span class="st0">"test/unit"</span>
+ 
+<span class="kw1">class</span> TestSimpleNumber <span class="sy0">&lt;</span> <span class="kw4"><span class="re2">Test::Unit::TestCase</span></span>
+ 
+  <span class="kw1">def</span> test_simple
+    assert_equal<span class="br0">(</span><span class="nu0">4</span>, SimpleNumber.<span class="me1">new</span><span class="br0">(</span><span class="nu0">2</span><span class="br0">)</span>.<span class="me1">add</span><span class="br0">(</span><span class="nu0">2</span><span class="br0">)</span> <span class="br0">)</span>
+    assert_equal<span class="br0">(</span><span class="nu0">6</span>, SimpleNumber.<span class="me1">new</span><span class="br0">(</span><span class="nu0">2</span><span class="br0">)</span>.<span class="me1">multiply</span><span class="br0">(</span><span class="nu0">3</span><span class="br0">)</span> <span class="br0">)</span>
+  <span class="kw1">end</span>
+ 
+<span class="kw1">end</span>
+</pre></div>
+</div>
+<p>Which produces</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;">
+<div class="text source-text">
+<pre class="de1"> &gt;&gt; ruby tc_simpleNumber.rb
+ Loaded suite tc_simpleNumber
+ Started
+ .
+ Finished in 0.002695 seconds.
+ 
+ 1 tests, 2 assertions, 0 failures, 0 errors
+</pre></div>
+</div>
+<p>So what happened here? We defined a class <i>TestSimpleNumber</i> which inherited from <i>Test::Unit::TestCase</i>. In <i>TestSimpleNumber</i> we defined a member function called <i>test_simple</i>. That member function contains a number of simple <i>assertions</i>
+ which exercise my class. When we run that class (note I haven't put any
+ sort of wrapper code around it -- it's just a class definition), the 
+tests are automatically run, and we're informed that we've run 1 test 
+and 2 assertions.</p>
+<p>Let's try a more complicated example.</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;">
+<div class="ruby source-ruby">
+<pre class="de1"><span class="kw3">require</span> <span class="st0">"simpleNumber"</span>
+<span class="kw3">require</span> <span class="st0">"test/unit"</span>
+ 
+<span class="kw1">class</span> TestSimpleNumber <span class="sy0">&lt;</span> <span class="kw4"><span class="re2">Test::Unit::TestCase</span></span>
+ 
+  <span class="kw1">def</span> test_simple
+    assert_equal<span class="br0">(</span><span class="nu0">4</span>, SimpleNumber.<span class="me1">new</span><span class="br0">(</span><span class="nu0">2</span><span class="br0">)</span>.<span class="me1">add</span><span class="br0">(</span><span class="nu0">2</span><span class="br0">)</span> <span class="br0">)</span>
+    assert_equal<span class="br0">(</span><span class="nu0">4</span>, SimpleNumber.<span class="me1">new</span><span class="br0">(</span><span class="nu0">2</span><span class="br0">)</span>.<span class="me1">multiply</span><span class="br0">(</span><span class="nu0">2</span><span class="br0">)</span> <span class="br0">)</span>
+  <span class="kw1">end</span>
+ 
+  <span class="kw1">def</span> test_typecheck
+    assert_raise<span class="br0">(</span> <span class="kw4">RuntimeError</span> <span class="br0">)</span> <span class="br0">{</span> SimpleNumber.<span class="me1">new</span><span class="br0">(</span><span class="st0">'a'</span><span class="br0">)</span> <span class="br0">}</span>
+  <span class="kw1">end</span>
+ 
+  <span class="kw1">def</span> test_failure
+    assert_equal<span class="br0">(</span><span class="nu0">3</span>, SimpleNumber.<span class="me1">new</span><span class="br0">(</span><span class="nu0">2</span><span class="br0">)</span>.<span class="me1">add</span><span class="br0">(</span><span class="nu0">2</span><span class="br0">)</span>, <span class="st0">"Adding doesn't work"</span> <span class="br0">)</span>
+  <span class="kw1">end</span>
+ 
+<span class="kw1">end</span>
+</pre></div>
+</div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;">
+<div class="text source-text">
+<pre class="de1">&gt;&gt; ruby tc_simpleNumber2.rb
+Loaded suite tc_simpleNumber2
+Started
+F..
+Finished in 0.038617 seconds.
+ 
+  1) Failure:
+test_failure(TestSimpleNumber) [tc_simpleNumber2.rb:16]:
+Adding doesn't work.
+&lt;3&gt; expected but was
+&lt;4&gt;.
+ 
+3 tests, 4 assertions, 1 failures, 0 errors
+</pre></div>
+</div>
+<p>Now there are three tests (three member functions) in the class. The function <i>test_typecheck</i> uses <i>assert_raise</i> to check for an exception. The function <i>test_failure</i>
+ is set up to fail, which the Ruby output happily points out, not only 
+telling us which test failed, but how it failed (expected &lt;3&gt; but 
+was &lt;4&gt;). On this assertion, we've also added an final parameters 
+which is a custom error message. It's strictly optional but can be 
+helpful for debugging. All of the assertions include their own error 
+messages which are usually sufficient for simple debugging.</p>
+<h2><span class="editsection">[<a href="http://en.wikibooks.org/w/index.php?title=Ruby_Programming/Unit_testing&amp;action=edit&amp;section=2" title="Edit section: Available Assertions">edit</a>]</span> <span class="mw-headline" id="Available_Assertions">Available Assertions</span></h2>
+<p>Test::Unit provides a rich set of assertions, which are documented thoroughly at <a href="http://www.ruby-doc.org/stdlib/libdoc/test/unit/rdoc/classes/Test/Unit.html" class="external text" rel="nofollow">Ruby-Doc</a>.
+ Here's a brief synopsis (assertions and their negative are grouped 
+together. The text description is usually for the first one listed -- 
+the names should make some logical sense):</p>
+<table border="1" cellpadding="5" cellspacing="0">
+<tbody><tr>
+<td>assert( boolean, [message] )</td>
+<td>True if <i>boolean</i></td>
+</tr>
+<tr>
+<td>assert_equal( expected, actual, [message] )<br>
+assert_not_equal( expected, actual, [message] )</td>
+<td>True if <i>expected == actual</i></td>
+</tr>
+<tr>
+<td>assert_match( pattern, string, [message] )<br>
+assert_no_match( pattern, string, [message] )</td>
+<td>True if <i>string =~ pattern</i></td>
+</tr>
+<tr>
+<td>assert_nil( object, [message] )<br>
+assert_not_nil( object, [message] )</td>
+<td>True if <i>object == nil</i></td>
+</tr>
+<tr>
+<td>assert_in_delta( expected_float, actual_float, delta, [message] )</td>
+<td>True if <i>(actual_float - expected_float).abs &lt;= delta</i></td>
+</tr>
+<tr>
+<td>assert_instance_of( class, object, [message] )</td>
+<td>True if <i>object.class == class</i></td>
+</tr>
+<tr>
+<td>assert_kind_of( class, object, [message] )</td>
+<td>True if <i>object.kind_of?(class)</i></td>
+</tr>
+<tr>
+<td>assert_same( expected, actual, [message])<br>
+assert_not_same( expected, actual, [message] )</td>
+<td>True if <i>actual.equal?( expected )</i>.</td>
+</tr>
+<tr>
+<td>assert_raise( Exception,... ) {block}<br>
+assert_nothing_raised( Exception,...) {block}</td>
+<td>True if the block raises (or doesn't) one of the listed exceptions.</td>
+</tr>
+<tr>
+<td>assert_throws( expected_symbol, [message] ) {block}<br>
+assert_nothing_thrown( [message] ) {block}</td>
+<td>True if the block throws (or doesn't) the expected_symbol.</td>
+</tr>
+<tr>
+<td>assert_respond_to( object, method, [message] )</td>
+<td>True if the object can respond to the given method.</td>
+</tr>
+<tr>
+<td>assert_send( send_array, [message] )</td>
+<td>True if the method sent to the object with the given arguments return true.</td>
+</tr>
+<tr>
+<td>assert_operator( object1, operator, object2, [message] )</td>
+<td>Compares the two objects with the given operator, passes if <i>true</i></td>
+</tr>
+</tbody></table>
+<h2><span class="editsection">[<a href="http://en.wikibooks.org/w/index.php?title=Ruby_Programming/Unit_testing&amp;action=edit&amp;section=3" title="Edit section: Structuring and Organizing Tests">edit</a>]</span> <span class="mw-headline" id="Structuring_and_Organizing_Tests">Structuring and Organizing Tests</span></h2>
+<p>Tests for a particular unit of code are grouped together into a <i>test case</i>, which is a subclass of Test::Unit::TestCase. Assertions are gathered in <i>tests</i>, member functions for the test case whose names start with <tt>test_</tt>.
+ When the test case is executed or required, Test::Unit will iterate 
+through all of the tests (finding all of the member functions which 
+start with <i>test_</i> using reflection) in the test case, and provide the appropriate feedback.</p>
+<p>Test case classes can be gathered together into <i>test suites</i> which are Ruby files which require other test cases:</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;">
+<div class="ruby source-ruby">
+<pre class="de1"><span class="co1"># File: ts_allTheTests.rb</span>
+<span class="kw3">require</span> <span class="st0">'test/unit'</span>
+<span class="kw3">require</span> <span class="st0">'testOne'</span>
+<span class="kw3">require</span> <span class="st0">'testTwo'</span>
+<span class="kw3">require</span> <span class="st0">'testThree'</span>
+</pre></div>
+</div>
+<p>In this way, related test cases can be naturally grouped. Further, 
+test suites can contain other test suites, allowing the construction of a
+ hierarchy of tests.</p>
+<p>This structure provides relatively fine-grained control over testing.
+ Individual tests can be run from a test case (see below), a full test 
+case can be run stand-alone, a test suite containing multiple cases can 
+be run, or a suite of suites can run, spanning many test cases.</p>
+<h3><span class="editsection">[<a href="http://en.wikibooks.org/w/index.php?title=Ruby_Programming/Unit_testing&amp;action=edit&amp;section=4" title="Edit section: Naming Conventions">edit</a>]</span> <span class="mw-headline" id="Naming_Conventions">Naming Conventions</span></h3>
+<p>The author of Test::Unit, Nathaniel Talbott, suggests starting the names of test cases with <tt>tc_</tt> and the names of test suites with <tt>ts_</tt></p>
+<h3><span class="editsection">[<a href="http://en.wikibooks.org/w/index.php?title=Ruby_Programming/Unit_testing&amp;action=edit&amp;section=5" title="Edit section: Running Specific Tests">edit</a>]</span> <span class="mw-headline" id="Running_Specific_Tests">Running Specific Tests</span></h3>
+<p>It's possible to run just one (or more) tests out of a full test case:</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;">
+<div class="text source-text">
+<pre class="de1">&gt;&gt; ruby -w tc_simpleNumber2.rb --name test_typecheck 
+Loaded suite tc_simpleNumber2
+Started
+.
+Finished in 0.003401 seconds.
+ 
+1 tests, 1 assertions, 0 failures, 0 errors
+</pre></div>
+</div>
+<p>It is also possible to run all tests whose names match a given pattern:</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;">
+<div class="text source-text">
+<pre class="de1">&gt;&gt; ruby -w tc_simpleNumber2.rb --name /test_type.*/ 
+Loaded suite tc_simpleNumber2
+Started
+.
+Finished in 0.003401 seconds.
+ 
+1 tests, 1 assertions, 0 failures, 0 errors
+</pre></div>
+</div>
+<h3><span class="editsection">[<a href="http://en.wikibooks.org/w/index.php?title=Ruby_Programming/Unit_testing&amp;action=edit&amp;section=6" title="Edit section: Setup and Teardown">edit</a>]</span> <span class="mw-headline" id="Setup_and_Teardown">Setup and Teardown</span></h3>
+<p>There are many cases where a small bit of code needs to be run before and/or after each test. Test::Unit provides the <tt>setup</tt> and <tt>teardown</tt> member functions, which are run before and after every test (member function).</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;">
+<div class="ruby source-ruby">
+<pre class="de1"><span class="kw3">require</span> <span class="st0">"simpleNumber"</span>
+<span class="kw3">require</span> <span class="st0">"test/unit"</span>
+ 
+<span class="kw1">class</span> TestSimpleNumber <span class="sy0">&lt;</span> <span class="kw4"><span class="re2">Test::Unit::TestCase</span></span>
+ 
+  <span class="kw1">def</span> setup
+    <span class="re1">@num</span> = SimpleNumber.<span class="me1">new</span><span class="br0">(</span><span class="nu0">2</span><span class="br0">)</span>
+  <span class="kw1">end</span>
+ 
+  <span class="kw1">def</span> teardown
+    <span class="co1">## Nothing really</span>
+  <span class="kw1">end</span>
+ 
+  <span class="kw1">def</span> test_simple
+    assert_equal<span class="br0">(</span><span class="nu0">4</span>, <span class="re1">@num</span>.<span class="me1">add</span><span class="br0">(</span><span class="nu0">2</span><span class="br0">)</span> <span class="br0">)</span>
+  <span class="kw1">end</span>
+ 
+  <span class="kw1">def</span> test_simple2
+    assert_equal<span class="br0">(</span><span class="nu0">4</span>, <span class="re1">@num</span>.<span class="me1">multiply</span><span class="br0">(</span><span class="nu0">2</span><span class="br0">)</span> <span class="br0">)</span>
+  <span class="kw1">end</span>
+ 
+<span class="kw1">end</span>
+</pre></div>
+</div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;">
+<div class="text source-text">
+<pre class="de1">&gt;&gt; ruby tc_simpleNumber3.rb
+Loaded suite tc_simpleNumber3
+Started
+..
+Finished in 0.00517 seconds.
+ 
+2 tests, 2 assertions, 0 failures, 0 errors
+</pre></div>
+</div>
+<h2><span class="editsection">[<a href="http://en.wikibooks.org/w/index.php?title=Ruby_Programming/Unit_testing&amp;action=edit&amp;section=7" title="Edit section: Exercises">edit</a>]</span> <span class="mw-headline" id="Exercises">Exercises</span></h2>
+<h3><span class="editsection">[<a href="http://en.wikibooks.org/w/index.php?title=Ruby_Programming/Unit_testing&amp;action=edit&amp;section=8" title="Edit section: Radius of a bike tire">edit</a>]</span> <span class="mw-headline" id="Radius_of_a_bike_tire">Radius of a bike tire</span></h3>
+<p>Implement a class with a public method that can solve the following 
+problem: A user has a rubber bicycle tire of an arbitrary circumference.
+ When one side is cut, and the bike tire is stretched into a line, it is
+ measured at an arbitrary length. From this length, determine the radius
+ of the bike tire originally.</p>
+<p>After this, write a test case to test the class. It should include at least 2 methods to test.</p>
+<h2><span class="editsection">[<a href="http://en.wikibooks.org/w/index.php?title=Ruby_Programming/Unit_testing&amp;action=edit&amp;section=9" title="Edit section: External Links">edit</a>]</span> <span class="mw-headline" id="External_Links">External Links</span></h2>
+<ul>
+<li><a href="http://www.ruby-doc.org/stdlib/libdoc/test/unit/rdoc/classes/Test/Unit.html" class="external text" rel="nofollow">Test::Unit documentation</a> at <a href="http://www.ruby-doc.org/" class="external text" rel="nofollow">Ruby-Doc</a></li>
+</ul>
+
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 149/1000000
+Post-expand include size: 367/2048000 bytes
+Template argument size: 51/2048000 bytes
+Expensive parser function count: 0/500
+-->
+
+<!-- Saved in parser cache with key enwikibooks:pcache:idhash:68668-0!*!0!default!!en!* and timestamp 20110713054304 -->
+<div class="printfooter">
+Retrieved from "<a href="http://en.wikibooks.org/wiki/Ruby_Programming/Unit_testing">http://en.wikibooks.org/wiki/Ruby_Programming/Unit_testing</a>"</div>
+				<!-- /bodytext -->
+								<!-- catlinks -->
+				<div id="catlinks" class="catlinks"><div id="mw-normal-catlinks"><a href="http://en.wikibooks.org/wiki/Special:Categories" title="Special:Categories">Category</a>: <span dir="ltr"><a href="http://en.wikibooks.org/wiki/Category:Ruby_Programming" title="Category:Ruby Programming">Ruby Programming</a></span></div></div>				<!-- /catlinks -->
+												<!-- dataAfterContent -->
+				<div id="mw-data-after-content">
+	<form method="post" action="/w/index.php?title=Special:ReaderFeedback&amp;action=submit" id="mw-feedbackform"><fieldset class="feedback_reviewform noprint"><legend><strong>What do you think of this page?</strong></legend>
+<p><i>Please take a moment to rate this page below. Your feedback is valuable and helps us improve our website.</i>
+</p><span id="mw-feedbackselects"><b><label for="wpreliability">Reliability</label>:</b>&nbsp;<select class="rfb-rating-option--1" name="wpreliability" id="wpreliability" onchange="updateFeedbackForm()"><option class="rfb-rating-option-4" value="4">Excellent</option>
+<option class="rfb-rating-option-3" value="3">High</option>
+<option class="rfb-rating-option-2" value="2">Fair</option>
+<option class="rfb-rating-option-1" value="1">Low</option>
+<option class="rfb-rating-option-0" value="0">Poor</option>
+<option value="-1" selected="selected">(unsure)</option>
+</select>
+<b><label for="wpcompleteness">Completeness</label>:</b>&nbsp;<select class="rfb-rating-option--1" name="wpcompleteness" id="wpcompleteness" onchange="updateFeedbackForm()"><option class="rfb-rating-option-4" value="4">Excellent</option>
+<option class="rfb-rating-option-3" value="3">High</option>
+<option class="rfb-rating-option-2" value="2">Fair</option>
+<option class="rfb-rating-option-1" value="1">Low</option>
+<option class="rfb-rating-option-0" value="0">Poor</option>
+<option value="-1" selected="selected">(unsure)</option>
+</select>
+<b><label for="wpnpov">Neutrality</label>:</b>&nbsp;<select class="rfb-rating-option--1" name="wpnpov" id="wpnpov" onchange="updateFeedbackForm()"><option class="rfb-rating-option-4" value="4">Excellent</option>
+<option class="rfb-rating-option-3" value="3">High</option>
+<option class="rfb-rating-option-2" value="2">Fair</option>
+<option class="rfb-rating-option-1" value="1">Low</option>
+<option class="rfb-rating-option-0" value="0">Poor</option>
+<option value="-1" selected="selected">(unsure)</option>
+</select>
+<b><label for="wppresentation">Presentation</label>:</b>&nbsp;<select class="rfb-rating-option--1" name="wppresentation" id="wppresentation" onchange="updateFeedbackForm()"><option class="rfb-rating-option-4" value="4">Excellent</option>
+<option class="rfb-rating-option-3" value="3">High</option>
+<option class="rfb-rating-option-2" value="2">Fair</option>
+<option class="rfb-rating-option-1" value="1">Low</option>
+<option class="rfb-rating-option-0" value="0">Poor</option>
+<option value="-1" selected="selected">(unsure)</option>
+</select>
+</span><input disabled="disabled" value="Submit" id="submitfeedback" accesskey="b" title="Submit review [ctrl-b]" type="submit"><input value="Special:ReaderFeedback" name="title" type="hidden">
+<input value="Ruby_Programming/Unit_testing" name="target" type="hidden">
+<input value="2091125" name="oldid" type="hidden">
+<input value="f1af9ab53b5e4c065dd98e8aaf1c7bcc" name="validatedParams" type="hidden"><input value="submit" name="action" type="hidden">
+<input value="+\" name="wpEditToken" type="hidden">
+<input name="commentary" size="12" style="display: none;">
+</fieldset></form>
+</div>
+				<!-- /dataAfterContent -->
+								<div class="visualClear"></div>
+			</div>
+			<!-- /bodyContent -->
+		</div>
+		<!-- /content -->
+		<!-- header -->
+		<div id="mw-head" class="noprint">
+			
+<!-- 0 -->
+<div id="p-personal" class="">
+	<h5>Personal tools</h5>
+	<ul>
+					<li id="pt-login"><a href="http://en.wikibooks.org/w/index.php?title=Special:UserLogin&amp;returnto=Ruby_Programming/Unit_testing" title="You are encouraged to log in; however, it is not mandatory [ctrl-o]" accesskey="o">Log in / create account</a></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+			<div id="left-navigation">
+				
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li id="ca-nstab-main" class="selected"><span><a href="http://en.wikibooks.org/wiki/Ruby_Programming/Unit_testing" title="View the content page [ctrl-c]" accesskey="c">Book</a></span></li>
+					<li id="ca-talk"><span><a href="http://en.wikibooks.org/wiki/Talk:Ruby_Programming/Unit_testing" title="Discussion about the content page [ctrl-t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+			</div>
+			<div id="right-navigation">
+				
+<!-- 0 -->
+<div id="p-views" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="http://en.wikibooks.org/wiki/Ruby_Programming/Unit_testing">Read</a></span></li>
+					<li id="ca-edit"><span><a href="http://en.wikibooks.org/w/index.php?title=Ruby_Programming/Unit_testing&amp;action=edit" title="You can edit this page. Please use the preview button before saving [ctrl-e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-history" class="collapsible "><span><a href="http://en.wikibooks.org/w/index.php?title=Ruby_Programming/Unit_testing&amp;action=history" title="Past revisions of this page [ctrl-h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+
+<!-- 2 -->
+<div id="p-search">
+	<h5><label for="searchInput">Search</label></h5>
+	<form action="/w/index.php" id="searchform">
+		<input name="title" value="Special:Search" type="hidden">
+				<div id="simpleSearch">
+						<input autocomplete="off" placeholder="Search" tabindex="1" id="searchInput" name="search" title="Search Wikibooks [ctrl-f]" accesskey="f" type="text">
+						<button id="searchButton" type="submit" name="button" title="Search the pages for this text"><img src="ruby-unit-testing_files/search-ltr.png" alt="Search"></button>
+					</div>
+			</form>
+</div>
+
+<!-- /2 -->
+			</div>
+		</div>
+		<!-- /header -->
+		<!-- panel -->
+			<div id="mw-panel" class="noprint collapsible-nav">
+				<!-- logo -->
+					<div id="p-logo"><a style="background-image: url(&quot;http://upload.wikimedia.org/wikibooks/en/b/bc/Wiki.png&quot;);" href="http://en.wikibooks.org/wiki/Main_Page" title="Visit the main page"></a></div>
+				<!-- /logo -->
+				
+<!-- Navigation -->
+<div class="portal first persistent" id="p-Navigation">
+	<h5>Navigation</h5>
+	<div class="body">
+				<ul>
+					<li id="n-mainpage"><a href="http://en.wikibooks.org/wiki/Main_Page" title="Visit the main page [ctrl-z]" accesskey="z">Main Page</a></li>
+					<li id="n-help"><a href="http://en.wikibooks.org/wiki/Help:Contents" title="Find help on how to use and edit Wikibooks">Help</a></li>
+					<li id="n-Browse"><a href="http://en.wikibooks.org/wiki/Wikibooks:Card_Catalog_Office" title="Check out what Wikibooks has to offer">Browse</a></li>
+					<li id="n-Cookbook"><a href="http://en.wikibooks.org/wiki/Cookbook:Table_of_Contents" title="Learn recipes from around the world">Cookbook</a></li>
+					<li id="n-Wikijunior"><a href="http://en.wikibooks.org/wiki/Wikijunior" title="Books for children">Wikijunior</a></li>
+					<li id="n-Featured-books"><a href="http://en.wikibooks.org/wiki/Wikibooks:Featured_books" title="The best of Wikibooks">Featured books</a></li>
+					<li id="n-recentchanges"><a href="http://en.wikibooks.org/wiki/Special:RecentChanges" title="The list of recent changes in the wiki [ctrl-r]" accesskey="r">Recent changes</a></li>
+					<li id="n-sitesupport"><a href="http://wikimediafoundation.org/wiki/Special:Landingcheck?landing_page=WMFJA085&amp;language=en&amp;utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=20101204SB002" title="Support Wikibooks">Donations</a></li>
+				<li id="n-randbook"><a accesskey="x" title="Show me a random book [ctrl-x]" href="#">Random book</a></li></ul>
+			</div>
+</div>
+
+<!-- /Navigation -->
+
+<!-- SEARCH -->
+
+<!-- /SEARCH -->
+
+<!-- Community -->
+<div class="portal expanded" id="p-Community">
+	<h5 tabindex="2">Community</h5>
+	<div style="display: block;" class="body">
+				<ul>
+					<li id="n-Reading-room"><a href="http://en.wikibooks.org/wiki/Wikibooks:Reading_room" title="Discuss Wikibooks-related questions and concerns with others">Reading room</a></li>
+					<li id="n-portal"><a href="http://en.wikibooks.org/wiki/Wikibooks:Community_Portal" title="Find your way around the Wikibooks community">Community portal</a></li>
+					<li id="n-currentevents"><a href="http://en.wikibooks.org/wiki/Wikibooks:Reading_room/Bulletin_Board" title="Important community news">Bulletin Board</a></li>
+					<li id="n-maintenance"><a href="http://en.wikibooks.org/wiki/Wikibooks:Maintenance" title="Frequent tasks that you can help with">Help out!</a></li>
+					<li id="n-Policies-and-guidelines"><a href="http://en.wikibooks.org/wiki/Wikibooks:Policies_and_guidelines" title="Pages detailing important rules and procedures">Policies and guidelines</a></li>
+					<li id="n-contact"><a href="http://en.wikibooks.org/wiki/Wikibooks:Contact_us" title="Alternative methods of communication">Contact us</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /Community -->
+
+<!-- TOOLBOX -->
+<div class="portal collapsed" id="p-tb">
+	<h5 tabindex="3">Toolbox</h5>
+	<div class="body">
+		<ul>
+					<li id="t-whatlinkshere"><a href="http://en.wikibooks.org/wiki/Special:WhatLinksHere/Ruby_Programming/Unit_testing" title="List of all wiki pages that link here [ctrl-j]" accesskey="j">What links here</a></li>
+						<li id="t-recentchangeslinked"><a href="http://en.wikibooks.org/wiki/Special:RecentChangesLinked/Ruby_Programming/Unit_testing" title="Recent changes in pages linked from this page [ctrl-k]" accesskey="k">Related changes</a></li>
+																																					<li id="t-upload"><a href="http://commons.wikimedia.org/wiki/Commons:Upload" title="Upload files [ctrl-u]" accesskey="u">Upload file</a></li>
+											<li id="t-specialpages"><a href="http://en.wikibooks.org/wiki/Special:SpecialPages" title="List of all special pages [ctrl-q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="http://en.wikibooks.org/w/index.php?title=Ruby_Programming/Unit_testing&amp;oldid=2091125" title="Permanent link to this revision of the page">Permanent link</a></li>
+				<li id="t-rating"><a href="http://en.wikibooks.org/w/index.php?title=Special:RatingHistory&amp;target=Ruby_Programming/Unit_testing">Page rating</a></li>		</ul>
+	</div>
+</div>
+
+<!-- /TOOLBOX -->
+
+<!-- LANGUAGES -->
+
+<!-- /LANGUAGES -->
+
+<!-- Sister projects -->
+<div class="portal collapsed" id="p-Sister_projects">
+	<h5 tabindex="4">Sister projects</h5>
+	<div class="body">
+				<ul>
+					<li id="n-Wikipedia"><a href="http://en.wikipedia.org/wiki/Main_Page">Wikipedia</a></li>
+					<li id="n-Wikiversity"><a href="http://en.wikiversity.org/wiki/Wikiversity:Main_Page">Wikiversity</a></li>
+					<li id="n-Wiktionary"><a href="http://en.wiktionary.org/wiki/Wiktionary:Main_Page">Wiktionary</a></li>
+					<li id="n-Wikiquote"><a href="http://en.wikiquote.org/wiki/Main_Page">Wikiquote</a></li>
+					<li id="n-Wikisource"><a href="http://en.wikisource.org/wiki/Main_Page">Wikisource</a></li>
+					<li id="n-Wikinews"><a href="http://en.wikinews.org/wiki/Main_Page">Wikinews</a></li>
+					<li id="n-Commons"><a href="http://commons.wikimedia.org/wiki/Main_Page">Commons</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /Sister projects -->
+
+<!-- coll-print_export -->
+<div class="portal collapsed" id="p-coll-print_export">
+	<h5 tabindex="5">Print/export</h5>
+	<div class="body">
+				<ul id="collectionPortletList"><li id="coll-create_a_book"><a href="http://en.wikibooks.org/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Ruby+Programming%2FUnit+testing" title="Create a book or page collection" rel="nofollow">Create a collection</a></li><li id="coll-download-as-rl"><a href="http://en.wikibooks.org/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Ruby+Programming%2FUnit+testing&amp;oldid=2091125&amp;writer=rl" title="Download a PDF version of this wiki page" rel="nofollow">Download as PDF</a></li><li id="t-print"><a href="http://en.wikibooks.org/w/index.php?title=Ruby_Programming/Unit_testing&amp;printable=yes" title="Printable version of this page [ctrl-p]" accesskey="p">Printable version</a></li></ul>			</div>
+</div>
+
+<!-- /coll-print_export -->
+			</div>
+		<!-- /panel -->
+		<!-- footer -->
+		<div id="footer">
+											<ul id="footer-info">
+																	<li id="footer-info-lastmod"> This page was last modified on 2 May 2011, at 02:23.</li>
+																							<li id="footer-info-copyright">Text is available under the <a rel="license" href="http://en.wikibooks.org/wiki/Wikibooks:Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/" style="display: none;"></a>;
+additional terms may apply. See <a href="http://wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> for details.</li>
+															</ul>
+															<ul id="footer-places">
+																	<li id="footer-places-privacy"><a href="http://wikimediafoundation.org/wiki/Privacy_policy" title="wikimedia:Privacy policy">Privacy policy</a></li>
+																							<li id="footer-places-about"><a href="http://en.wikibooks.org/wiki/Wikibooks:Welcome" title="Wikibooks:Welcome">About Wikibooks</a></li>
+																							<li id="footer-places-disclaimer"><a href="http://en.wikibooks.org/wiki/Wikibooks:General_disclaimer" title="Wikibooks:General disclaimer">Disclaimers</a></li>
+																							<li id="footer-places-mobileview"><a href="http://en.wikibooks.org/w/index.php?title=Ruby_Programming/Unit_testing&amp;useformat=mobile">Mobile view</a></li>
+															</ul>
+											<ul id="footer-icons" class="noprint">
+					<li id="footer-copyrightico">
+						<a href="http://wikimediafoundation.org/"><img src="ruby-unit-testing_files/wikimedia-button.png" alt="Wikimedia Foundation" height="31" width="88"></a>
+					</li>
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="ruby-unit-testing_files/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" height="31" width="88"></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<!-- /footer -->
+		<script type="text/javascript">if ( window.mediaWiki ) {
+	mediaWiki.loader.load(["mediawiki.legacy.wikibits", "mediawiki.util", "mediawiki.legacy.ajax", "mediawiki.legacy.mwsuggest", "ext.vector.collapsibleNav", "ext.vector.collapsibleTabs", "ext.vector.editWarning", "ext.vector.simpleSearch"]);
+	mediaWiki.loader.go();
+}
+</script><script type="text/javascript" src="ruby-unit-testing_files/load_005.js"></script><script type="text/javascript" src="ruby-unit-testing_files/load.js"></script>
+
+<script src="ruby-unit-testing_files/flaggedrevs.js" type="text/javascript"></script>
+<script type="text/javascript">
+FlaggedRevs.messages = {"diffToggleShow": "show those changes", "diffToggleHide": "hide those changes", "logToggleShow": "show stability log", "logToggleHide": "hide stability log", "logDetailsShow": "show details", "logDetailsHide": "hide details", "toggleShow": "(+)", "toggleHide": "(-)"};
+</script>
+<script src="ruby-unit-testing_files/readerfeedback.js" type="text/javascript"></script>
+<script src="ruby-unit-testing_files/index_015.js" type="text/javascript"></script>
+<script src="ruby-unit-testing_files/load_004.js" type="text/javascript"></script>
+<script type="text/javascript">if ( window.mediaWiki ) {
+	mediaWiki.user.options.set({"ccmeonemails":0,"cols":80,"contextchars":50,"contextlines":5,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":1,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":false,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":4,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":0,"watchdeletion":0,
+	"watchlistdays":"3","watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"flaggedrevssimpleui":0,"flaggedrevsstable":false,"flaggedrevseditdiffs":true,"flaggedrevsviewdiffs":false,"vector-simplesearch":1,"useeditwarning":1,"vector-collapsiblenav":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":true,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs102":false,"searchNs103":false,"searchNs108":false,"searchNs109":false,"searchNs110":false,"searchNs111":false,"searchNs112":true,"searchNs113":false});;mediaWiki.loader.state({"user.options":"ready"});
+	
+	/* cache key: enwikibooks:resourceloader:filter:minify-js:5:6a1a5c7907cffcc8c58c4ac1ab4a7c3d */
+}
+</script><script type="text/javascript" src="ruby-unit-testing_files/a.js"></script>		<!-- fixalpha -->
+		<script type="text/javascript"> if ( window.isMSIE55 ) fixalpha(); </script>
+		<!-- /fixalpha -->
+		<!-- Served by srv285 in 0.107 secs. -->			
+
+<div class="suggestions" style="top: 72px; width: 204px; display: none; left: auto; right: 29px;"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body></html>

@@ -1,0 +1,48 @@
+Cornac
+http://www.cornac.info/
+It's a person who drives an elphant
+Damien Seguy
+damien.seguy@gmail.com
+
+./bin/cornac -I spotweb.ini
+> Tokenizer
+> Auditeur
+> Done
+
+
+Also interesting
+PMD: PHP Mess Detector
+PHP_Depends
+
+Gives a list of extensions.  Maybe Perl::Critic should include an
+inventory of modules used?
+
+Static audit:
+* Process large quantities of code
+* Process the same code over and over
+* Depends on auditor expert level
+* Automates searches
+* Make search systematic
+* Produces false positives
+
+Found three different classes with the same name, but three different
+source files.
+
+Application inventory
+* Taking a global look at the appliction
+* List of structures names
+* List of used functionalities
+
+5.3 migration
+* Incomplete evolutions
+* Obsolete functions
+* Reference handling
+* References with the "new" operator
+* mktime() doesn't take 7 parameters any more
+
+Summary of classes and properties makes it easy to see inconsistencies.
+
+Has an inclusion network, like my Dev/xreq, but graphical
+* include* and require*
+* Ignores variables
+* Circles represent files, arrows represent inclusions

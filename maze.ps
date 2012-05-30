@@ -1,0 +1,36 @@
+%!
+% Expert Labyrinth for Postscript printers, Copyright 1992 by David Bau
+    % desc{an expert maze, dynamically generated in PostScript}
+
+/realtime where { pop realtime } { 1 } ifelse srand
+
+.00 .15 % line weights (0..1) % This file is free puzzleware.  :)
+   -.70 % tunnel shape(-1..1) % Please distribute it and its output only for
+     40 % twistiness (0..100) %  free, and keep my original comments intact.
+   true % tunnel crossings    % If you like it or if you have a suggestion,
+612 792 % page dimensions     %  send me a postcard from your home town!
+ 18  18 % page margins        % 777 South Avenue; Weston, MA 02193; USA
+     12 % cell size           % bau@cs.cornell.edu
+
+/`/def/*/repeat/~/lineto/!/mod/@/if/#/ifelse/$/dup/^/add/|/stroke/'/put/S/gsave
+/./exit/,/and/&/sub/-/or/_/loop/=/exch/+/eq/Z/ne/"/bind/:/get/;/bitshift/W/exec
+/N/mul/O/translate/P/neg/Q/for/?/moveto/T/grestore/X/showpage/$/dup/V/arc/M/pop
+/Y/setlinewidth/R/div 73 dict begin 35{load def}repeat(,b5;-'/aabaCPbzN^`/bbw4!
+`}{/bb3^4!`}#}_}"WYI$0Z{SXTIYH}{M}#XT)(31)({.}@}_c1eK$G4-'c0eK5'cfdK$G1-'cfdKw5
+'/hfwdK`/a0eK`/b0`{ah+{.}@aGbJ,0Z{caaG)(ge)(gf2R&)(abs)(;`b4+{.}@/abaCPbzNa^`}#
+}_{/eghw`/dghw`de&)(-5)(,k5;-}@'}_caaGk$5;=J--'}{/baG)(lt{15 xor 31)(-6h3)(16)(
+`caaGbJ-'baC{BcaaG)(xor)({{l$i=:d{.}@M}_}{4}#}#`b4Z{/kb2)(100 h n ge ,{b}{false
+i{d -}forall)('}Q}*/afhwghwK`/bl`ca45;'{/b/i[013{aC}Q]`ib:d)(16)(;`SaEOb{L}*mw4
+!b+{L}@umb^2!:WTah+{.}@/bm`baCP{BSaEOb2!{L}*1y?sy~ry?0y~|T}_}_}D{01px{c=0'}Q01o
+po&1p0opoxop4{x{c=)(-5)(,0Z/nA013{$Ji,0Z{/kA/lk`/ml`4{/mmw4!`LmJi,0Z{tl4^m&4!:W
+/lm`}@km+{.}@}*.}@LM}QT}Q}D/H{/a0eK`/b0`{/maG)(15 ,/i A 16)(abz^`x$0+{M.}@}D/I{
+01px{/aASaEOaG$)(/L{90 rotate 0 -1 O}D /B{/a)(,FZ{P.}@}_}D)(15)(,0+{M.}@)(31)(#
+/FA0{w/jjv^`jG$)({10}{5})(0V|}"}{{0y?yy~y1~|}"}#]`/l{{5h$4Z{.}@M}_}D/C{/jA$z/vA
+1,0+)(270)([{1y?0y~|}"e{{01y)(/u)(V|}"}{{1r?sr~s0~|}"}#]`)(90 180)(V|}"}{{1r?rr
+~rs~1s~|}"{1r?rr~r1~|}"}#{1r?0r~n{s0?sr~r0?rr~}@|}"e{{10r)(180 270)(V1r~|}"{11s
+)(90 270)(x}D/z{[1o1PoP]=:}D/J{1=;}D/G{c=:}D/t[e{{1s?yyq)(idiv)(=!}D/K{oN^}D/E{
+$o!x=o)S(/c p array `/w{1 ^}D/x{1 &}D/h{rand)(2R/qA/ryq&`/syq^`/of2^`/pog2^N`)(
+ge/e A/y .5 ` abs)({{1+}}#"/dA/nA$0)(scale{{1 ge}})($/fAcN&2R/oAopOcc)(cvi)($/g
+AcN&2R/pA$o&cR)(cvi)(/k/b/a3{0`}*/D{"`}"`/A{=`}D/cA$^/pA$^/oA$p&cR)()/j{F = i $
+1 ^/i = ` = '}/F 2157 string/i 0/m{32 j}/v{forall}5{`}* 27{{j}v m{$ j 47 Z{m}@}
+v}* F cvx W end

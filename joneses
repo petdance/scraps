@@ -1,0 +1,42 @@
+#!/usr/bin/perl
+
+=pod
+
+Takes a list from the iTunes viewer, pasted as text and tab-separated,
+and turns it into a nice little bulletized list for pasting into
+blog posts, like L<http://petdance.livejournal.com/157250.html>.
+
+=cut
+
+use Perl6::Say;
+
+say '<ul>';
+my @rows = <DATA>;
+#@rows = sort { key($a) cmp key($b) } @rows;
+for ( @rows ) {
+    my ($title,undef,undef,undef,$who,undef,$where) = split /\t/;
+    my $line = qq{<li>"$title", $who};
+    $line .= qq{ from <i>$where</i></li>} if $where;
+
+    say $line;
+}
+say '</ul>';
+
+sub key {
+    my $str = shift;
+
+    $str =~ s/^The //;
+
+    return $str;
+}
+
+__DATA__
+Grotto Of Miracles	1 of 2	10 of 14	4:01	Suzanne The Plan	2006	An Idiot To Not Appreciate Your Time: The Songs Of Silkworm	2/13/07 8:16 PM	160 kbps
+In Need Of A Miracle	1 of 1	8 of 12	3:43	New Radicals	1998	Maybe You've Been Brainwashed Too	7/28/07 11:29 PM	160 kbps
+It's A Miracle	1 of 1	2 of 20	3:51	Barry Manilow	2002	Ultimate Manilow	6/1/06 7:00 PM	112 kbps
+Miracle Mile	1 of 2	13 of 14	4:25	The Nectarines	2006	An Idiot To Not Appreciate Your Time: The Songs Of Silkworm	2/13/07 8:16 PM	160 kbps
+Miracle Mile	1 of 1	12 of 16	4:14	Silkworm	1996	Firewater	11/26/07 10:29 PM	112 kbps
+Miracle Of Miracles	1 of 1	6 of 14	2:04	Original Cast	1971	Fiddler On The Roof	1/13/08 9:24 PM	128 kbps
+Miracles	1 of 1	3 of 15	6:54	Jefferson Starship	2008	The Very Best Of Jefferson Starship	11/14/08 8:13 PM	128 kbps
+The Tears Of A Clown	1 of 12	4 of 12	3:01	Smokey Robinson & The Miracles	1970	Classic Soul: The Pure Gold Collection	9/1/06 2:02 PM	160 kbps
+Your Love Is A Miracle	1 of 1	4 of 10	2:49	Mark Chesnutt	1990	Too Cold At Home	12/20/06 1:11 PM	160 kbps

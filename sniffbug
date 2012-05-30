@@ -1,0 +1,7 @@
+#!/bin/sh
+
+#echo 'Old'
+phpcs --report=full --standard=phpcs.xml sniffbugs.php
+
+#echo 'New'
+#php ~/phpcs/scripts/phpcs --report=full --standard=phpcs.xml sniffbugs.php

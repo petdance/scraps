@@ -1,0 +1,18 @@
+#!/usr/bin/perl
+
+# compare pack() to the x operator for whitespace
+
+
+use Benchmark;
+
+
+my $COUNT = 5_000_000;
+
+my $blanks_25 = ' ' x 25;
+
+timethese( $COUNT, {
+        'x'      => sub { $x = ' ' x 25; },
+        'pack'   => sub { $x = pack( 'A25', '' ); },
+        'assign' => sub { $x = $blanks_25; },
+    }
+);

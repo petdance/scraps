@@ -1,0 +1,20 @@
+Conway Channel
+
+
+Regexp::Grammars
+Lots of DSL and grammar stuff that is so beyond me.
+
+
+IO::Prompter
+Successor to IO::Prompt
+Only works with 5.10+
+All sorts of cool little input tricks.
+
+
+Data::Show
+Offshoot of Data::Dumper and Data::Dump
+Data::Dump with a bow-tie
+
+
+Acme::Crap
+Use carp as a tool, putting blame where it goes in the user's place.

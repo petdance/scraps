@@ -1,0 +1,8 @@
+Postmodern Object-Orientation Moose with Chris Prather
+
+Postmodern:
+* After the modern era
+* Return to tradition
+* Ironic self-reference
+
+The MOP is the class that lets you look into what Moose gives you.

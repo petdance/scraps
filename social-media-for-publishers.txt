@@ -1,0 +1,1712 @@
+from Andy Lester to All Participants:
+Morning, all.
+from O'Reilly Media to All Participants:
+Good morning, Andy!
+from Andy Lester to All Participants:
+I've got at least three others coming to this.
+from Andy Lester to All Participants:
+It's all projected up on a wall
+from O'Reilly Media to All Participants:
+Nice. I think it's going to be really good.
+from Andy Lester to All Participants:
+We're book sellers, not publishers.
+from Andy Lester to All Participants:
+but still, same thing.
+from Andy Lester to All Participants:
+http://flr.follett.com/
+from Andy Lester to All Participants:
+Good, audio testing.
+from Andy Lester to All Participants:
+you both sound good.
+from Yael Miller to All Participants:
+What's the hash tag for this event?
+from Chris Brogan to All Participants:
+I'm talking.
+from O'Reilly Media to All Participants:
+
+Hello Everyone, thank you for joining us today. The presentation will begin at 10 am PT. There will be silence until then.
+
+We're streaming the audio portion of this presentation; however, sometimes the streaming audio can be choppy. It can be affected by your bandwidth--try closing unnecessary applications if you experience this. You can also dial into the teleconference. Call 1-408-792-6300, and enter the meeting number 668 127 062 when prompted.
+
+If you encounter any difficulties, please send email to webcast@oreilly.com. We'll do our best to help you!
+from matt goodwin to All Participants:
+Will the slides of this presentation be available afterwards?
+from Andy Lester to All Participants:
+Yes, they will.
+from Andy Lester to All Participants:
+With the audio.
+from matt goodwin to All Participants:
+thanks andy
+from Andy Lester to All Participants:
+However, my pithy remarks may not be, so make sure you get those down.
+from O'Reilly Media to All Participants:
+
+Hello Everyone, thank you for joining us today. The presentation will begin at 10 am PT. There will be silence until then.
+
+We're streaming the audio portion of this presentation; however, sometimes the streaming audio can be choppy. It can be affected by your bandwidth--try closing unnecessary applications if you experience this. You can also dial into the teleconference. Call 1-408-792-6300, and enter the meeting number 668 127 062 when prompted.
+
+If you encounter any difficulties, please send email to webcast@oreilly.com. We'll do our best to help you!
+from O'Reilly Media to All Participants:
+
+Hello Everyone, thank you for joining us today. The presentation will begin at 10 am PT. There will be silence until then.
+
+We're streaming the audio portion of this presentation; however, sometimes the streaming audio can be choppy. It can be affected by your bandwidth--try closing unnecessary applications if you experience this. You can also dial into the teleconference. Call 1-408-792-6300, and enter the meeting number 668 127 062 when prompted.
+
+If you encounter any difficulties, please send email to webcast@oreilly.com. We'll do our best to help you!
+from Mac Slocum to All Participants:
+How about #TOCSM?
+from Kim Dushinski to All Participants:
+Mac: what is your Twitter ID?
+from Chris Brogan to All Participants:
+Twitter hashtag - #TOCSM
+from Michael Schechter to All Participants:
+is there going to be a hashtag for those using twitter?
+from Michael Schechter to All Participants:
+nevermind :)
+from Mac Slocum to All Participants:
+@macslocum - personal / @toc - for biz
+from James Lichtenberg to All Participants:
+The sound is very bad, choppy
+from Andy Lester to All Participants:
+That means BitTorrent clients, kids.
+from Allison Sheridan to All Participants:
+sound is perfect for me
+from Andy Lester to All Participants:
+twitter for me: @petdance
+from tim windsor to All Participants:
+perfect audio here
+from Nicholas Chase to All Participants:
+Sound is clear in CA
+from Pariah Burke to All Participants:
+Audio is clear for me as well.
+from Jernej Kelih to All Participants:
+now sound is OK - Slovenia, Europe
+from Christian Messer to All Participants:
+my Twitter: @WhiplashDesign
+from Pariah Burke to All Participants:
+my Twitter @iamPariah
+from Andy Lester to All Participants:
+I have two web geeks and three book & A/V buyers for Follett Library Resources here.
+from Jaculynn Peterson to All Participants:
+my Twitter: @diablogue_chat
+from Nicholas Chase to All Participants:
+My Twitter/nachase
+from Yael Miller to All Participants:
+My Twitter @MillerMosaicLLC
+from Andy Lester to All Participants:
+and Book Wholesalers Inc
+from Bryan Buchan to All Participants:
+@bryanbuchan
+from Jernej Kelih to All Participants:
+My Twitter: @Jernej
+from Josh Rangel to All Participants:
+my twitter @rangelie
+from Sarah Rettger to All Participants:
+@SarahRettger
+from Allison Sheridan to All Participants:
+@podfeet
+from CJ Guest to All Participants:
+@cjguest
+from Kathy Ishizuka to All Participants:
+School Library Journal tech editor @kishizuka
+from Honey Mae Caffin to All Participants:
+@honeymae
+from Ami Greko to All Participants:
+@ami_with_an_i
+from Troy Malone to All Participants:
+@troymalone
+from Brett Sandusky to All Participants:
+@bsandusky
+from Mary McRae to All Participants:
+@fiberartisan
+from Cathy Stucker to All Participants:
+@CathyStucker
+from Erin Cubert to All Participants:
+@erincubert
+from Holli B to All Participants:
+Follow me: @hollib
+from Allison Sheridan to All Participants:
+excellent book choices!
+from Michael Sauers to All Attendees:
+Yea libraries!
+from Allison Sheridan to All Participants:
+Stuart Little ftw
+from tim windsor to All Participants:
+@timwindsor
+from Kim Werker to All Participants:
+@kpwerker
+from Lester Smith to All Participants:
+@LesterSmith
+from Ellen Gerstein to All Participants:
+@elleinthecity
+from Susan Murphy to All Participants:
+@suzemuse
+from marsee henon to All Participants:
+O'Reilly Media's twitter @oreillymedia and Tools of Change is @TOC
+from Amanda MacArthur to All Participants:
+@amaaanda
+from Andy Lester to All Participants:
+libraries++
+from Pamela Weir to All Participants:
+@pamelaweir
+from Brett Kizner to All Participants:
+@bkiz
+from Alison Lowry to All Participants:
+@alisonstorm
+from Brian Link to All Participants:
+@blinkdaddy
+from Peter Mello to All Participants:
+@petermello
+from janica smith to All Participants:
+@janica
+from Christopher Westfall to All Participants:
+@reallynobody
+from Jay M to All Participants:
+resource for entrepreneurs @4entrepreneur
+from Julie Niesen to All Participants:
+@winemedineme
+from Ellen Di Resta to All Participants:
+@elldir
+from Kirk Biglione to All Participants:
+@kirkbiglione
+from Tobias Schirmer to All Participants:
+@tobitobias
+from Alvin Borromeo to All Participants:
+@wyliemac
+from Debra Simpson to All Participants:
+@magicinblogging
+from Jimmy Gray to All Participants:
+@grayzhouse
+from Darin Berntson to All Participants:
+@igobydoc
+from Ehren Cheung to All Participants:
+@ehrenc
+from Jennifer Tribe to All Participants:
+@jennifertribe
+from Johnny Amos to All Participants:
+@JohnnyAMos
+from Regina Rainwater to All Participants:
+@velvet_trope
+from DJ Francis to All Participants:
+@MarketerBlog
+from Kim Dushinski to All Participants:
+@KimDushinski
+from Ellen Gerstein to All Participants:
+Handsome fella!
+from Mark Smiciklas to All Participants:
+@intersection1
+from Yvonne Adams to All Participants:
+@yvonneadams
+from Maurice Cherry to All Participants:
+@karsh
+from Honey Mae Caffin to All Participants:
+nice head with good ideas. cool.
+from Ben Stock to All Participants:
+@benstock
+from Debba haupert to All Participants:
+@girlfriendology
+from Chris Paul to All Participants:
+cpaul
+from Michael Schechter to All Participants:
+@scheky1068
+from Sharon Jaffe to All Participants:
+@sharonjaffe
+from Michael Kindness to All Participants:
+@mkindness
+from Sean Davis to All Participants:
+@Sean_Davis
+from ê–igo Gil to All Participants:
+@inigogil
+from Jessica Powers to All Participants:
+Sound has stopped--and I have no applications running.
+from Jessica Powers to All Participants:
+Sound has stopped and I have no applications running other than Word to take notes.
+from Anna Balasi to All Participants:
+@annabalasi
+from David Sonnen to All Participants:
+@david_sonnen
+from kate buck to All Participants:
+@katebuckjr
+from Casey Hill to All Attendees:
+sound has gone wacky WAY echo
+from Mac Slocum to All Participants:
+Hi folks -- Feel free to submit questions as we go along. I'll bubble them up to Chris.
+from Gillian Brouse to All Participants:
+@gilliebee
+from Jimmy Gray to All Participants:
+sound is bad!
+from Ann Kingman to All Participants:
+@AnnKingman
+from Cosmin Ghiurau to All Participants:
+sound is bad. glad to see i'm not the only one.
+from Michael Pastore to All Participants:
+Moby Dick sold a total of 60 copies in its first 10 years
+from Lester Smith to All Participants:
+My sound is good.
+from Jeff Bailey to All Participants:
+@sasxjb
+from Amber Naslund to All Participants:
+sound issues seem individual; mine is fine
+from Ellen Gerstein to All Participants:
+Hi Chris! Ellen Gerstein...
+from Amber Naslund to All Participants:
+@AmberCadabra on twitter for me
+from Cosmin Ghiurau to All Participants:
+@cosguru
+from marsee henon to All Participants:
+We're streaming the audio portion of this presentation; however, sometimes the streaming audio can be choppy. It can be affected by your bandwidth--try closing unnecessary applications if you experience this. You can also dial into the teleconference. Call 1-408-792-6300, and enter the meeting number 668 127 062 when prompted.
+from Samir Balwani to All Participants:
+@leftthebox
+from Ken Yeung to All Participants:
+@kyeung808 for me on Twitter
+from Kim Werker to All Participants:
+Yay, BOTN!
+from Mark Coker to All Participants:
+@markcoker
+from Ann Kingman to All Participants:
+Thanks for shout-out, Chris!
+from Michael Kindness to All Participants:
+thanks Chris!
+from Robert Labossiere to All Participants:
+@roblab
+from Janice Beley to All Participants:
+@Arsenalpulp
+from Kat Meyer to All Participants:
+@KatMeyer
+from Judy Rey Wassermaan Wasserman to All Participants:
+I follow followers! @judyrey
+from Boris Vidovic to All Participants:
+I can hear clearly in Croia.
+from Morgan Cowie to All Participants:
+@BookNetCanada
+from Jennifer Aderhold to All Participants:
+@jjaderhold
+from Michael Sauers to All Attendees:
+@msauers
+from DJ Francis to All Participants:
+Wow, good folks on today, including Sharon (@sharonjaffe), Ann (@AnnKingman), and Amber (@AmberCadabra). They're good to follow.
+from Morgan Cowie to All Participants:
+whoops @BookNet_Canada (need more coffee)
+from Jaculynn Peterson to All Participants:
+Will the slide deck be posted online after the event?
+from Michael Hohner to All Participants:
+@mhohner
+from matt goodwin to All Participants:
+@mattgoodwin
+from Chris Nerney to All Participants:
+@datamationblog
+from Tim Middleton to All Participants:
+@kirtim
+from Jaculynn Peterson to All Participants:
+Will the slide deck be posted online after the event?
+
+from Christiana Briddell to All Participants:
+@thoughtlead
+from Chris Webb to All Participants:
+@chriswebb
+from Bruce Miller to All Participants:
+@bamiller664
+from Nicholas Chase to All Participants:
+twitter.com/nachase
+from Louis Rosenfeld to All Participants:
+@louisrosenfeld
+from Erik Rabasca to All Participants:
+@ErikNYC
+from Kris Francisco to All Participants:
+@krisfrancisco
+from Jason Fleck to All Participants:
+@jaephlec
+from Cheryl Smith to All Participants:
+@cherylsmith999
+from Laura Pexton to All Participants:
+@Laura7
+from Aaron Prather to All Participants:
+@amprather
+from Dick Mansfield to All Participants:
+@dickmansfield
+from Kameya Shows to All Participants:
+@kamkam
+from Chris Erickson to All Participants:
+@cerickson
+from Kathy Ishizuka to All Participants:
+At School Library Journal, we have completely dif audience on Facebook than Twitter...
+from Joe Mescher to All Participants:
+@joemescher
+from barry brown to All Attendees:
+@barry_brown
+from Todd Thille to All Participants:
+@synesthete
+from Deb Nasitka to All Participants:
+@dnasitka
+from Jay M to All Participants:
+@4entrepreneur
+from Ely Rosenstock to All Participants:
+@elyrosenstock
+from Holli B to All Participants:
+The importance of responding on Twitter is lost on many.
+from Michael Pastore to All Participants:
+Would Buddha Twitter?
+from Yael Miller to All Participants:
+Chris' sound is weird -- drops sometimes
+from Kean Graham to All Participants:
+Anyone else just lose sound?
+from Jimmy Gray to All Participants:
+i agree responding is key
+from Jaculynn Peterson to All Participants:
+Sounds like he's underwater
+from O'Reilly Media to All Participants:
+
+We're streaming the audio portion of this presentation; however, sometimes the streaming audio can be choppy. It can be affected by your bandwidth--try closing unnecessary applications if you experience this. You can also dial into the teleconference. Call 1-408-792-6300, and enter the meeting number 668 127 062 when prompted.
+
+from Jason Fleck to All Participants:
+sounds fine to me.
+from Jaculynn Peterson to All Participants:
+Twitter is only other app I have "open" too
+from Jimmy Gray to All Participants:
+he is underwater,in a submarine
+from DJ Francis to All Participants:
+Hmm, Warren Ellis, eh? John Wall and I are also marketing/comic geeks. Is this a trend?
+from ê–igo Gil to All Participants:
+I lost it.
+from O'Reilly Media to All Participants:
+Please send comments about audio, etc, directly to me. It is usually a problem specific to you or your network
+from O'Reilly Media to All Participants:
+Let's keep audio comments offline, thanks!
+from CJ Guest to All Participants:
+that is a good idea!
+from Jaculynn Peterson to All Participants:
+Paulo loves the internet. And it loves him, si.
+from Ellen Gerstein to All Participants:
+I heart Powells. What a great store.
+from Kameya Shows to All Participants:
+I agree with the happy feeling in your belly - cesar milan mess me on twitter and I geeked
+from Andy Lester to All Participants:
+Note the preponderance of the word "love" here.
+from Kevin Meath to All Participants:
+hey -- decent editor here...
+from marsee henon to All Participants:
+http://twitter.com/powells
+from Judy Rey Wassermaan Wasserman to All Participants:
+to Michael Pastore Every great communicator would have used Twitter. Even Buddah. Reach people!
+from Michael Pastore to All Participants:
+@Judy: OK Judy, I'll try it!
+from Jessica Powers to All Participants:
+the question is: how do people find time for all of this????? I have enough trouble keeping up with blog and sort of Facebook/My Space.
+from marsee henon to All Participants:
+http://twitter.com/timoreilly
+from Nicholas Chase to All Participants:
+Twitter has connected me to influential people who are helpful and professional at the same time. Chris is one of those people I have met. He is the real deal.
+from Amber Naslund to All Participants:
+Jessica, same way you find time for email and phone. You work it in to your communications with others.
+from Chris Paul to All Participants:
+it doesn't take much to keep twitter active
+from Pariah Burke to All Participants:
+@Jessica Powers: It's tough. The Flock social media browser helps.
+from marsee henon to All Participants:
+http://twitter.com/johnbattelle
+from O'Reilly Media to All Participants:
+Someone asked: can we get a linked list of all the twitter participants? If you mean people in this webcast, the best we can do is make the chat transcript available.
+
+from Judy Rey Wassermaan Wasserman to All Participants:
+Michael Pastore follow me on Twitter @judyrey I can be funny, relevant & inspiring
+from Nicholas Chase to All Participants:
+Twitter provides a means to nd private messages, called DM or 'Direct Message'
+from Christian Messer to All Participants:
+Just like networking, Twitter's about relationship building, as was just said.
+from Jay M to All Participants:
+I am looking for original entrepreneur content/interview/book reviews 4 web magazine www.4entrepreneur.net twitter@4entrepreneur
+from O'Reilly Media to All Participants:
+You can either save the transcript at the end of the webcast or--better formatting--select all, copy, and paste into another file.
+from Holli B to All Participants:
+TO: Pariah Burke - I love using Flock and their social media apps. It's replaced FF for me.
+from Yael Miller to All Participants:
+of course, search.twitter.com doesn't pick up everything, my My #TOCSM tweets aren't showing up.
+from Jessica Powers to All Participants:
+If you end up with a couple hundred contacts on Twitter who are posting mini-blogs all the time, how do you sift through any of that?
+from Kent Beatty to All Participants:
+Jessica - once you make a twitter a priority, you will find time for it, much more pertinent today than email communications - http://twitter.com/kent_beatty
+from Yael Miller to All Participants:
+@jessica TweetDeck, learn to skim, to skip, to put it down
+from Judy Rey Wassermaan Wasserman to All Participants:
+It is fun & important to interact on Twitter. Love to follow. blogged on this.
+from Jessica Powers to All Participants:
+I will check it out. Still a skeptic, though. :-)
+from Pariah Burke to All Participants:
+@Jessica Powers There are various apps to help sort. Apps like TweetDeck can separate different people/tweets into groups.
+from Amber Naslund to All Participants:
+Jessica, tools help there. I have about 3K followers, and I use an application called TweetDeck that helps me parse into groups
+from Ann Kingman to All Participants:
+Tweetdeck helps a lot. Jessica, give it 30 days and you'll likely be a convert.
+from Holli B to All Participants:
+@kent_beatty - I agree with the priority of Twitter. It's been so beneficial to me, I make sure that I am interacting each day.
+from Andy Lester to All Participants:
+Jessica; Just try it. It's free to try, better than skepticism.
+from Susan Murphy to All Participants:
+@Jessica you work it in to your regular online comms. It's impossible to read every tweet but using tools like Twitter Search and Tweetdeck can help you find what is important to you.
+from Amber Naslund to All Participants:
+I agree with Ann, Twitter takes 30 days to "get"
+from Nicholas Chase to All Participants:
+Get past the belief that Twitter is texting for adults..it is much greater, Sir Richard Branson is following me how cool is that?
+from jacob morgan to All Participants:
+hey jessica, i actually limit how many people i follow, you dont have to follow everyone that follows you
+from Pariah Burke to All Participants:
+/agree Amber Nashlund
+from Judy Rey Wassermaan Wasserman to All Participants:
+Twitter is like a window on the world
+from Laura Pexton to All Participants:
+For authors or publishers, twitter is one o the best ways to increase loyalty and community among readers
+from Jessica Powers to All Participants:
+Cool, thanks.
+from Ellen Gerstein to All Participants:
+Spending GOOD money, I might add. Well done book trailers are not cheap.
+from Cheryl Smith to All Participants:
+@rachelhauck did a book trailer for book this fall: Elle is for Love. YOu can find on You Tube.
+from Yael Miller to All Participants:
+@chris, but look at the view numbers for YouTube book trailers. Not a lot.
+from Nicholas Chase to All Participants:
+I solved a problem for a twitter user yesterday, no charge and instant results, how cool is that?
+from Deb Nasitka to All Participants:
+UC Press book trailers: http://tinyurl.com/5c864s
+from Judy Rey Wassermaan Wasserman to All Participants:
+Nicholas Chase --Super cool! ; -))
+from Michael Pastore to All Participants:
+Book trailers = great idea !
+from Bryan Buchan to All Participants:
+I do post production work for book trailers, interested dm me @bryanbuchan
+from Laura Pexton to All Participants:
+is UC Press on twitter?
+from Michael Kindness to All Participants:
+@chris - Crown is right.
+from Susan Murphy to All Participants:
+@Yael - book trailers=long tail marketing?
+from Deb Nasitka to All Participants:
+not yet, soon
+from Cheryl Smith to All Participants:
+Chris, Thomas Nelson has a great section on their site to engage bloggers in previewing books.
+from Kat Meyer to All Participants:
+stone creek media does nice work on book trailers http://www.stonecreekmedia.com/work.php
+from Judy Rey Wassermaan Wasserman to All Participants:
+I'll be giving a way a e booklet that is life transforming late this week. I'll Twit the news.
+from Amber Naslund to All Participants:
+I also care that it's the RIGHT eyeballs
+from Robert Labossiere to All Participants:
+I like the Hagen Daaz product placement, did Sigler get paid for that?!?
+from Susan Murphy to All Participants:
+Give people somethign they can share
+from Katie Sayers to All Participants:
+would librarians use twitter to follow updates from publishers - i.e to note new journals we have taken over etc?
+from Nicholas Chase to All Participants:
+I met the BlogWorld staff through twitter, received a pass to blogworld Expo 2008 had dinner with wealthy publishers and made powerful connections to marketing pros, all for free from TWITTER>COM!
+from Brett Sandusky to All Participants:
+Trailer I had produced for one of our books: http://www.youtube.com/watch?v=Q9inDHa_7dU
+from Chris Webb to All Participants:
+Really cool book trailer/contest from Capstone- Find Elvis: http://is.gd/bZzy
+from Alison Lowry to All Participants:
+Christian Publisher: @AmbassadorIntl
+from Deb Nasitka to All Participants:
+Insominac book trailer: http://www.youtube.com/watch?v=sXrey19btAM
+from Andy Lester to All Participants:
+For that matter, how about following news from your book jobbers?
+from Christian Messer to All Participants:
+Wow, Nicholas, that's great!
+from Nicholas Chase to All Participants:
+How about using Twitter to discover trends in search, what the readers are requesting for your next book?
+from Cheryl Smith to All Participants:
+Good reads is similar to LibaryThing
+from Michael Schechter to All Participants:
+we love www.goodreads.com also, my wife is actually implementing it in her middle school
+from Judy Rey Wassermaan Wasserman to All Participants:
+Amber Naslund not just right eyeball- right brains. 90% of vision occurs in the brain
+from Michael Sauers to All Attendees:
+I was a LibraryThing featured author recently. http://www.librarything.com/author/sauersmichaelp
+from Ann Kingman to All Participants:
+The Sparrow by Mary Doria Russell
+from Michael Schechter to All Participants:
+so students can share books
+from Whitney hoffman to All Participants:
+Getting a cuecat to keep track of your books is extra great, too.
+from Yael Miller to All Attendees:
+Problem with book trailers is that often you can't tell what the book is about. Not cool.
+
+from Andy Lester to All Participants:
+Also shelfari.com
+from Susan Murphy to All Participants:
+@Yael depends how well they are produced. Should a trailer give away everything?
+from Michael Pastore to All Participants:
+@yael: Same problem with movie trailers.
+from Fred Ramey to All Participants:
+Did 9/11 knock others out of the fiction-reading world?
+from Ann Kingman to All Participants:
+But Chris, I wouldn't have known to send you that book if I didn't know you from Twitter first. It was the conversation ...
+from Cheryl Smith to All Participants:
+Yes, shelfari is a good one.
+from Lena West to All Participants:
+Chris: do you tihnk social media works better for non-fiction than for business titles?
+from Jennifer Tribe to All Participants:
+@tweet_trends is a bot that automatically tells you what's trending on Twitter
+from Regina Rainwater to All Participants:
+what about virtual bookshelf on Facebook?
+from Lena West to All Participants:
+Whoops - I mean fiction
+from Judy Rey Wassermaan Wasserman to All Participants:
+Anyone else have an e book?
+from Yael Miller to All Attendees:
+I can't tell if this trailer is a chemistry textbook or a novel: http://twurl.nl/0exoud
+from Morris Rosenthal to All Participants:
+Publishing talksDVD trailer: http://www.youtube.com/watch?v=FC16OP-fZZA
+from Nicholas Chase to All Participants:
+Thanks Jennifer!
+from Lena West to All Participants:
+Thanks!
+from Patrick Hederman to All Participants:
+what was that website that looked like a Netflix for books? i missed the url.
+from Troy Corley to All Participants:
+What strategies can we use for travel/resource guides?
+from Katie Sayers to All Participants:
+or academic books?
+from Jessica Powers to All Participants:
+out of curiosity, what's the range in publishers here? how many books do you all publish per year? for now, it's just me so I'm only doing 2-3 per year...
+from Chris Paul to All Participants:
+@ Patrick shelfari.com
+from Katie Sayers to All Participants:
+at SAGE we publish 500 ish a year
+from Sharon Jaffe to All Participants:
+Are there any social media book clubs? i.e. virtual book clubs? I'm a member of an actual book club but can see that this is a great outlet for conversation and book promotion.
+from Yael Miller to All Attendees:
+@sharon yeah, it's called Twitter. :)
+from Whitney hoffman to All Participants:
+Just One More Book is a podcast about children's books
+from Andy Lester to All Participants:
+Harlequin is doing amazing things with social media.
+from Brett Sandusky to All Participants:
+@Troy: Every community of buyers is online. Finding them and speaking to them in their language through social media can drive them to your titles. It's just a question of finding the right community bases, and the websites that they use regularly
+from Andy Lester to All Participants:
+podcasts, e-book chapters, etc
+from Judy Rey Wassermaan Wasserman to All Participants:
+That's a good idea!
+from Kris Francisco to All Participants:
+@sharon shelfari.com
+from Whitney hoffman to All Participants:
+Thanks, CB!
+from Jody Costa to All Participants:
+at Marketplace Books we do about 10-15 titles per yr all focused on active trading/investing
+from Robert Swanwick to All Participants:
+what are the best tools for video driven asynchronous collaboration? Youtube good to present video, but not much asynchronous collaboration.
+from Yael Miller to All Attendees:
+@whitney children's books -- which age range? YA, Middle Grade, what?
+from janica smith to All Participants:
+Bookswim.com = netflix for books
+from Jay M to All Participants:
+agree with @kentbeatty - http://twitter.com/4entrepreneur
+from Mark Coker to All Participants:
+at Smashwords we've done about 130 titles since starting our public beta in may.
+from Patrick Hederman to All Participants:
+thanks Chris
+from Patrick Hederman to All Participants:
+and janica
+from Kathy Ishizuka to All Participants:
+Re: virtual book clubs. See what librarian Anna Koval does with teens www.bighouselibrary.com
+from Nicholas Chase to All Participants:
+Robert Swanwick TRY: oovoo.com Interactive webcam collaboration in real time with 16 participants and free!
+from Whitney hoffman to All Participants:
+@Yael- young to middle school age; I actually also keep a recommendatin page on my website about books my kids love; I have a podcast about learning and learning disabilities, so getting books kids love into the hands of reluctant readers is incredibly powerful
+from David Sonnen to All Participants:
+Anybody using social media to build comunities around periodicals?
+from Anna Phillips to All Participants:
+We
+from Honey Mae Caffin to All Participants:
+That's a good question David Sonnen
+from Yael Miller to All Attendees:
+@whitney what's the url again?
+from Christian Messer to All Participants:
+Biznik.com is another option for networking for publishers, it's great. Host events, social networking etc.
+from Amanda MacArthur to All Participants:
+Yes David
+from janica smith to All Participants:
+Any other VAs for authors here?
+from Anna Phillips to All Participants:
+are curious about social media for periodicals also....
+from Katie Sayers to All Participants:
+we use YouTube to post interviews with academics
+from Whitney hoffman to All Participants:
+Just One More Book covers kid lit across the board, but sort of draws the line at young adult; Mark Blevis is amazing- happy to talk and introduce you
+from Erin Cubert to All Participants:
+Yes here too @ David on the print side
+from Katie Sayers to All Participants:
+so, lots of social theorists etc
+from Elizabeth Payne to All Participants:
+http://twitter.com/KevinZraly
+from Katie Sayers to All Participants:
+giving basic core 101 information
+from Chris Webb to All Participants:
+Chris, there is a Ning community for almost everything :)
+from Judy Rey Wassermaan Wasserman to All Participants:
+Any others w. art, inspirational or sel help books here?
+from Whitney hoffman to All Participants:
+www.justonemorebook.com
+from Robert Swanwick to All Participants:
+Nicholas, thx. Anything for asynchronous? Forum, idea generation, polling, etc...?
+from Michael Kindness to All Participants:
+just one more book is essential if you've got kids!
+from Nicholas Chase to All Participants:
+Robert, send me an email to: nicholas.chase1@gmail.com
+from Kathy Ishizuka to All Participants:
+Just One More Book also a highly skilled Twitterer! Follow 'em.
+from Laura Pexton to All Participants:
+For anyone with books on Amazon, you can get your trailer posted to your book page there, as well as audio interviews, you blog, etc.
+from Lena West to All Participants:
+Good old Don Fontaine...
+from Jessica Powers to All Participants:
+ha-ha, great trailer voice, Chris
+from Kat Meyer to All Participants:
+yes - having conversations! and sharing enthusiasm of those behind the book
+from Matt Smith to All Participants:
+Yep, we miss Don!
+from Amanda MacArthur to All Participants:
+David, (periodical) Publishers Using Twitter - http://tinyurl.com/6ev4lj
+from Regina Rainwater to All Participants:
+@littlebrown doing a great job to incorporate outpost book blog groups and promotes them by tweeting blog's contests, etc.
+from Whitney hoffman to All Participants:
+There are a bunch of podcasters who love to read books and interview authors; I've had Marcus Buckingham on my show- the author interview has a great long tail.
+from Cheryl Smith to All Participants:
+Chris, Thomas Nelson is doing giveaway well at their Blogger Review site.
+from Dee Stewart to All Participants:
+my show takes authors also
+from Lena West to All Participants:
+Chris - free chapter with autoresponder series still works surprisingly well
+from Yael Miller to All Attendees:
+@whitney how long have you been doing the podcast?
+from Dee Stewart to All Participants:
+Michael Hyatt, CEO of Thomas Nelson is also on twitter and blogs
+from Michael Schechter to All Participants:
+loving the content he is creating with tribes
+from elyssa Timmer to All Attendees:
+http://twitter.com/boulderservices
+from Kat Meyer to All Participants:
+definitely - using social media to enhance and extend the reading experience.
+from Michael Schechter to All Participants:
+if you havent, download the visceralbusiness podcast
+from DJ Francis to All Participants:
+I've gotten free books after directly contacting the publishers. I'd recommend it.
+from Whitney hoffman to All Participants:
+Then I give away books at the holidays, some from publishers, some I pick up at discount stores, to do at the holidays. Everyone is always happy. So reach out to bloggers and new media people can be a great win-win situation
+from Lisa Johnson to All Attendees:
+In answer to Janica's question, I'm a VA for two authors at this time.
+from Michael Schechter to All Participants:
+it is essentially godin giving a presentation on tribes
+from Lena West to All Participants:
+A blog that chronicles their attempted path to the best-seller list: http://www.bestsellerornot.com
+from Laura Pexton to All Participants:
+unfortunately, seth godin isn't on twitter :(
+from Andy Lester to All Participants:
+Seth does announce blog postings on Twitter, but @sethgodin is NOT him.
+from Don Lafferty to All Participants:
+We're releasing a 10 page prequel chapter to build pre-launch interest for a major novel.
+from Jaculynn Peterson to All Participants:
+I'm in Triiibes. Anyone else here in Triiibes?
+from Whitney hoffman to All Participants:
+@Yael- 2.5 years- will be three in the spring.
+from Yael Miller to All Attendees:
+@chrisbrogan Is "Trust Agents" ebook or regular?
+from Whitney hoffman to All Participants:
+@Jaculynn- I am a Triiibe person as well
+from Dee Stewart to All Participants:
+pdf galleys work well
+from Yael Miller to All Attendees:
+@whitney Nice.
+from CJ Guest to All Participants:
+like the music industry
+from Whitney hoffman to All Participants:
+@Yael- Chris's book will be a real book
+from Pariah Burke to All Participants:
+Would like an invite to Triiibes if anyone has one.
+from Jaculynn Peterson to All Participants:
+@whitney: What your Twitter handle?
+from Whitney hoffman to All Participants:
+@ldpodcast
+from Dee Stewart to All Participants:
+i review for Romantic Times Magazine and read many books via pdf it's better sometimes for me when i'm in a time crunch
+from Jaculynn Peterson to All Participants:
+thanks
+from Don Lafferty to All Participants:
+kindle rocks
+from Dee Stewart to All Participants:
+@deegospel
+from janet fouts to All Participants:
+any examples of pdf galleys to share?
+from Gillian Brouse to All Participants:
+I need a kindle too! (But I can't get one in Cda)
+from Michael Schechter to All Participants:
+still listen to most things on audiobooks these days :) dont kill me :)
+from Erin Cubert to All Participants:
+audiobooks are great, especially for long drives!!
+from Michael Schechter to All Participants:
+also on the subway in NY
+from Natasha Netschay Davies to All Attendees:
+any fave web hot spots for under 30 readers? been told my readerships prefer PDFs to hardcopy (my novel at www.shelbymunro.com) thx
+from Whitney hoffman to All Participants:
+Audiobooks work- you can process more information faster- I often buy both the hardcover and then on audible so I can "read" it faster
+from Michael Hohner to All Participants:
+SciFi ebooks (mobipocket) on a BlackBerry - http://knowledgenavigator.ca/2008/06/23/adding-freely-available-ebooks-to-your-blackberry/
+from Whitney hoffman to All Participants:
+Exactly!
+from Kameya Shows to All Participants:
+what is kindle?
+
+from Michael Schechter to All Participants:
+I'd pay a premium for that!!
+from Andy Lester to All Participants:
+Kindle = Amazon e-book reader
+from Michael Schechter to All Participants:
+the amazon reader...
+from Jessica Powers to All Participants:
+Kindle is Amazon's e-book reader
+from Whitney hoffman to All Participants:
+@Michael- me too! Like DVD's with the electronic version included
+from Don Lafferty to All Participants:
+$$$$
+from Michael Hohner to All Participants:
+kindle - think of 80's colecovision looking thing ;)
+from Pariah Burke to All Participants:
+Film industry is doing that more now, with many DVDs released with companion disc of film for download to PC/pocket player
+from matt goodwin to All Participants:
+what happened?
+from janica smith to All Participants:
+I would definitely pay for a bundle like that!
+from Sharon Jaffe to All Participants:
+@chrisbrogan The movie studios are thinking of the same thing i.e. you buy a movie and get all formats bundled to watch online, DVD, download, stream etc
+from Patrick Hederman to All Participants:
+kindle is far superior to sony reader. if sony doesn't get wireless download capabilites, i don't see how they can stay afloat.
+from Gillian Brouse to All Participants:
+Google Readerfan here!
+from Judy Rey Wassermaan Wasserman to All Participants:
+Kindle does not have color for illustrated books. My ebook includes visual brain enhancing for adults
+from CJ Guest to All Participants:
+google reader is better
+from Michael Schechter to All Participants:
+also you can use the share through friendfeed to share great articles that you read on twitter and facebook
+from Mac Slocum to All Participants:
+that was google.com/reader -- Google's RSS reader
+from Kat Meyer to All Participants:
+google reader just did a "makeover" and it's even better now.
+from marsee henon to All Participants:
+How can a tech publisher do audio with tables, code, etc? Any suggestions?
+from Whitney hoffman to All Participants:
+yes
+from Michael Sauers to All Attendees:
+Love my Sony Reader. Sorry, but when I'm reading a book I don't want all the bells and whistles of being online.
+from Dee Stewart to All Participants:
+with publishing, some authors would love to do it, but their contract won't allow it. so i think having that discussion wth publishers is great.
+from Don Lafferty to All Participants:
+Any St Martin's folks here?
+from Kim Dushinski to All Participants:
+Kat - does that mean it looks better? (hoping so)
+from Dee Stewart to All Participants:
+now if the author is self-published she should consider bundling
+from Ami Greko to All Participants:
+@ Don--I work at Macmillan (parent company of SMP)
+from Kat Meyer to All Participants:
+@kim - yep, hard to explain, but go take a look...:)
+from Chris Webb to All Participants:
+Love that.
+from Patrick Hederman to All Participants:
+@michael- agreed. not for browsing purposes, but rather for on the run instantaneous downloads, without needing a computer or any wires.
+from Erin Cubert to All Participants:
+or newspapers!
+from Chris Webb to All Participants:
+A "book" is just a format.
+from Whitney hoffman to All Participants:
+There are other podcasts, like Word to Mouth that specifically interview authors; Mitch Joel does one for a publisher in Canada- I think podcasting and blogging makes the authors real to the readers; author readings on line, so to speak.
+from Kat Meyer to All Participants:
+delivering content - in many different packages
+from Don Lafferty to All Participants:
+@Ami --I'm working with some of your people.
+from Judy Rey Wassermaan Wasserman to All Participants:
+@Dee Stewart I just completed a 30= page booklet of my regular inspirational visual e book to use bundling or in JVt
+from Whitney hoffman to All Participants:
+My kids love author readings- it brings books alive for the readers and kids- and makes them so enthusiastic
+from matt goodwin to All Participants:
+great preso
+from Alison Lowry to All Participants:
+Anybody know a good podcast that focuses on Christian books?
+from Ami Greko to All Participants:
+@don Oh? Would be interested to hear more. My email is just first.last@macmillan.com
+from Bryan Buchan to All Participants:
+Whitney what is your twitter @
+from Whitney hoffman to All Participants:
+@Alison- not off hand- but you could start one!
+from Dee Stewart to All Participants:
+@JudyRey Wassermaan Kewl! DM me I would like to see it
+from Michael Schechter to All Participants:
+Godin just ripped them apart for not building that into kindle
+from Michael Schechter to All Participants:
+amazon that is
+from Whitney hoffman to All Participants:
+@ldpodcast on twitter :) email = ldpodcast@gmail.com
+from Bryan Buchan to All Participants:
+thx
+from Alison Lowry to All Participants:
+@Whitney You want to help me? haha
+from Yael Miller to All Attendees:
+Where's the best place to search for podcasts?
+from Dee Stewart to All Participants:
+i build bookclub communities for my author clients via social media and coffeehouses here in Atlanta
+from Susan Murphy to All Participants:
+@yael iTunes
+from Patrick Hederman to All Participants:
+i use itunes for podcast serch
+from Whitney hoffman to All Participants:
+@Alison- I love helping people figure this stuff out- no problem. This is why I help run podcamps
+from Michael Schechter to All Participants:
+@yael itunes or on your iphone now
+from Susan Murphy to All Participants:
+Has social media changed the way authors do research for their books?
+from Kat Meyer to All Participants:
+and, ala Godin it's important to activate the community in advance of the book pub date
+from Judy Rey Wassermaan Wasserman to All Participants:
+anyone self publishing via POD?
+from Michael Schechter to All Participants:
+social media book clubs...
+from Yael Miller to All Attendees:
+I can't stand itunes. Any other place to search.
+from Ann Kingman to All Participants:
+Yael - podcastalley.com is a good place to look
+from Patrick Hederman to All Participants:
+iuniverse is another
+from Troy Corley to All Participants:
+print on demand is different than publisher on demand
+from Troy Corley to All Participants:
+sorry publish on demand
+from Michelle McManus to All Participants:
+Yael, i like podcastalley as well.
+from Alison Lowry to All Participants:
+@Whitney awesome! Following you now
+from Whitney hoffman to All Participants:
+@DeeAndrews- you need to get in touch with the ladies at the DivaCast- they are in Atlanta, and would be a great connection for you
+from Ann Kingman to All Participants:
+Northshire Bookstore in Vermont has a print-on-demand machine in the store
+from Casey Hill to All Attendees:
+great list of indie bookstores at www.newpages.com
+from Mark Coker to All Participants:
+@chrisbrogan: Smashwords - self publishing platform for indie ebook authors
+from Jaculynn Peterson to All Participants:
+Where can I go to get info on Self-publishing 101?
+from Lester Smith to All Participants:
+CreateSpace.com is a great POD company owned by Amazon and listing with Amazon.
+from Shelly Goodin to All Participants:
+Chris, was it Newtonville Books?
+from Tim Middleton to All Participants:
+espresso machine
+from janet fouts to All Participants:
+check out http://www.podiobooks.com/
+from Kat Meyer to All Participants:
+@chris - how to get bosses/mgmt on board with social media campaigning?
+from Amanda MacArthur to All Participants:
+CreateSpace.com is awesome
+from Lester Smith to All Participants:
+I use CreateSpace for www.popcornpress.com titles.
+from Dan Cotton to All Participants:
+@chrisbrogan What are the Ten Commandments for using Twitter?
+from Josh Rangel to All Participants:
+I'm currenty reading "Made to Stick." So far, so good. @rangelie
+from Jessica Powers to All Participants:
+I use Lightning Source and BookMobile, depending on the book.
+from Alison Lowry to All Participants:
+Yes! Thank you Mac.
+from Yael Miller to All Attendees:
+@susan See @shelisrael sharing his new book Twitterville and @pistachio Twitter for Dummies
+from Chris Webb to All Participants:
+Where will the slides etc be posted after this session?
+from Yael Miller to All Attendees:
+Thanks, people.
+from Jaculynn Peterson to All Participants:
+Also, where can I find Self-Publishing case studies?
+from Whitney hoffman to All Participants:
+@Josh- Made to Stick is in my all time favorite books- part of my top ten for this year again
+from Kat Meyer to All Participants:
+BookMobile is awesome. really high quality and customer service. they do hc too.
+from Michael Schechter to All Participants:
+I found facebook was the easiest and best paced place to start
+from Bryan Buchan to All Participants:
+Seesmic is cool for video posting
+from Michael Schechter to All Participants:
+twitter gets going fast :)
+from Bruce Miller to All Participants:
+What do you think about using NING.com
+from Jessica Powers to All Participants:
+Yes, I've been very pleased with BookMobile.
+from Andy Lester to All Participants:
+Also, check who the people you follow follow.
+from Pariah Burke to All Participants:
+Hopefully slides will be shared via social media site http://slideshare.com :-)
+from janet fouts to All Participants:
+Twitter is all about who you follow
+from Amanda MacArthur to All Participants:
+Self publishing site comparisons - http://tinyurl.com/5qhnea
+from jacob morgan to All Participants:
+let's talks about measuring success :)
+from Laura Pexton to All Participants:
+@jpostman just wrote SocialCorp, too, using a lot of input from his Twitter followers
+from Gillian Brouse to All Participants:
+Blog is "try before you buy." A must in marketing.
+from Alison Lowry to All Participants:
+Christian authors should check out www.Ambassador-International.com
+from Taylor Walsh to All Participants:
+NING is awesome and gets better by the month
+from Jaculynn Peterson to All Participants:
+THANKS AMANDA!
+from Natasha Netschay Davies to All Attendees:
+How do you drive traffic to all your outposts?
+from Don Lafferty to All Participants:
+Authors must be involved.
+from Christiana Briddell to All Participants:
+I'm creating a platform for authors to create communities... I think the key is creating courses that build off your book, especially for how-to's. WDYT?
+from Andy Lester to All Participants:
+Natasha;: YOu can't drive. It's all pull.
+from Kat Meyer to All Participants:
+Authors often need training to get up and running. most love blogging/twittering, etc. once they try it.
+from Yael Miller to All Attendees:
+@Natasha the greatest q of all time
+from Honey Mae Caffin to All Participants:
+I have to run to my next meeting. THANKS Chris Brogan and host!
+from Brett Sandusky to All Participants:
+Why don't authors realize that THEY have to be engaged in the success of their titles?
+from Josh Rangel to All Participants:
+@Whitney - Made to Stick has definitely given me some new perspective and ways to generate ideas.
+from Kirk Biglione to All Participants:
+@brett The smart authors do realize that.
+from Jaculynn Peterson to All Participants:
+What site do you recommend for Self-Publishing 101 tips/info?
+from Pariah Burke to All Participants:
+@Brett I think authors have a tendency to think that, for the percentage of sales the publisher apparenlty takes, the publisher should do all the marketing.
+from Michael Pastore to All Participants:
+There was a time when all the promotion was managed by publishers: authors could focus on writing. ... That time is gone.
+from Brett Sandusky to All Participants:
+@kirk Very true...it would be nice if they all did
+from Kat Meyer to All Participants:
+i've been working w/ authors training them on social media & had a lot of success. must start early - be4 book is out.
+from Troy Corley to All Participants:
+how about non-fcition books vs fiction?
+from Jessica Powers to All Participants:
+I'm both an author (published by Knopf) and a small press (Catalyst Book Press) and I think it's overwhelming to most authors. I'm still trying to figure it out for my business, much less for me personally as an author. There are one hundred million things we should be doing, and I think most authors are still nostalgic for the time when they didn't need to be marketing.
+from Troy Corley to All Participants:
+a lot of info about promoting fiction
+from Whitney hoffman to All Participants:
+@Brett- I think the author has to be involved- the audience loves to hear from them, but by doing things on twitter, podcasts, etc. can be done remotely and give that personal experience in a wide-spectrum, long-tail way
+from Michael Pastore to All Participants:
+Chris: If we build it, will they come?
+from Gillian Brouse to All Participants:
+We've talked about reaching readers. Does the same apply to reaching publishers/agents?
+from Yael Miller to All Attendees:
+@Jessica authors have always needed to market their own book
+from Amanda MacArthur to All Participants:
+@Jaculynn - Self publishing site comparisons - http://tinyurl.com/5qhnea
+from Jessica Powers to All Participants:
+of course--but the ante has been upped
+from Chris Webb to All Participants:
+@gillian I think so. I make lots of author/agent contacts via Social media
+from Regina Rainwater to All Participants:
+at this point in social game, if an author has static blog/web presence, I rarely go back to read, those that engage me I respond to, even if I am not nec a fan of work...it can win me over as a new fan before I read work
+from Don Lafferty to All Participants:
+I tee my authors off. It's up to them to hit the ball.
+from Jaculynn Peterson to All Participants:
+Got that - thanks Amanda
+from Yael Miller to All Attendees:
+"Top Self Publishing Firms" by Stacie Vander Pol reviews different self publishing options.
+from Bruce Miller to All Participants:
+What do yuo think about the mashup of content to social media
+from Brett Sandusky to All Participants:
+@Whitney Agreed. I would be considered the choir, come preach to some of my authors, please.
+from Whitney hoffman to All Participants:
+@Michael- I think you have to have patience and watch it grow; do outreach, but just like a church community or any other social group, it grows and changes over time.
+from Gillian Brouse to All Participants:
+Thanks Chris Webb
+from jacob morgan to All Participants:
+to help people out i put together a list of tools and metrics to measure success http://is.gd/bYPS
+from Whitney hoffman to All Participants:
+@Brett- anytime, any where
+from Amanda MacArthur to All Participants:
+@Whitney - totally agree. Patience is key!
+from Jaculynn Peterson to All Participants:
+Thanks Yael Miller. Perfect
+from Robert Labossiere to All Participants:
+more on cost please! who is going to do this work? do you have to recruit special people? what do you have to pay them?
+from Whitney hoffman to All Participants:
+@Chrisbrogan- me too- my favorite way to keep track of my "to read" list
+from Bruce Miller to All Participants:
+ipublishcentral.com
+from Amanda MacArthur to All Participants:
+@Jacob, great list, thanks!
+from Michael Pastore to All Participants:
+@Whitney: Good advice, thanks.
+from jacob morgan to All Participants:
+how can you afford to NOT be in social media is the question?
+from jacob morgan to All Participants:
+you are welcome amanda
+from Kat Meyer to All Participants:
+@robert - maybe get help on learning how to use tools, but your voice needs to be the one involved in engaging with community. don't farm out content creation.
+from Roger Penguino to All Participants:
+@chrisbrogan Amazon iPhone app let's you take pix of books and automagically brings up the book page or add to wishlist
+from Andy Lester to All Participants:
+If you do NOT build it, they won't come.
+from Susan Murphy to All Participants:
+not every tool is going to be right for everyone.
+from Mark Buchholz to All Participants:
+Hoffspace is awesome
+from Michael Schechter to All Participants:
+do you think you are better off building it on existing sites or building your own?
+from Susan Murphy to All Participants:
+but you need to try things, see what works for your audience
+from Jaculynn Peterson to All Participants:
+Important to build it for your Specific Community, and not the whole world
+from Michael Schechter to All Participants:
+I would imagine if you are on Hoffspace you were going to think it was awsome regardless :)
+from David Saracco to All Participants:
+at iPublishcentral.com( iPC) we are looking for people to help publishers market their books. iPC is self serve for pubs to market and sell books online.
+from Don Lafferty to All Participants:
+@Labossiere - you're asking some basic questions. The answers may be very specific to your application and needs.
+from Pariah Burke to All Participants:
+@Michael Fish wher ethe fish are biting.
+from Howard Cohen to All Participants:
+Chris: we're a small company w/ a small staff and I we can't cover all these bases. Which are most important first?
+from Howard Cohen to All Participants:
+thx Chris
+from Michael Pastore to All Participants:
+Chris (and everyone): Do you think that Arianna Huffington has the right idea: that the way to build a community is to work together, rather than go it alone?
+from Cheryl Smith to All Participants:
+2 minutes
+from Howard Cohen to All Participants:
+90 minutes
+from Chris Webb to All Participants:
+share the slides?
+from David Saracco to All Participants:
+what do you think about widgets for book marketing?
+from Matt Smith to All Participants:
+Yeah, sharing the slides would be great!
+from Michael Schechter to All Participants:
+I followed her for a minute she overloads you with content
+from Chris Webb to All Participants:
+Huffington blogging book #1 in tech last week.
+from Honey Mae Caffin to All Participants:
+how do you build community by going at it alone? that seems antithetical don't y ou think?
+from Brett Sandusky to All Participants:
+How would you go about establishing an ROI for social media usage? Price is lower than traditional/time is more, etc.
+from janet fouts to All Participants:
+Agree with her or not, she's managed to build her own empire
+from Roger Penguino to All Participants:
+@Howard Cohen: Also use Tweetdeck lets you subscribe to Twitter searches and displays results in realtime
+from Regina Rainwater to All Participants:
+but HuffPost on twitter just regurgitates NYT links, so I unsubscribed
+from Judy Rey Wassermaan Wasserman to All Participants:
+Does Sony Reader support color illustrations?
+from jacob morgan to All Participants:
+he brett you use the metrics i mentioned
+from Yael Miller to All Attendees:
+@brett for ROI in social media see @jasonfalls' great post on it.
+from Cheryl Smith to All Participants:
+my bad, 90 minutes
+from jacob morgan to All Participants:
+there are other things that you cant measure wiith numbers such as knowledge, business process, etc
+from Chris Webb to All Participants:
+@judy re: Sony Reader - no.
+from Howard Cohen to All Participants:
+thx Roger. Will look into it
+from Lester Smith to All Participants:
+Will the chat transcript be saved & available?
+from Patrick Hederman to All Participants:
+@judy no color on sony reader, that i'm aware of
+from jacob morgan to All Participants:
+but social media is more measurable than traditional media
+from Judy Rey Wassermaan Wasserman to All Participants:
+Does Kindle link to web . Can I embed links to color illustrations?
+from Brett Sandusky to All Participants:
+@yael: thanks! Much appreciated
+from Yael Miller to All Attendees:
+Wait, when is this over?
+from Yael Miller to All Attendees:
+You're welcome.
+from Chris Webb to All Participants:
+@judy no color display on Kindle either
+from Susan Murphy to All Participants:
+@jacob in what way?
+from Patrick Hederman to All Participants:
+@judy- you can link on Kindle reader, but the results won't be in color
+from David Saracco to All Participants:
+what do you think about widgets for marketing books?
+from marsee henon to All Participants:
+The webcast was supposed to be 90 minutes
+from Jessica Powers to All Participants:
+Chris, what I really found helpful was your comment about how we're no longer in the "book" publishing business but the information exchange business. Thanks.
+from Michael Schechter to All Participants:
+looking forward to talking to more of you on twitter @scheky1068
+from Bruce Miller to All Participants:
+nest gen of kindle may be the device, but there are 4 now
+from Bryan Buchan to All Participants:
+Best bloggin platform?
+from Andy Lester to All Participants:
+FYI, if anyone doubts value of podcast, note that we are all typing adn reading in this window, And listening simultaneously.
+from Erin Cubert to All Participants:
+Thanks everyone! Great to meet you all ... have to run.
+from Amber Naslund to All Participants:
+Bryan - WordPress.
+from Michael Schechter to All Participants:
+is it just content publishing at this poing?
+from Jaculynn Peterson to All Participants:
+Wordpress
+from Michael Schechter to All Participants:
+point :)
+from Chris Webb to All Participants:
+@Bryan I really like Wordpress
+from Dave Jennette to All Participants:
+Out. Thanks.
+from Kim Werker to All Participants:
+Ditto -- WordPress
+from Pariah Burke to All Participants:
+@Andy Excellent point.
+from Bryan Buchan to All Participants:
+I like wordpress too
+from Lester Smith to All Participants:
+WordPress is da bomb.
+from Jessica Powers to All Participants:
+I use wordpress, too. Can do almost everything with it.
+from Kat Meyer to All Participants:
+Squarespace!
+from Gillian Brouse to All Participants:
+I like typepad - based on wordpress
+from Amanda MacArthur to All Participants:
+I've seen high traffic site move over to Drupal because it can "handle it better", but I still like Wordpress.
+from Tim Middleton to All Participants:
+Posterous is pretty cool
+from Jason Griffey to All Participants:
+@Gillian Brouse: Typepad isn't Worpdress, it's Moveable Type.
+from Kim Werker to All Participants:
+Drupal is amazing for larger communities.
+from Susan Murphy to All Participants:
+depends what you want to do - Tumblr is good for some people.
+from jacob morgan to All Participants:
+hubspot is turnkey though, not customized :(
+from Kathy Ishizuka to All Participants:
+Chris: We have a staff Twitter account, presently a free for all - ok? Or should there be an eye toward a singular mission.
+from Gillian Brouse to All Participants:
+Oh, oops. Thanks @Jason.
+from Nick Martinelli to All Participants:
+I use Joomla for our social sites
+from David Saracco to All Participants:
+Chris question- what do you think about Widgets for marketing books. Lots of buzz about it right now.
+from jacob morgan to All Participants:
+might be a good starting point
+from marsee henon to All Participants:
+A copy of this webcast will be available online at http://oreilly.com/webcasts/
+from Jessica Powers to All Participants:
+But moveable type is good, and I just heard about Drupal from Casey at New Pages--apparently does a lot more than Wordpress, can create discussion communities, etc.
+from Chris Webb to All Participants:
+Brands are not social - give them all a personal account. Let them be real people.
+from Dan Cotton to All Participants:
+@marsee Thx
+from Kim Werker to All Participants:
+Drupal is a full-on content management system that is extremely extensible.
+from Amber Naslund to All Participants:
+Jessica: Drupal is very robust, but not for the faint of heart or rookie
+from Jason Griffey to All Participants:
+Drupal is a full-fledged Content Management System. More than just a blog. Although the same is more or less true of Wordpress these days.
+from Jessica Powers to All Participants:
+that's why I'm sticking with wordpress for now
+from Maurice Cherry to All Participants:
+Wordpress can be leveraged fully into a CMS, but Drupal really takes the cake.
+from Ulhas Anand to All Participants:
+Joomla, Drupal, Zend - there are more
+from Gillian Brouse to All Participants:
+brand v person -- @michael_at_dell is a hybrid
+from DJ Francis to All Participants:
+@ColonelTribune, btw
+from Amanda MacArthur to All Participants:
+We've turned Wordpress into a full-on CMS, but it was very expensive.
+from Heather Francell to All Participants:
+@Statesman -Austin paper does too - real human
+from Kameya Shows to All Participants:
+GM is also engaged in convo on twitter
+from Nick Martinelli to All Participants:
+Joomla is great for blogging, comments, and they is a facebook like app forit too
+from Sharon Jaffe to All Participants:
+@michael_at_dell isn't a real person? I'm gutted ...
+from Nicholas Chase to All Participants:
+Your web personality is very important, as you extend your reach, search for your name and make sure you respond to negative comments ASAP. It your reputation, protect it!
+from Nick Martinelli to All Participants:
+we run our cart from joomla too
+from Michelle McManus to All Participants:
+@ohltweets is me.
+from Johnny Amos to All Participants:
+@michael_at_dell is a real person
+from Kirk Biglione to All Participants:
+ExpressionEngine is an exceptional CMS, but not open source - though very reasonably priced
+from Lester Smith to All Participants:
+Thanks, Chris Brogan. Great presentation! Thanks all for rich chat. I'm out.
+from Michael Pastore to All Participants:
+Chris, some tips on this million-dollar question: How can we convert page views to cash?
+from jacob morgan to All Participants:
+where do you see social media in 2 years chris?
+from Susan Murphy to All Participants:
+This is all about people talking to people, not companies talking to people.
+from Yael Miller to All Attendees:
+@Amanda in what way was it expensive?
+from Alison Lowry to All Participants:
+@Nick we have joomla but have a lot to learn
+from Aaron Prather to All Participants:
+Is there anything that sites like Digg, StumpleUpon, or Mixx may do for publishers?
+from Bryan Buchan to All Participants:
+Joomla rocks if you are web savy highly reccommend
+from Johnny Amos to All Participants:
+Kameya: Do you know any GM twitter names?
+from Ulhas Anand to All Participants:
+Zend is pretty stable too
+from Gillian Brouse to All Participants:
+@sharon - definitely a real person, but he carries the brand in his username, and obviously talks mostly dell issues
+from Bruce Miller to All Participants:
+what about widgets in social networking
+from Amanda MacArthur to All Participants:
+I agree with the personality vs. brand on Twitter. When we turned our @mequoda account from company to person, we got tons of new followers.
+from Regina Rainwater to All Participants:
+Starbucks is very responsive on blogs and twitter, I always get a human exchange, good example
+from Nick Martinelli to All Participants:
+also Joomla has a bigger presence here in the USA, drupal is bigger overseas
+from Michael Schechter to All Participants:
+michael, isnt it more building an audience that is willing to spend cash on your products?
+from Yael Miller to All Attendees:
+Amazon on the other ahnd, you can't ever talk to a real person
+from Morris Rosenthal to All Participants:
+Chris, I hear from a lot of publishers about their Web 2.0 and Social Networking strategies, and almost invariably, they never got Web 1.0 right. How do you feel about publisher rushing into video, twitter, etc, without establishing a basis resource site for their business or enterprise, with core content that will bring them the links and visibility they are unlikely to get otheriwse, unless they are very exotic or pretty:-)
+from Nick Martinelli to All Participants:
+but open source CMS web systems are great compared to build custom web apps for $$$,$$$
+from Kameya Shows to All Participants:
+@johhnyamas http://twitter.com/GMblogs
+from Bryan Buchan to All Participants:
+Where is the best place to go to get paid ads on your site??
+from Kent Beatty to All Participants:
+Chris, a good way to manage tweets from a large # if tweeps you follow?
+from Andy Lester to All Participants:
+Digg gives you a "spam" option when marking down stories, and "spam" basically is taken to mean "any marekting"
+from Chris Webb to All Participants:
+Start by being part of the Digg, Mixx and StumbleUpon communities (for real)
+from Johnny Amos to All Participants:
+Thanks, Kameya!
+from Amanda MacArthur to All Participants:
+@Yael, it was expensive for development costs, building custom APIs to connect with Paypal, Google Analytics, WhatCounts EMS, etc.
+from Judy Rey Wassermaan Wasserman to All Participants:
+@ Christ - teleseminars are social media, How can authors use them? What is best?
+from Andy Lester to All Participants:
+Chris Webb nails it: YOu can't just walk in to the room and expect to be loved.
+from Kameya Shows to All Participants:
+@johnnyamos - NP!
+from Whitney hoffman to All Participants:
+@KentBeatty- tools like tweetdeck allows you to see twitter off twitter and do groups- reduces noise in the stream
+from Yael Miller to All Attendees:
+@kent @chrisbrogan has a great blog post about how he manages Twitter
+from Whitney hoffman to All Participants:
+If you need help, drop me an email
+from Nick Martinelli to All Participants:
+Open source cms platforms for webs are a great way to save tons on web development
+from Ulhas Anand to All Participants:
+Tweetdeck +1
+from Bryan Buchan to All Participants:
+Whittney rocks
+from Whitney hoffman to All Participants:
+@Bryan- Thanks :)
+from Regina Rainwater to All Participants:
+good point/read re: Web 1.0/2.0: The book isn't the paper. It's the content! Why don't you understand your own product? http://tinyurl.com/6gor6x
+from Yael Miller to All Attendees:
+@amanda but wouldn't it be the same # of money if you made for a non-blog website with all the things you wanted?
+from Dan Cotton to All Participants:
+Thanks Chris
+from Susan Murphy to All Participants:
+ow
+from Jaculynn Peterson to All Participants:
+Tweet from @paulocoelho @chrisbrogan This image came from a virtual exhibition I created with my readers in http://tinyurl.com/5rnzcd
+from Johnny Amos to All Participants:
+ow, my ears
+from Jason Fleck to All Participants:
+my ears lol
+from Bryan Buchan to All Participants:
+Where is the best place to go to get paid ads on your site??
+from Jaculynn Peterson to All Participants:
+The virtual exhibition was cool
+from Andy Lester to All Participants:
+"Bring wine, not a bullhorn": Just paid for the 2 hours of my time on this.
+from Judy Rey Wassermaan Wasserman to All Participants:
+Opps 1 of my Typos! Apologize. "Christ" should just be Chris. It's a questio for Chris about social marketing using teleseminars
+from Amanda MacArthur to All Participants:
+We have a publishing event coming up that's made to help Publishers transfer from 1.0 to 2.0 - http://summit.mequoda.com
+from Morris Rosenthal to All Participants:
+Chris, I think most people would agree that search is the killer app of the web, text search, yet it doesn't mesh well with the advanced web techniques. Publishers (book publishers) are in the best position of all business to attract visitors through search, lots of text content, but somehow, they don't get there.
+from Michael Pastore to All Participants:
+Christ probably can't handle this new media ...
+from Yael Miller to All Attendees:
+What's a good way to print out this chat?
+from Chris Webb to All Participants:
+Wine and Bullhorns - I feel a blog post coming on :)
+from Jaculynn Peterson to All Participants:
+Judy Rey; interesting slip, there heh
+from Michael Pastore to All Participants:
+@yael: just select all ... Also, O'Reilly will make this chat available
+from Andy Lester to All Participants:
+Yael: Cut & Paste it into a word processor document.
+from Robert Swanwick to All Participants:
+listening and reading at the same time is one thing, but how the heck does Chris talk and read at the same time?
+from Judy Rey Wassermaan Wasserman to All Participants:
+Regina Rainwater Agree that the book is not the paper but the content!
+from elyssa Timmer to All Attendees:
+Wow the chatter is just as interesting as the presentation :-)
+from Whitney hoffman to All Participants:
+is it over?
+from Amber Naslund to All Participants:
+you can drive all the search you want, but if there's nothing worthwhile and useful when you GET there...
+from Bryan Buchan to All Participants:
+agree chat is very informatice
+from Jaculynn Peterson to All Participants:
+I know. I can barely "listen" and read at same time!
+from Yael Miller to All Attendees:
+@andy @chrisbrogan is magic.
+from Jaculynn Peterson to All Participants:
+How does he do it??!
+from elyssa Timmer to All Attendees:
+funny isn't it - exercising the multitasking brain
+from Robert Labossiere to All Participants:
+gotta go, thank you, really good info presented in a short and snappy style
+from Don Lafferty to All Participants:
+Chris, Re: our exchange with CC about SL. Turns out authors are indeed selling books via SL events. It's genre/community driven but requires solid SL skills. Virtual book tours are booming in general.
+from marsee henon to All Participants:
+yes, this chat will be available, please email webcast@oreilly.com and we'll send you a copy.
+from Lena West to All Participants:
+Chris:
+from Amanda MacArthur to All Participants:
+@Yael, very likely. It's a lot of hard work any way you look at it, it's just the "out of the box" vs. the custom package. We wanted to build it for what we as publishers need. salesletters, email conversion, etc.
+from Bryan Buchan to All Participants:
+Where is the best place to go to get paid ads on your site??
+from Lena West to All Participants:
+Chris: gotta dash....EXCELLENT content...been Tweeting you...
+from Whitney hoffman to All Participants:
+Search can be expensive if you outsource it, for sure, but the basics aren't all that hard- that's why we did a "Searchcamp" in Philly- a community unconference about search
+from Cheryl Smith to All Participants:
+dadomatic ;-)
+from Yael Miller to All Attendees:
+What's SL?
+from Whitney hoffman to All Participants:
+SL= second life
+from Johnny Amos to All Participants:
+Second Life
+from Morris Rosenthal to All Participants:
+Chris, I have two very simple websites with book content from a handful of books that draw approaching 10,000 visitors a day. That drives my paper book business, I do no other advertising, and I have a healthier ebook business than anybody I know. It's why I hear from so many publisher on the web topic, but the always stop short of putting significant content online, I believe they are simply distracted by the drive for newer web technology.
+from Michael Schechter to All Participants:
+Thanks as always Chris... gotta hop follow me at www.twitter.com/scheky1068
+from Joe Kelly to All Participants:
+linkshare, commission junction
+from Janice Beley to All Participants:
+Thank you Chris, great info!
+from Kathy Ishizuka to All Participants:
+@chrisbrogan @oreillymedia Thanks, great Webcast. Can't believe I did this on deadline day ;-)
+from Yael Miller to All Attendees:
+@Morris what are your sites?
+from O'Reilly Media to All Participants:
+Glad you could join us, Kathy!
+
+from Morris Rosenthal to All Participants:
+@Yael fonerbooks.com is the main one, you'll laugh at the front page, I use an HTML editor from 1995:-)
+from Regina Rainwater to All Participants:
+commission junction is a great service, good people
+from Judy Rey Wassermaan Wasserman to All Participants:
+Chris,re money in the piece of paper -- Warhol foundation makes more $ from franchising images than from art
+from elyssa Timmer to All Attendees:
+thanks @oreilly @chrisbrogan must go to work (8:00 am in new zealand)
+from Natasha Netschay Davies to All Attendees:
+any unique strategies for reaching younger readers, who get all info online
+from Whitney hoffman to All Participants:
+Wonderful webcast! Thanks!
+from Dee Stewart to All Attendees:
+@Natasha how young of a reader?
+from Fred Ramey to All Participants:
+Thanks to all. Excellent information. Out.
+from Whitney hoffman to All Participants:
+@Natasha- reach parents, places like Just One more Book Podcasts; author visits to schools- tons of places
+from Natasha Netschay Davies to All Attendees:
+Dee: under 25
+from Ulhas Anand to All Participants:
+@Natasha Facebook
+from Yael Miller to All Attendees:
+@natasha All ages under 25?
+from Morris Rosenthal to All Participants:
+Chris, that was actually my question (the dark side) and I'm a fan of YouTube, use them. What I'm against is the site that contacted me on YouTube yesterday offering me a $25 Amazon gift certificate for uploading my video to their new video site.
+from Dee Stewart to All Attendees:
+@Natasha teen or elementary?
+from Rob Colding to All Participants:
+Morris, what is your website?
+from DJ Francis to All Participants:
+If people focused more on helping others and creating good content - and less on making money or placing advertising - the world would be a better place AND they'd make more money.
+from Whitney hoffman to All Participants:
+@Natasha- Facebook is a great suggestion; what about colleges?
+from Nicholas Chase to All Participants:
+Chris, thanks for the shout out!. Nicholas Chase
+from Natasha Netschay Davies to All Attendees:
+mostly college crowd, thx
+from Bryan Buchan to All Participants:
+Thanks Chris GREAT Webinar followed you on twitter since the New Media Expo in Vegas http://twitter.com/bryanbuchan @bryanbuchan thx again!
+from Ann Kingman to All Participants:
+@Natasha - go where your target readers already are. If you publish in a niche (i.e., fashion), go to the fashion sites where they congregate
+from Joe Kelly to All Participants:
+have to find specific interests first, humour is a big one
+from Amber Naslund to All Participants:
+UGH Morris - it's about sustainability and growth, not transactions. Scamlicious.
+from Morris Rosenthal to All Participants:
+@Rob, the main site is fonerbooks.com - as I just told Yael, you'll get a kick out of the simplicty, maybe:-)
+from Michael Pastore to All Participants:
+Chris, if you had only 10 hours per week for new media marketing, how would you apportion your time?
+from marsee henon to All Participants:
+If your interested in more publishing info like this webcast, check out the Tools of Change blog
+from marsee henon to All Participants:
+#TOCSM
+from Jessica Powers to All Participants:
+I have to go. Thanks, Chris. Just added you on Facebook--see you there. Cheers!
+from Dee Stewart to All Attendees:
+@Natasha Facebook definitely but you should do events using Facebook to mobilize them offline to the next author event
+from Yael Miller to All Attendees:
+@bethkanter has a time breakdown of social media
+from marsee henon to All Participants:
+http://toc.oreilly.com/
+from Natasha Netschay Davies to All Attendees:
+thx Dee!
+from Yael Miller to All Attendees:
+@Natasha if it's music-centered then MySpace
+from Chris Webb to All Participants:
+There are probably people within your organization who are already utilizing Social Media on their own. Find them.
+from Cindy Helton to All Participants:
+@Natasha I work with high shcool and college age and Facebook is major, and as @Dee said use it to promo events. I am seeing MySpace switch to younger crowd
+from Dee Stewart to All Attendees:
+@Natasha NP! :) also invite them to become members of a reader advisory panel to learn what they like to do and how books can fit into that
+from Dee Stewart to All Attendees:
+i have three bestselling teen authors who sells 50,000 * books easy that way
+from Ulhas Anand to All Participants:
+@Natasha Also try FB groups and pages
+from Jaculynn Peterson to All Participants:
+Dee: They sell 50,000 books just w/FB?
+from Dee Stewart to All Attendees:
+@Jaculynn No, at mobilizing teens with Reading Advisory Panels and having them build events in their communities
+from Jaculynn Peterson to All Participants:
+My client does not want to switch from traditional book publishing channel
+from Dave Pelland to All Participants:
+Awesome thoughts/ideas Chris and everyone. Thanks for sharing!
+from Don Lafferty to All Participants:
+I find publishers are thrilled with any help they can get. :-)
+from Dee Stewart to All Attendees:
+@jaculynn Facebook makes it much easier. However, many highschoolers are also on MySpace so you have to do both
+from Yael Miller to All Attendees:
+@Jaculynn can you tell client that web is just another way to market?
+from Jaculynn Peterson to All Participants:
+Ahhh. Thanks @Dee
+from Nicholas Chase to All Participants:
+Being real with your web presence goes a long way..Do not attempt to 'game' your audience. It can take years to recover from perceived authenticity.
+from Alison Lowry to All Participants:
+Where is a good place to find reviewers?
+from Joe Kelly to All Participants:
+bebo is big in the uk and ireland with under 20s
+from Andy Lester to All Participants:
+@jaculynn @Dee My wife's HS students seem to see going MySpace -> Facebook as a sort of "graduation"
+from Jaculynn Peterson to All Participants:
+@yael. Yep. Working on digging up case studies like Paulo. It's killing me because he has a huge following, too.
+from Dee Stewart to All Attendees:
+@Andy lol that is so true
+from Don Lafferty to All Participants:
+Facebook + 8th grade
+from Morris Rosenthal to All Participants:
+Chris, As a long time blogger, do you find that the search traffic has saturated with time? I know that my main blog on publishing drew around 500 search visitors a day by the time I got to a couple dozen posts, and 400 posts later, it's still around 500 visitors a day from search. Google just favors the older posts with earlier links over the newer posts, and since it's subject specific, the rest of the posts mainly compete with each other:-)
+from Yael Miller to All Attendees:
+@Jaculynn as @chris said earlier Neil Gaiman has been online forever.
+from Andy Lester to All Participants:
+@Michael Pastore: See what Nicholas Chase said. You have to get IN to the world, not see it from the outside.
+from Jaculynn Peterson to All Participants:
+He's almost 80. Started a blog for him and working well so far.
+from Jaculynn Peterson to All Participants:
+What is Neil Gaiman's Twitter handle?
+from Morris Rosenthal to All Participants:
+Chris, specifically blog search.
+from jacob morgan to All Participants:
+hola :)
+from Jaculynn Peterson to All Participants:
+ah. thanks
+from jacob morgan to All Participants:
+socia media and seo have a lot to share
+from Andy Lester to All Participants:
+As with everything, you can't "make" anyone do aything.
+from Yael Miller to All Attendees:
+Neil Gaiman's blog or as he calls it "journal" online forever
+from Laura Pexton to All Participants:
+Chris, if you had to pick one social network to spend most of your time on, which would it be?
+from Dee Stewart to All Attendees:
+@Allison you need to do a market analysis when you build a marketing plan. that way you can find the demographics and psychographics of your readers. once you have that you will find where they are
+from Andy Lester to All Participants:
+People have to want to find your content.
+from Regina Rainwater to All Participants:
+oh, what about the twitter moms contro w/ motrin? another cautionary tale like Tahoe?
+from Nicholas Chase to All Participants:
+Remember that Web 2.0 is a community. If you are kind to your 'online neighbor' the benefits are staggering.
+from Judy Rey Wassermaan Wasserman to All Participants:
+Chris, what about groups, like on yahoo. I have had little success with traffic but great success in one for networking re web info
+from Morris Rosenthal to All Participants:
+Chris, was mainly curious if you've seen the effect, assuming you watch your server stats:-)
+from Don Lafferty to All Participants:
+Mia Twitters for Californication linked from their FB Fan Page. It's a whole nuther entertainment experience, feeding all the supporting content.
+from Andy Lester to All Participants:
+@Laura: There any many TYPES we discussed here.
+from Jason Fleck to All Participants:
+what was jasons twitter
+from Chris Brogan to All Participants:
+@jacobm
+from Don Lafferty to All Participants:
+good one
+from Jason Fleck to All Participants:
+ah jacob
+from Jason Fleck to All Participants:
+thanks
+from Bryan Buchan to All Participants:
+If you are inerested in video social networking use Seesmic
+from Gillian Brouse to All Participants:
+Bye all. Thanks for a great call with lots of good info.
+from Chris Webb to All Participants:
+Like Chris says, fish where the fish are. Dont need to dig a pond and hope for fish...
+from Andy Lester to All Participants:
+O'Reilly's network benefits the fans of O'Reilly.
+from Don Lafferty to All Participants:
+Book characters and authors work best.
+from Andy Lester to All Participants:
+But only because there's value for the fans.
+from Alison Lowry to All Participants:
+Would love to talk to you more! @AlisonStorm
+from Michael Pastore to All Participants:
+O'Reilly has a great far-seeing vision -- that's what attracts me to it
+from Andy Lester to All Participants:
+OTOH, O'Reilly DID try an O'reilly-specific social network, and it tanked.
+from Yael Miller to All Attendees:
+I hope everyone on Twitter used #TOCSM so I can find you.
+from Chris Webb to All Participants:
+On the other hand, building sites around your brands like P2P.wrox.com to support products works well.
+from Bryan Buchan to All Participants:
+I d
+from Yael Miller to All Attendees:
+My tweets aren't appearing. I'm at @MillerMosaicLLC
+from Michael Pastore to All Participants:
+Chris, that happened to me in Turkey ...
+from jacob morgan to All Participants:
+sounds like chris is inviting all of us to a party at his place :)
+from Jaculynn Peterson to All Participants:
+I"m in
+from jacob morgan to All Participants:
+i was just in turkey
+from Bruce Miller to All Participants:
+add twitter tyo your fscebook
+from Yael Miller to All Attendees:
+But can chris make Creme Brulle?
+from Jaculynn Peterson to All Participants:
+R there traditional publishers you reco that "get" social media marketing?
+from Michelle McManus to All Participants:
+@MillerMosaicLLC, I'm not seeing anything from you. I'm @ohltweets
+from Yael Miller to All Attendees:
+Universal is fighting with a DVD vending machine company. See WSJ.
+from Chris Webb to All Participants:
+<wave>
+from Michael Carrasquillo to All Participants:
+Me!
+from Jaculynn Peterson to All Participants:
+thanks!
+from James Woods to All Participants:
+I've seen DVD vending machines in local Wal-Mart.
+from Bruce Miller to All Participants:
+They do and they use their authors to tout their stuff thru social networks
+from Lorelle VanFossen to All Participants:
+Where do you see social media and publishing in two years? Predict the future, my friend. :D
+from Yael Miller to All Attendees:
+@michlle I know, I don't know why.
+from Bruce Miller to All Participants:
+it is now not 2 years
+from Jaculynn Peterson to All Participants:
+Chris Webb -- you have a very convenient name ;-)
+from Bruce Miller to All Participants:
+the new term is social media optimization
+from Chris Webb to All Participants:
+@Jaculynn thanks. It was given to me :)
+from jacob morgan to All Participants:
+thanks for the time and info chris, have to jump on client call, ill see you online
+from Michael Pastore to All Participants:
+Chris, thank you. Superb presentation. Giving us lots to think about, and lots to do! ... And thanks to "All Participants" ...
+from Cheryl Smith to All Participants:
+Is anyone having success with using Multiply.com? Demographics? My middle schooler and her friends love it.
+from Kim Werker to All Participants:
+Thank you so much!
+from Brett Sandusky to All Participants:
+Thank you, Chris!
+from Chris Webb to All Participants:
+Fantastic webinar!
+from Kat Meyer to All Participants:
+kthxbai!
+from Jason Griffey to All Participants:
+Thanks, Chris.
+from Bryan Buchan to All Participants:
+thx u
+from DJ Francis to All Participants:
+Thanks Chris!
+from Cheryl Smith to All Participants:
+Well done!
+from Joe Kelly to All Participants:
+Heads Up all! Serious security flaw found in IE anonnounced today. http://news.bbc.co.uk/1/hi/technology/7784908.stm
+from Matt Smith to All Participants:
+Obrigado!
+from Cindy Helton to All Participants:
+@chrisbrogan @oreillymedia thank you!!
+from Roger Penguino to All Participants:
+Thanks
+from Ann Kingman to All Participants:
+Thanks, Chris
+from Mark Buchholz to All Participants:
+Thanks a lot
+from Jaculynn Peterson to All Participants:
+THANKS CHRIS! AND EVERYONE IN CHAT! VALUABLE
+from Ulhas Anand to All Participants:
+Thanks Chris
+from Joe Kelly to All Participants:
+thanks
+from Nicholas Chase to All Participants:
+Thank you WEBEX O'Reilly and Chris
+from Johnny Amos to All Participants:
+Thank you Chris.
+from jacob morgan to All Participants:
+great job chris
+from JAMIE croft to All Participants:
+yeah i came in just in time for the end.
+from Dee Stewart to All Attendees:
+Thank you, Chris and all everyone
+from James Woods to All Participants:
+Thanks, Chris.
+from Yael Miller to All Attendees:
+Thanks everyone.
+from Chris Brogan to All Participants:
+Thanks to you. My laptop's only at 21% : )
+from JAMIE croft to All Participants:
+Thanks Chris!
+from Chris Webb to All Participants:
+Great job O'Reilly. Thanks. Chris - as always :)
+from Maurice Bassett to All Participants:
+Thanks, Chris!
+from Matt Smith to All Participants:
+SiteSays.com?
+from Chris Brogan to All Participants:
+Was worried I'd go dark. : )
+from Johnny Amos to All Participants:
+Thanks to all!
+from Bruce Miller to All Participants:
+Thank you Chris. See you at TOC in NYC
+from Mark Coker to All Participants:
+Chris, thanks for the great session. http://www.smashwords.com
+from Jennifer Aderhold to All Participants:
+Thanks, Chris!
+from Jaculynn Peterson to All Participants:
+CHAT TRANSCRIPT?
+from Judy Rey Wassermaan Wasserman to All Participants:
+Thaks to Chris, Mac and also participants IMing with! @judyrey
+from Matt Smith to All Participants:
+Thanks!

@@ -1,0 +1,42 @@
+#!/usr/bin/perl -w
+
+# Test program to show that the "call ls -1t" method to get the
+# newest file is way too slow.  Kwiki was doing this.
+
+use strict;
+use Benchmark;
+
+my $count = 10000;
+
+#my $path = '/usr/local/bin';
+my $path = '/Users/alester/lab';
+
+sub all_ids_newest_first {
+    map {chomp; $_} `/bin/ls -1t $path`;  # TODO: Split this into a non-shelling func
+}
+
+sub faster1 {
+    my @files;
+
+    opendir my $dh, $path or die "Unable to open $path: $!\n";
+    while ( my $file = readdir $dh ) {
+        if ( -f "$path/$file" ) {
+            # Relies on using the _ magic handle
+            push @files, [$file, (stat _)[9]];
+        }
+    }
+    closedir $dh;
+    return map { $_->[0] } sort { $b->[1] <=> $a->[1] } @files;
+}
+
+timethese( $count, {
+    original => \&all_ids_newest_first,
+    faster1 => \&faster1,
+#    faster2 => \&faster2,
+} );
+
+use Test::More tests => 1;
+use Test::Differences;
+
+eq_or_diff( [all_ids_newest_first()], [faster1()] );
+#eq_or_diff( [all_ids_newest_first()], [faster2()] );

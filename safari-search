@@ -1,0 +1,152 @@
+#!/usr/bin/perl -w
+# safari-search -- keyword search O'Reilly and Pearson books
+
+# v0.8 by Nathan Torkington.
+#
+# usage:
+#   safari-search [-b bookid] keywords
+# 
+# Without -b, the search returns a list of books, their titles and IDs.
+# With -b, the search is limited to a particular book and the search
+# returns a list of sections and their titles.
+#
+# Sample bookids: pperl3 perlnut2 lperl3 begperlbio
+
+use Getopt::Std;
+use strict;
+
+my %opts;          # commandline options
+my $response;      # XML response from search
+my @results;       # search hits extracted from $response
+
+unless (@ARGV) {
+  die "usage: $0 -b book keywords\n";
+}
+
+getopts('b:', \%opts);
+
+$response = do_search();
+
+# split XML according to results we want
+if ($opts{b}) {
+    @results = $response =~ m{<section.*?</section>}gs;
+} else {
+    @results = $response =~ m{<book.*?</book>}gs;
+}
+
+# process each hit
+foreach my $record (@results) {
+    my $tag;      # XML for <section> or <book> tag
+    my $title;    # book or section title
+    my %attrs;    # attributes from $tag
+
+    if ($opts{b}) {
+	# sections
+	($tag, $title) = $record =~ m{<section(.*)>.*?<title>(.*)</title>}s;
+	de_attribute($title);
+	%attrs = split_attrs($tag);
+	printf "%5.5s %-73.73s\n", $attrs{weight}, $title;
+    } else {
+	# books
+	($tag, $title) = $record =~ m{<book(.*)>.*?<title>(.*)</title>}s;
+	de_attribute($title);
+	%attrs = split_attrs($tag);
+	printf "%5.5s %-15.15s %-56.56s\n", $attrs{weight}, $attrs{bookname}, $title;
+    }
+}
+
+sub split_attrs {
+    my $html_mess = shift;
+    my @attrs = $html_mess =~ m{\w+="[^"]+"|\w+=[^"]\S*|\w+(?=\s|\Z)}gs;
+    my %attrs;
+
+    foreach my $attr (@attrs) {
+	if ($attr =~ m{(\w+)="(.*)"}) {
+	    $attrs{$1} = $2;
+	} elsif ($attr =~ m{(\w+)=(.*)}) {
+	    $attrs{$1} = $2;
+	} else {
+	    $attrs{$attr}++;
+	}
+    }
+    de_attribute($_) foreach (values %attrs);
+    return %attrs;
+}
+
+sub de_attribute {
+    $_[0] =~ s/&amp;/&/g;
+    $_[0] =~ s/&lt;/</g;
+    $_[0] =~ s/&gt;/>/g;
+}
+
+sub do_search {
+    my $path;
+    my $response;
+
+    s{(\W)}{sprintf("%02x", ord($1))}ge foreach (@ARGV);
+
+    $path = '/searchft.asp?text=' . join('%20', @ARGV);
+
+    if ($opts{b}) {
+	$path .= sprintf('&bookname=%s&level=section', $opts{b});
+    } else {
+	$path .= '&level=book';
+    }
+    $response = _trivial_http_get('safari.oreilly.com', 80, $path);
+    # remove random binary nonsense in Pearson titles
+    $response =~ s/\xAE//g;
+    $response =~ s/\x99//g;
+    $response =~ s/\x95//g;
+    return $response;
+}
+
+# from LWP/Simple.pm
+
+my %loop_check = ();
+my $VERSION = '1.00';
+
+sub _trivial_http_get
+{
+   my($host, $port, $path) = @_;
+   #print "HOST=$host, PORT=$port, PATH=$path\n";
+
+   require IO::Socket;
+   local($^W) = 0;
+   my $sock = IO::Socket::INET->new(PeerAddr => $host,
+                                    PeerPort => $port,
+                                    Proto    => 'tcp',
+                                    Timeout  => 60) || return undef;
+   $sock->autoflush;
+   my $netloc = $host;
+   $netloc .= ":$port" if $port != 80;
+   print $sock join("\015\012" =>
+                    "GET $path HTTP/1.0",
+                    "Host: $netloc",
+                    "User-Agent: safari-search/$VERSION",
+                    "", "");
+
+   my $buf = "";
+   my $n;
+   1 while $n = sysread($sock, $buf, 8*1024, length($buf));
+   return undef unless defined($n);
+
+   if ($buf =~ m,^HTTP/\d+\.\d+\s+(\d+)[^\012]*\012,) {
+       my $code = $1;
+       #print "CODE=$code\n$buf\n";
+       if ($code =~ /^30[1237]/ && $buf =~ /\012Location:\s*(\S+)/) {
+           # redirect
+           my $url = $1;
+           return undef if $loop_check{$url}++;
+	   return undef unless $url =~ m,^http://([^/:\@]+)(?::(\d+))?(/\S*)?$,; # this can't handle redirects to FTP
+	   my $host = $1;
+	   my $port = $2 || 80;
+	   my $path = $3;
+	   $path = "/" unless defined($path);
+	   return _trivial_http_get($host, $port, $path);
+       }
+       return undef unless $code =~ /^2/;
+       $buf =~ s/.+?\015?\012\015?\012//s;  # zap header
+   }
+
+   return $buf;
+}

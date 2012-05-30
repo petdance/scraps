@@ -1,0 +1,50 @@
+Alex Martelli, Google
+http://www.oscon.com/oscon2011/public/schedule/detail/18826
+
+An anti-pattern write-up should include;
+* Root causes (why did it seem a good idea at the time?)
+* effects (why it's actually a bad idea)
+* interactions (how it helps or hurts other patterns)
+* remedies (suggestions for fixes)
+
+API design anteipatterns
+* Worst issue: no API
+* 2nd-worst API design issue: no design
+* Too many APIs spoil the broth
+* "fear of commitment": to design -> to choose
+* Inconsistency in APIs
+
+More APIDAs
+* Extremes: No balance between concerns
+    * what languages to support?
+        * excessive language dependence or independence
+    * what about standard protocols/formats?
+* debugging, error messages, documentation
+
+No API
+* Check stackoverflow
+    * most common questions
+        * spidering and scraping websites
+        * Simulating keystroke & mouse gestures
+    * Some of these questions are about system testing
+    * Most of them are about "missing APIs"
+        * The APIs may not actually be there,
+        * Or they may be undocumented
+
+Why "no API" is bad
+* They're going to scrape if you don't
+* Makes your users' lives miserable
+
+Offer an API
+* Should be easy: You ARE in their shoes
+* Even a simple, weak one is better than none
+* Document it or at least consider examples, which may be easier than text to programmers
+* Keep docs tested
+    * Examples can be tested and should be
+
+Follow the path of least resistance:
+* REST & JSON
+* Use doctest for the "my only docs are examples" crowd
+
+The accidental API
+* An interface that was never actually designed as such

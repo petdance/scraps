@@ -1,0 +1,21 @@
+#!/usr/local/bin/perl
+
+use strict;
+use warnings;
+
+use 5.10.0;
+
+use Net::Trac;
+use Net::Trac::Ticket;
+
+my $trac = Net::Trac::Connection->new(
+    url      => 'http://trac.parrot.org/parrot',
+    user     => 'petdance',
+    password => $ENV{TRAC_PASSWORD},
+);
+
+my $search = Net::Trac::TicketSearch->new( connection => $trac );
+
+my $ticket = Net::Trac::Ticket->new( connection => $trac );
+$ticket->load( 2201 );
+{use Data::Show; show( $ticket )}

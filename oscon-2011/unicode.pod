@@ -1,0 +1,68 @@
+=pod
+
+Perl Unicode Essentials, Tom Christiansen
+
+L<http://98.245.80.27/tcpc/OSCON2011/index.html>
+
+Perl has best Unicode suport of any language.
+
+Unicode::Tussle is a bundle of Unicode tools tchrist wrote.
+
+5.12 is minimal for using C<unicode_strings> feature.  5.14 is
+optimal.
+
+Recommendations:
+
+    use strict;
+    use warnings;
+    use warnings qw( FATAL utf8 ); # Fatalize utf8
+
+21 bits for a Unicode character.
+
+Enable named cahracters via \N{CHARNAME}
+
+    use charnames qw( :full );
+
+If you have a DATA handle, you must explicitly set its encoding.
+If you want this to be UTF-8, then say:
+
+    binmode( DATA, ':encoding(UTF-8)' );
+
+Tom's programs start this way.
+
+    use v5.14;
+    use utf8;
+
+    use strict;
+    use autodie;
+    use warnings;
+
+    use warnings  qw< FATAL utf8 >;
+    use open      qw< :std :encoding(UTF-8) >;
+    use charnames qw< :full >;
+    use feature   qw< unicode_strings >;
+
+Explicitly C<close> your files.  Implicit C<close> never checks for
+errors.
+
+Up until 5.12, there was "The Unicode Bug".  The fix that makes it work right is
+
+    use feature "unicode_strings";
+
+Key core pragmas for Unicode are: v5.14, utf8, feature, charnames,
+open, re"/flags", encoding::warnings.
+
+Stay away from bytes, encoding and locale.
+
+For the programmer, it's easier to do NFD ("o\x{304}\x{303}") instead
+of NFC ("\x{22D}")
+
+NFD is required to, for example, match C</^o/> to know that something
+starts with "o".
+
+String comparisons on Unicode are pretty much always the wrong way
+to go.  That includes C<eq>, C<ne>, C<le>, C<gt>, C<cmp>, C<sort>,
+etc.  Use Unicode::Collate.  Get a taste of it by playing with
+F<ucsort> utility.
+
+=cut

@@ -1,0 +1,63 @@
+#!/usr/bin/perl -Tw
+
+# HTMLify a dump of a webex chat transcript
+
+use strict;
+use warnings;
+
+use HTML::Entities qw( encode_entities );
+use CGI ':standard';
+use Perl6::Say;
+
+my $name;
+my $html = 0;
+my $mw = 1;
+
+if ( $html ) {
+    say start_html( 'Chat transcript' );
+
+    say <<EOF;
+    <style type="text/css">
+        tr {
+            vertical-align: top;
+        }
+        th {
+            text-align: left;
+        }
+    </style>
+EOF
+    say q{<table>};
+}
+elsif ( $mw ) {
+    say <<'EOF';
+        {|
+EOF
+}
+
+while (<>) {
+    chomp;
+    if ( /^from (.+) to All (Attendee|Participant)s:$/ ) {
+        $name = $1;
+    }
+    else {
+        next if $name eq q{O'Reilly Media};
+
+        my $msg = $_;
+        if ( $html ) {
+            my $msg = encode_entities($msg);
+            say qq{<tr><th>$name</th><td>$msg</td></tr>};
+        }
+        elsif ( $mw ) {
+            say qq{|-\n|$name||$msg};
+        }
+    }
+}
+
+if ( $html ) {
+    say q{</table>};
+
+    say end_html();
+}
+elsif ( $mw ) {
+    say '|}';
+}

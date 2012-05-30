@@ -1,0 +1,3 @@
+Don't just index your primary key.
+
+Be consistent in naming of your table aliases.

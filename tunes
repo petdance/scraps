@@ -1,0 +1,35 @@
+#!/usr/bin/ruby
+
+=begin
+
+Ruby version of the joneses program
+
+Takes a list from the iTunes viewer, pasted as text and tab-separated,
+and turns it into a nice little bulletized list for pasting into
+blog posts, like L<http://petdance.livejournal.com/157250.html>.
+
+=end
+
+puts '<ul>'
+lines = DATA.each_line do |line|
+    fields = line.split( /\t/ )
+    printf( '<li>"%s", by %s from <cite>%s</cite></li>', fields[0], fields[3], fields[4] )
+    puts
+end
+puts '</ul>'
+
+__END__
+Love Is A Clown	1 of 1	3 of 20	Frankie Lymon & The Teenagers	The Best Of Frankie Lymon & The Teenagers	2:53	192 kbps (VBR)	1957	11/11/09 9:26 AM
+Love Is A Long Road	1 of 1	3 of 12	Tom Petty	Full Moon Fever	4:08	128 kbps	1989	8/23/07 9:22 AM
+Love Is A Many Splendored Thing	1 of 1	6 of 13	Barry Manilow	The Greatest Songs Of The Fifties	2:43	192 kbps (VBR)	2006	11/21/08 1:37 PM
+Love Is A Rock	2 of 2	16 of 18	REO Speedwagon	The Essential REO Speedwagon	5:35	128 kbps	2004	9/10/07 4:44 PM
+Love Is Alright Tonight	1 of 1	3 of 12	Rick Springfield	Greatest Hits	3:20	160 kbps	1981	4/23/07 11:47 AM
+Love Is Better In The A.M. (Part 1 & 2)	1 of 1	7 of 10	Johnnie Taylor	Super Hits	5:07	192 kbps (VBR)	2002	3/5/09 12:02 PM
+Love Is Forever		1 of 11	UFO	Covenant	4:22	192 kbps	2000	3/20/08 1:50 PM
+Love Is Gone	2 of 2	14 of 18	The Smithereens	From Jersey It Came! The Smithereens Anthology	3:34	160 kbps (VBR)	1992	6/2/08 3:23 PM
+Love Is Here	1 of 1	14 of 16	The Futures	Conquer The World: The Lost Soul Of Philadelphia International Records	4:59	128 kbps	1972	3/18/08 3:39 PM
+Love Is Here And Now You're Gone	1 of 1	18 of 22	The Supremes	AM Gold 1967	2:46	128 kbps	1967	7/5/07 1:42 PM
+Love Is Here To Stay	1 of 1	2 of 11	Harry Connick, Jr.	When Harry Met Sally	4:13	128 kbps	1989	6/25/07 8:37 AM
+Love Is In The Air	1 of 1	3 of 18	John Paul Young	Romancing the 70's: You Needed Me	3:27	192 kbps (VBR)	1978	5/4/10 11:11 AM
+Love Is Like A Butterfly	1 of 1	12 of 20	Dolly Parton	Essential Dolly Parton, Vol. 2	2:22	128 kbps	1975	5/7/07 9:44 AM
+Love Is Like Oxygen	1 of 1	1 of 12	Sweet	Super Hits Of The '70s: Have A Nice Day, Vol. 25	3:48	128 kbps	1978	11/18/07 11:59 AM
