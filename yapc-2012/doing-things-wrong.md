@@ -17,3 +17,8 @@ Using `waitpid()` + `curl` instead of LWP::Parallel.
 * Obvious: HTML::TokeParser::Simple or Mojo::DOM
 * Common: Regexes
 * Lovely: Template::Extract
+
+# Database updates
+
+Instead of transactional stuff, generate SQL and then batch load
+it.  chromatic does what I do on Solr updates.
