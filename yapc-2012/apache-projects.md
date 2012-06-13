@@ -34,3 +34,15 @@ If it didn't happen on a mailing list, it didn't happen.
 * Do-ocracy
     * Merit never expires, doing does
     * Merit is not transferable
+* Incubation
+    * All may enter
+    * Most will scuceed
+    * Competition is good
+    * Collaboration is better
+* Attic
+    * Obsolete communities, not obsolete tech
+    * It's OK to go elsewhere
+* Community over code
+    * Powerplant checkins are bad
+    * Bikesheds are worse
+    * Genius is commodity: You are not more amazing than anyone else.
