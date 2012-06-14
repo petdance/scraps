@@ -35,3 +35,5 @@ Benchmarks
 * eval is much much faster than Try::Tiny, but TryCatch is a little faster than Try::Tiny
 
 TryCatch has much more clever syntax, but looks dangerouser
+
+Exception::Class is what Mark recommends as a base, sort of.
