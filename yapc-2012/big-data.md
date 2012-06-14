@@ -64,3 +64,9 @@ Subsearches
 * Chain searches together with results from one as params for next
 
     sqj_injection groupby:srcip | subsearch(status_code:500)
+
+Map/reduce
+* Map = query on index
+* Reduce = run function (plugin) or report on field
+* Recurse as necessary
+
