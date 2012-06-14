@@ -2,6 +2,10 @@
 
 Mark Allen
 
+https://github.com/mrallen1/perl-PaaS-Shootout
+
+https://speakerdeck.com/u/mrallen1/p/perl-platform-as-a-service-shootout
+
 Coders don't have to be sysadmins
 * Deploy yoru code
 * Magic happens
@@ -38,3 +42,7 @@ Criteria
 * Performance (ignored)
 * Cost (ignored)
 * How "magical" the Perl support is (first class or hacked together)
+
+Findings
+* Getting PSGI-compliant apps into PaaS is general pain free
+* Ptyhon is less painful
