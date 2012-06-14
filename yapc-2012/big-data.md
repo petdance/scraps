@@ -2,6 +2,8 @@
 
 http://act.yapcna.org/2012/talk/163
 
+github.com/mcholste
+
 Martin Holste (This is the guy who was at Madison.PM talking about Sphinx)
 
 Signs it is getting big
@@ -70,3 +72,9 @@ Map/reduce
 * Reduce = run function (plugin) or report on field
 * Recurse as necessary
 
+
+Our stats
+* Billinos of fulpl-text indexed logs per node
+* 1 billion logs per day across nodes
+* Dozens of customers querying
+* Most queries finish in under 100ms
