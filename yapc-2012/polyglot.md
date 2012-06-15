@@ -38,3 +38,26 @@ Creating Ruby gems is easy.
     gem push yapc-0.0.1.gem
 
 Stealing from Ruby
+* Web::Scraper was inspired by ScrAPI in Ruby
+* Learned how to write DSL in Perl
+* Married with HTML::TreeBuilder
+
+Little issues: DSL for Perl
+* I thought it is a good idea
+* Difficult to mix with classes / OO code
+* text and hash keys are weak to typos
+
+Stealing ideas
+* Don't just borrow the idea. Copy it
+* Copy the ecosystem too.
+
+Cross-language pollination
+* Mechanize, Mime-Types, ack, etc
+
+Publish your code on github
+
+Naming differences
+* Perl naming: Description, boring, ::Simple
+* Python: Descriptive, confusing, py*, *py
+* Ruby: Fancy, creative, chaotic
+* except for frameworks: Django, nbottle, Catalyst, Dancer, Mojolicious
