@@ -61,3 +61,5 @@ Naming differences
 * Python: Descriptive, confusing, py*, *py
 * Ruby: Fancy, creative, chaotic
 * except for frameworks: Django, nbottle, Catalyst, Dancer, Mojolicious
+
+Ruby is not the enemy. They're neighbors.
