@@ -4,19 +4,26 @@ Here are some notes about YAPC::NA 2012, extracted from my notes.
 
 # ack 2.0
 
-Rob Hoelz and I shipped ack 2.00alpha01 to the CPAN on Thursday
-night during the Bad Movie BOF, some time after "Computer Beach
-Party (1987)" ended and "Catalina Caper (1967)" started.
+I uploaded [ack 2.00alpha01](http://betterthangrep.com/ack-20/) to the CPAN.
+
+All that week, Rob Hoelz did a ton of work, and Jerry Gay was
+invaluable in helping us work through some configuration issues.
+Then, out of nowhere, Ryan Olson swoops in to close some sticky
+issues in the GitHub queue.  I love conferences for bringing people
+to get things done.
+
+Finally, on Thursday night at the Bad Movie BOF I hacked away on
+the final few tickets while watching ["Computer Beach Party (1987)"](http://www.mentalfloss.com/blogs/archives/55561).
+Halfway through MST3K's take on ["Catalina Caper (1967)"](http://en.wikipedia.org/wiki/Catalina_Caper),
+I made the alpha release.  If that's not heaven, I don't know what is.
 
 # Mojolicious
 
 Glen Hinkle
 
-http://act.yapcna.org/2012/talk/84
-
-Mojolicous looks pretty cool.  Glen Hinkle called it a "full web
-framework, not partial," although I'm not sure what would count as
-a partial framework.
+[Mojolicous](http://mojolicio.us/) looks really cool.  Glen
+called it a "full web framework, not partial," although I'm not
+sure what would count as a partial framework.
 
 It has no outside dependencies, and works to have a lot of bleeding
 edge features like websockets, non-blocking events, IPv6 and
@@ -36,10 +43,10 @@ it's got all sorts of cool features:
 
 Mojolicious is based on "routes", which look like:
 
-* `get '/'`
-* `get '/:placeholder'`
-* `get '/#releaxed'`
-* `get '/*wildcard'`
+    get '/'
+    get '/:placeholder'
+    get '/#releaxed'
+    get '/*wildcard'
 
 The latter three are (apparently) ways of making flexible URL
 specifications that then return information to your app about the
@@ -66,11 +73,15 @@ Full Mojolicious includes a dev server called Morbo and you can run
 your apps through the Hypnotoad "hot-code-reloading production
 server" if you don't want to run under Apache/etc.
 
+Another selling point for Mojolicious: They value making things
+"beautiful" and "fun".  Glen specifically said "Join our IRC channel.
+We will not be mean to you."
+
 # Perl-as-a-Service shootout
 
 Mark Allen
 
-https://speakerdeck.com/u/mrallen1/p/perl-platform-as-a-service-shootout
+[Slides](https://speakerdeck.com/u/mrallen1/p/perl-platform-as-a-service-shootout)
 
 This was disappointing because I was hoping for recommendations to
 use or not use a given vendor's offerings.  I was hoping at least
@@ -93,9 +104,10 @@ Why ignore performance and cost?  I don't know.
 
 There were three sessions back-to-back about PDL, the Perl Data
 Language.  It's in the same space as Mathematica and R.  I was
-disappointed because I didn't realize it was just numeric stuff.
-The analysis of galaxy luminosity was pretty and looked very easy
-to do, but it didn't have any application I was interested in.
+disappointed because I was hoping for big data analysis outside of
+just number crunching.  The analysis of galaxy luminosity was pretty
+and looked very easy to do, but it didn't have any application I
+was interested in.  I bailed after the 2nd talk.
 
 My big takeaway from the talk was that I need to take a statistics
 class.
@@ -113,6 +125,11 @@ taint mode, but I don't know what he's referring to.
 
 Taint mode is one of my favorite things about Perl 5, and there are
 (last I checked) no plans for implementing it in Perl 6. :-(
+
+One of the examples Michael used for an example of an attack with
+SQL injection used `sleep()` to let the attacker find out information
+about the database based on timings.  I asked him to write that up
+for [bobby-tables.com](http://bobby-tables.com).
 
 # On being a polyglot
 
@@ -149,8 +166,8 @@ Catalyst, Dancer, Mojolicious
 
 When you're going to borrow something from another language, don't
 just borrow it, but copy it wholesale.  Example: Perl's
- [WWW::Mechanize][perlmech] getting cloned as Ruby's
- [WWW::Mechanize][rubymech].
+[WWW::Mechanize][perlmech] getting cloned as Ruby's
+[WWW::Mechanize][rubymech].
 
 # Doing Things Wrong, chromatic
 
@@ -164,11 +181,11 @@ he knew: `waitpid()` and shelling to `curl`.
 
 Screen scraping example:
 
-* Obvious answer: HTML::TokeParser::Simple or Mojo::DOM
+* Obvious answer: [HTML::TokeParser::Simple](http://search.cpan.org/dist/HTML-TokeParser-Simple/) or [Mojo::DOM](http://search.cpan.org/dist/Mojolicious/lib/Mojo/DOM.pm)
 * Common: Regexes
-* Lovely: Template::Extract
+* Lovely: [Template::Extract](http://search.cpan.org/dist/Template-Extract/)
 
- [Parsing HTML with regex][htmlregex] may be the "wrong" way to do
+[Parsing HTML with regex][htmlregex] may be the "wrong" way to do
 it, but sometimes, it's the best solution.
 
 # Perl 6 lists
@@ -236,5 +253,6 @@ TryCatch has much more clever syntax, but looks (to me) to be more dangerous.
 
 Mark recommends that whatever you use, you make exceptions out of `Exception::Class` objects.
 
-    [perlmech][http://search.cpan.org/dist/WWW-Mechanize]
-    [rubymech][?] XXX Need link
+[perlmech]: http://search.cpan.org/dist/WWW-Mechanize
+[rubymech]: http://mechanize.rubyforge.org/
+[htmlregex]: http://htmlparsing.com/regexes.html
