@@ -10,7 +10,7 @@ All that week, Rob Hoelz did a ton of work, and Jerry Gay was
 invaluable in helping us work through some configuration issues.
 Then, out of nowhere, Ryan Olson swoops in to close some sticky
 issues in the GitHub queue.  I love conferences for bringing people
-to get things done.
+together to get things done.
 
 Finally, on Thursday night at the Bad Movie BOF I hacked away on
 the final few tickets while watching ["Computer Beach Party (1987)"](http://www.mentalfloss.com/blogs/archives/55561).
@@ -66,8 +66,10 @@ Sample app with Mojolicious::Lite:
     Hello!
 
 Mojolicious also has its own templating language that looks a lot
-like Mason, but Glen said you can use Template Toolkit as well (and
-presumably others, but TT was the only one I was interested in.)
+like [Mason](http://search.cpan.org/dist/Mason), but Glen said you
+can use [Template Toolkit](http://search.cpan.org/dist/Template)
+as well (and presumably others, but TT was the only one I was
+interested in.)
 
 Full Mojolicious includes a dev server called Morbo and you can run
 your apps through the Hypnotoad "hot-code-reloading production
