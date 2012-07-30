@@ -1,5 +1,9 @@
 #!/usr/bin/perl
 
+use 5.10.0;
+
+use constant HTML => 1;
+
 =pod
 
 Takes a list from the iTunes viewer, pasted as text and tab-separated,
@@ -8,19 +12,26 @@ blog posts, like L<http://petdance.livejournal.com/157250.html>.
 
 =cut
 
-use Perl6::Say;
-
-say '<ul>';
+say '<ul>' if HTML;
 my @rows = <DATA>;
-#@rows = sort { key($a) cmp key($b) } @rows;
 for ( @rows ) {
-    my ($title,undef,undef,undef,$who,undef,$where) = split /\t/;
-    my $line = qq{<li>"$title", $who};
-    $line .= qq{ from <i>$where</i></li>} if $where;
+    chomp;
+
+    my ($title,undef,$who,$where) = split /\t/;
+
+    my $line;
+    if ( HTML ) {
+        $line = qq{<li>"$title", $who};
+        $line .= qq{ from <i>$where</i></li>} if $where;
+    }
+    else {
+        $line = qq{* "$title", $who};
+        $line .= qq{ from *$where*} if $where;
+    }
 
     say $line;
 }
-say '</ul>';
+say '</ul>' if HTML;
 
 sub key {
     my $str = shift;
@@ -31,12 +42,44 @@ sub key {
 }
 
 __DATA__
-Grotto Of Miracles	1 of 2	10 of 14	4:01	Suzanne The Plan	2006	An Idiot To Not Appreciate Your Time: The Songs Of Silkworm	2/13/07 8:16 PM	160 kbps
-In Need Of A Miracle	1 of 1	8 of 12	3:43	New Radicals	1998	Maybe You've Been Brainwashed Too	7/28/07 11:29 PM	160 kbps
-It's A Miracle	1 of 1	2 of 20	3:51	Barry Manilow	2002	Ultimate Manilow	6/1/06 7:00 PM	112 kbps
-Miracle Mile	1 of 2	13 of 14	4:25	The Nectarines	2006	An Idiot To Not Appreciate Your Time: The Songs Of Silkworm	2/13/07 8:16 PM	160 kbps
-Miracle Mile	1 of 1	12 of 16	4:14	Silkworm	1996	Firewater	11/26/07 10:29 PM	112 kbps
-Miracle Of Miracles	1 of 1	6 of 14	2:04	Original Cast	1971	Fiddler On The Roof	1/13/08 9:24 PM	128 kbps
-Miracles	1 of 1	3 of 15	6:54	Jefferson Starship	2008	The Very Best Of Jefferson Starship	11/14/08 8:13 PM	128 kbps
-The Tears Of A Clown	1 of 12	4 of 12	3:01	Smokey Robinson & The Miracles	1970	Classic Soul: The Pure Gold Collection	9/1/06 2:02 PM	160 kbps
-Your Love Is A Miracle	1 of 1	4 of 10	2:49	Mark Chesnutt	1990	Too Cold At Home	12/20/06 1:11 PM	160 kbps
+Ain't Going Down	4:03	Eric Clapton	Money And Cigarettes	Rock	15	6/21/12 2:53 PM
+B.O.B	5:04	Outkast	Stankonia	Hip Hop/Rap	83	7/15/12 6:24 PM
+Baba O'Riley	5:09	The Who	Who's Next	Rock	7	6/9/12 4:49 PM
+Back On The Road Again	5:30	REO Speedwagon	The Essential REO Speedwagon	Rock	64	6/27/12 3:43 PM
+Back Together Again	3:27	Hall & Oates	The Essential Daryl Hall & John Oates	Rock	12	7/9/12 3:04 PM
+Dirty Deeds Done Dirt Cheap	2:57	Oblivion	Suckers From The Start	Punk	11	6/9/12 4:16 PM
+Do You Feel Like We Do	14:16	Peter Frampton	Frampton Comes Alive!	Rock	18	6/7/12 2:50 PM
+Edge of Seventeen	5:30	Stevie Nicks	Bella Donna	Rock	12	6/6/12 2:55 PM
+Hallowed Be Thy Name	7:11	Iron Maiden	The Number of the Beast	Metal	9	6/21/12 11:13 AM
+Hello There	1:41	Cheap Trick	In Color (1997)	Rock	74	6/22/12 11:07 AM
+Holy Wars... The Punishment Due	6:33	Megadeth	Rust In Peace	Metal	85	7/26/12 2:50 PM
+(I Hope U) Don't Survive	3:25	Silkworm	Italian Platinum	Rock	112	6/9/12 4:39 PM
+I Just Want To Celebrate	3:40	Rare Earth	20th Century Masters: The Millennium Collection: Best of Rare Earth	R&B	40	6/27/12 4:24 PM
+(I Know) I'm Losing You	5:26	Rod Stewart	Every Picture Tells A Story	Rock	42	6/8/12 10:02 AM
+I Should've Known	4:53	Aimee Mann	Whatever	Rock	107	7/17/12 9:57 AM
+Let There Be Rock	6:06	AC/DC	Let There Be Rock	Rock	27	6/8/12 3:13 PM
+Love To Love	7:17	UFO	Lights Out	Rock	45	6/7/12 1:47 PM
+A Man I'll Never Be	6:38	Boston	Don't Look Back	Rock	11	7/30/12 2:01 PM
+Mountain Song	4:04	Jane's Addiction	Nothing's Shocking	Rock	29	6/9/12 4:53 PM
+Never Been Any Reason	5:11	Head East	Flat As A Pancake	Rock	31	7/9/12 3:00 PM
+On The Loose	4:13	Saga	Worlds Apart	Rock	19	6/21/12 1:53 PM
+Papa Was A Rollin' Stone	12:04	The Temptations	Psychedelic Soul	R&B	9	5/2/11 1:55 PM
+Paschendale	8:28	Iron Maiden	Dance Of Death	Metal	20	7/17/12 11:54 AM
+Reflections Of My Life	4:17	Marmalade	Bob Stroud's Rock n' Roll Roots V. 04	Rock	45	6/7/12 1:40 PM
+Rockin' In The Free World	4:42	Neil Young	Freedom	Rock	81	6/8/12 3:18 PM
+Roll With The Changes	5:37	REO Speedwagon	The Essential REO Speedwagon	Rock	81	6/27/12 4:38 PM
+Sabotage	2:58	Beastie Boys	Solid Gold Hits	Hip Hop/Rap	26	6/9/12 4:27 PM
+Seven Nation Army	3:52	The White Stripes	Elephant	Rock	35	7/20/12 3:18 PM
+She's Moving To Paris	3:20	Oblivion	Suckers From The Start	Punk	28	6/5/12 4:19 PM
+Short And Sweet	5:31	David Gilmour	David Gilmour	Rock	1	7/17/12 11:21 AM
+Since You Been Gone	3:21	Rainbow	Down To Earth	Rock	4	6/8/12 10:52 AM
+Six Months In A Leaky Boat	4:09	Ted Leo & The Pharmacists	Blueline Medic / Ted Leo & The Pharmacists Split EP	Rock	7	6/9/12 4:13 PM
+There's No Way Out Of Here	5:08	David Gilmour	David Gilmour	Rock	3	7/17/12 11:04 AM
+Thunder Road	4:50	Bruce Springsteen	Born To Run	Rock	26	7/11/12 4:11 PM
+Turn It On Again	3:51	Genesis	Duke	Rock	62	6/28/12 10:00 AM
+Under Pressure	4:03	Queen	Classic Queen	Rock	13	7/27/12 10:57 AM
+Unsung	3:58	Helmet	Meantime	Metal	39	6/8/12 2:22 PM
+Use Me	3:50	Bill Withers	Romancing the 70's: I Go Crazy	Pop	4	4/11/12 9:33 AM
+We're An American Band	3:27	Grand Funk Railroad	Greatest Hits	Rock	28	6/29/12 11:40 AM
+Why Me	3:57	Styx	Cornerstone	Rock	25	7/16/12 11:38 AM
+Your Love Alone Is Not Enough	3:56	Manic Street Preachers	Send Away The Tigers	Rock	69	6/9/12 3:43 PM
