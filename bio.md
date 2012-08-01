@@ -1,3 +1,11 @@
+Andy Lester has been developing software for decades, since "interface
+design" meant drawing arrows with asterisks to direct the user to
+check either the left or right floppy disk drive.  He works extensively
+in open source and is the creator of the ack code search tool and
+many useful Perl modules.  He also wrote "Land the Tech Job You
+Love", published by Pragmatic Bookshelf, and blogs about technology
+and work life.
+
 Andy Lester has been a software developer for over 25 years and has spoken
 at technical conferences large and small for a decade.  He's the
 creator of the code search tool
