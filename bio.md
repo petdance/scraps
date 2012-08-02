@@ -1,8 +1,8 @@
-Andy Lester has been developing software for decades, since "interface
-design" meant drawing arrows with asterisks to direct the user to
-check either the left or right floppy disk drive.  He works extensively
-in open source and is the creator of the ack code search tool and
-many useful Perl modules.  He also wrote "Land the Tech Job You
+Andy Lester has been developing business software for 25 years,
+back when "interface design" meant drawing arrows with asterisks
+to show the user which disk drive to put the floppy in.  He works
+extensively in open source and is the creator of the ack code search
+tool and many Perl modules.  He also wrote "Land the Tech Job You
 Love", published by Pragmatic Bookshelf, and blogs about technology
 and work life.
 
