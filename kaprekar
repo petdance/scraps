@@ -7,14 +7,29 @@ use 5.10.0;
 use warnings;
 use strict;
 
-my $n = shift || 1111;
+my %counts;
+my %nsteps;
+my %lasts;
+my %next_to_lasts;
 
-while ( $n =~ /^(\d)\1\1\1$/ ) {;
-    $n = sprintf( '%04d', rand() * 1000 );
+for ( 0..9999 ) {
+    my $n = sprintf( '%04d', $_ );
+    next if $n =~ /^(\d)\1\1\1$/;
+
+    my @steps = kap( $n );
+    say join ' ', @steps;
+
+    shift @steps; # Don't track the original number
+    ++$counts{$_} for @steps;
+    ++$nsteps{ scalar @steps };
+    ++$lasts{ @steps > 1 ? $steps[-2] : 'none' };
+    ++$next_to_lasts{ @steps > 2 ? $steps[-3] : 'none' };
 }
 
-my @steps = kap( $n );
-print "$_\n" for @steps;
+{use Data::Dumper; local $Data::Dumper::Sortkeys=1; print Dumper( \%counts)}
+{use Data::Dumper; local $Data::Dumper::Sortkeys=1; print Dumper( \%nsteps)}
+{use Data::Dumper; local $Data::Dumper::Sortkeys=1; print Dumper( \%lasts)}
+{use Data::Dumper; local $Data::Dumper::Sortkeys=1; print Dumper( \%next_to_lasts)}
 
 sub kap {
     my $n = shift;
