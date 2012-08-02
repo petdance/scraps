@@ -1,8 +1,8 @@
 # Who are you, and what do you do? (Try to keep this brief!)
 
 I'm Andy Lester and I'm a programmer and writer.  I work with open
-source all day, and by night I try to help people be happy in their
-jobs.
+source software all day, and by night I try to help people be happy
+in their jobs.
 I write a lot and give technical talks.
 
 I've written a lot of
