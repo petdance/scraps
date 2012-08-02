@@ -1,0 +1,22 @@
+#!/usr/bin/perl
+
+# http://plus.maths.org/content/mysterious-number-6174
+
+use 5.10.0;
+
+use warnings;
+use strict;
+
+my $n;
+do {
+    $n = sprintf( '%04d', rand() * 1000 );
+} while ( $n =~ /^(\d)\1\1\1$/ );
+
+say $n;
+do {
+    my @digits = split //, $n;
+    my $lo = join( '', sort @digits );
+    my $hi = join( '', reverse sort @digits );
+    $n = sprintf( '%04d', $hi - $lo );
+    say $n;
+} while ( $n != 6174 );
