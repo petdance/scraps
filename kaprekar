@@ -7,16 +7,26 @@ use 5.10.0;
 use warnings;
 use strict;
 
-my $n;
-do {
-    $n = sprintf( '%04d', rand() * 1000 );
-} while ( $n =~ /^(\d)\1\1\1$/ );
+my $n = shift || 1111;
 
-say $n;
-do {
-    my @digits = split //, $n;
-    my $lo = join( '', sort @digits );
-    my $hi = join( '', reverse sort @digits );
-    $n = sprintf( '%04d', $hi - $lo );
-    say $n;
-} while ( $n != 6174 );
+while ( $n =~ /^(\d)\1\1\1$/ ) {;
+    $n = sprintf( '%04d', rand() * 1000 );
+}
+
+my @steps = kap( $n );
+print "$_\n" for @steps;
+
+sub kap {
+    my $n = shift;
+    my @steps = ($n);
+
+    do {
+        my @digits = split //, $n;
+        my $lo = join( '', sort @digits );
+        my $hi = join( '', reverse sort @digits );
+        $n = sprintf( '%04d', $hi - $lo );
+        push( @steps, $n );
+    } while ( $n != 6174 );
+
+    return @steps;
+}
