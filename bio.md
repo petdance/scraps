@@ -35,10 +35,10 @@ and is the author of the book
 [Land the Tech Job You Love](http://petdance.com/book/)
 from Pragmatic Bookshelf.
 
-Andy Lester has been writing software professionally since Debbie
-Gibson was on the radio, and working in open source since Smashing
-Pumpkins got big. His projects range from ack, a source code search
-tool, to bobby-tables.com, a novice’s guide to avoiding SQL injection.
-Andy’s experiences hiring programmers led him to write Land the
-Tech Job You Love (Pragmatic Bookshelf, 2009), and he blogs about
-programming, careers and work life.
+Andy Lester has been writing software professionally since the
+mid-80s, and working in open source since the mid-90s. His projects
+range from ack, a source code search tool, to bobby-tables.com, a
+site to teach novices to avoid SQL injection. Andy’s experiences
+hiring programmers led him to write Land the Tech Job You Love
+(Pragmatic Bookshelf, 2009), and he blogs about programming, careers
+and work life.
