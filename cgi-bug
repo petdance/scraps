@@ -1,0 +1,9 @@
+#!/usr/bin/perl
+
+use CGI qw( :standard );
+
+print "Version=$CGI::VERSION\n";
+print li( 'I', 'like', 'CGI' ), "\n";
+print li( 'CGI', 'is', 'fun' ), "\n";
+print td( 'CGI', 'is', 'fun' ), "\n";
+print p( 'CGI', 'is', 'fun' ), "\n";
