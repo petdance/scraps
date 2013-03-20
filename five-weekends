@@ -1,0 +1,20 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+use feature 'say';
+
+use DateTime;
+
+my $year = 2011;
+say "Months with five full weekends, starting in $year";
+
+do {
+    for my $month ( 1..12 ) {
+        my $eom = DateTime->last_day_of_month( year => $year, month => $month );
+        if ( $eom->day == 31 && $eom->day_of_week == 7 ) {
+            say $eom->month_name, ' ', $year;
+        }
+    }
+} while ( $year++ );
