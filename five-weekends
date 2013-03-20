@@ -1,5 +1,8 @@
 #!/usr/bin/perl
 
+# Debunking the five weekends myth
+# http://www.snopes.com/inboxer/trivia/fivedays.asp
+
 use strict;
 use warnings;
 
