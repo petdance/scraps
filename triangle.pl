@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-use 5.010;
-$n=shift;
-for(1..$n){say'|',(' 'x($_-1)),'\\'}
-say('-'x($n+1))if$n;
+($n=shift)&&do{
+print'|',' 'x($_-1),"\\\n"for 1..$n++;
+print'-'x$n,$/;
+}
