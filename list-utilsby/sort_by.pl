@@ -1,5 +1,6 @@
 #!/usr/bin/perl
 
+use 5.010;
 use strict;
 use warnings;
 
@@ -7,13 +8,14 @@ use Benchmark ':all';
 use File::Slurp;
 use List::UtilsBy qw( sort_by );
 
-my $nusers = 10000;
-my @input = make_users( $nusers );
+my $niter = 100;
+my $nrecs = 10000;
 
-#my @sorted = sort_by { $_->{name} } @input;
-#{use Data::Dumper; local $Data::Dumper::Sortkeys=1; local $Data::Dumper::Trailingcomma=1; warn Dumper( \@sorted )}
+my @input = make_users( $nrecs );
 
-timethese( 100,
+say "Sorting arrays of $nrecs records $niter times.";
+
+timethese( $niter,
     {
         sort_lookup_old => sub { my @x = sort { $a->{name} cmp $b->{name} } @input },
         sort_lookup_new => sub { my @x = sort_by { $_->{name} } @input },
