@@ -24,11 +24,20 @@ timethese( $niter,
     }
 );
 
+my @sorted =
+    map  { $_->[0] }
+    sort { $a->[1] <=> $b->[1] }
+    map  { [$_, $_->name] }
+    @input;
+
+    {use Data::Dumper; local $Data::Dumper::Sortkeys=1; local $Data::Dumper::Trailingcomma=1; warn Dumper( \@sorted )}
+
 
 
 sub make_users {
     my $n = shift;
 
+    open( my $fh, '<', '/usr/share/dict/words' );
     my @words = File::Slurp::read_file( '/usr/share/dict/words' ) or die;
     chomp @words;
 
