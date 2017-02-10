@@ -31,12 +31,13 @@ How about getting the user with the highest salary?
 
     my $highest_paid;
     my $max_salary = 0;
-    for my $i ( @users ) {
-        if ( (my $val = $i->salary) > $max_salary ) {
-            $highest_paid = $i;
+    for my $user ( @users ) {
+        if ( (my $val = $user->salary) > $max_salary ) {
+            $highest_paid = $user;
             $max_salary = $val;
         }
     }
+    say $highest_paid->name, ' is the highest paid.';
 
 Or I can just do this:
 
