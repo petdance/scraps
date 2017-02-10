@@ -15,23 +15,18 @@ my @input = make_users( $nrecs );
 
 say "Sorting arrays of $nrecs records $niter times.";
 
-timethese( $niter,
-    {
-        sort_lookup_old => sub { my @x = sort { $a->{name} cmp $b->{name} } @input },
-        sort_lookup_new => sub { my @x = sort_by { $_->{name} } @input },
-        sort_method_old => sub { my @x = sort { $a->name cmp $b->name } @input },
-        sort_method_new => sub { my @x = sort_by { $_->name } @input },
-    }
-);
+my @x;
+timethese( $niter, {
+    # Key comes from a hash lookup.
+    lookup_raw_____ => sub { @x = sort { $a->{name} cmp $b->{name} } @input },
+    lookup_schwartz => sub { @x = sort_by { $_->{name} } @input },
+    lookup_utilsby_ => sub { @x = map { $_->[0] } sort { $a->[1] cmp $b->[1] } map { [$_, $_->{name}] } @input },
 
-my @sorted =
-    map  { $_->[0] }
-    sort { $a->[1] <=> $b->[1] }
-    map  { [$_, $_->name] }
-    @input;
-
-    {use Data::Dumper; local $Data::Dumper::Sortkeys=1; local $Data::Dumper::Trailingcomma=1; warn Dumper( \@sorted )}
-
+    # Key comes from a method call.
+    method_raw_____ => sub { @x = sort { $a->name cmp $b->name } @input },
+    method_schwartz => sub { @x = sort_by { $_->name } @input },
+    method_utilsby_ => sub { @x = map { $_->[0] } sort { $a->[1] cmp $b->[1] } map { [$_, $_->name] } @input },
+} );
 
 
 sub make_users {

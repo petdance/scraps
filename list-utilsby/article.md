@@ -41,6 +41,6 @@ Or you can just do this:
 
 # Performance
 
-In some cases, List::UtilsBy is faster, and sometimes slower.  For
-sorting, `sort_by` should be faster because it evaluates the key
-exactly once.
+In some cases, List::UtilsBy is faster, and sometimes slower.
+For sorting, `sort_by` should be faster because it evaluates the key
+exactly once.  In my benchmarking, it outperforms a Schwartzian transform.
