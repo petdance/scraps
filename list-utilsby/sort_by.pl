@@ -8,8 +8,8 @@ use Benchmark ':all';
 use File::Slurp;
 use List::UtilsBy qw( sort_by );
 
-my $niter = 100;
-my $nrecs = 10000;
+my $niter = 1000;
+my $nrecs = 5000;
 
 my @input = make_users( $nrecs );
 
@@ -19,13 +19,13 @@ my @x;
 timethese( $niter, {
     # Key comes from a hash lookup.
     lookup_raw_____ => sub { @x = sort { $a->{name} cmp $b->{name} } @input },
-    lookup_schwartz => sub { @x = sort_by { $_->{name} } @input },
-    lookup_utilsby_ => sub { @x = map { $_->[0] } sort { $a->[1] cmp $b->[1] } map { [$_, $_->{name}] } @input },
+    lookup_schwartz => sub { @x = map { $_->[0] } sort { $a->[1] cmp $b->[1] } map { [$_, $_->{name}] } @input },
+    lookup_utilsby_ => sub { @x = sort_by { $_->{name} } @input },
 
     # Key comes from a method call.
     method_raw_____ => sub { @x = sort { $a->name cmp $b->name } @input },
-    method_schwartz => sub { @x = sort_by { $_->name } @input },
-    method_utilsby_ => sub { @x = map { $_->[0] } sort { $a->[1] cmp $b->[1] } map { [$_, $_->name] } @input },
+    method_schwartz => sub { @x = map { $_->[0] } sort { $a->[1] cmp $b->[1] } map { [$_, $_->name] } @input },
+    method_utilsby_ => sub { @x = sort_by { $_->name } @input },
 } );
 
 
