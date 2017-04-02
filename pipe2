@@ -1,0 +1,36 @@
+#!/usr/bin/perl
+# pipe2 - bidirectional communication using socketpair
+#   "the best ones always go both ways"
+
+use feature 'say';
+use strict;
+use warnings;
+
+use IO::Handle;
+pipe(FINDER, COUNTER);
+COUNTER->autoflush(1);
+say 'PROGRAM IS STARTING';
+
+my $child_pid;
+if ($child_pid = fork()) {
+    close COUNTER;
+    while ( my $line = <FINDER> ) {
+        chomp $line;
+        say "Parent child_pid $$ just read this: '$line'";
+        for my $i ( 1..3 ) {
+            say "  Parent is doing work $i";
+        }
+    }
+    say 'Child is done talking to parent.';
+    close FINDER;
+    waitpid($child_pid, 0);
+} else {
+    die "cannot fork: $!" unless defined $child_pid;
+    close FINDER;
+    for my $i ( 1..5 ) {
+        print COUNTER "Child child_pid $$ is sending this: $i\n";
+        sleep 1;
+    }
+    close COUNTER;
+    exit(0);
+}

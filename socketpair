@@ -1,0 +1,39 @@
+#!/usr/bin/perl
+# pipe2 - bidirectional communication using socketpair
+#   "the best ones always go both ways"
+use feature 'say';
+use strict;
+use warnings;
+
+use Socket;
+use IO::Handle;  # thousands of lines just for autoflush :-(
+# We say AF_UNIX because although *_LOCAL is the
+# POSIX 1003.1g form of the constant, many machines
+# still don't have it.
+socketpair(CHILD, PARENT, AF_UNIX, SOCK_STREAM, PF_UNSPEC)
+                            ||  die "socketpair: $!";
+CHILD->autoflush(1);
+PARENT->autoflush(1);
+my $pid;
+if ($pid = fork()) {
+    close PARENT;
+    while ( my $line = <CHILD> ) {
+        chomp $line;
+        say "Parent Pid $$ just read this: '$line'";
+        for my $i ( 1..3 ) {
+            say "  Parent is doing work $i";
+        }
+    }
+    say 'Child is done talking to parent.';
+    close CHILD;
+    waitpid($pid, 0);
+} else {
+    die "cannot fork: $!" unless defined $pid;
+    close CHILD;
+    for my $i ( 1..10 ) {
+        print PARENT "Child Pid $$ is sending this: $i\n";
+        sleep 1;
+    }
+    close PARENT;
+    exit(0);
+}
