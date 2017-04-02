@@ -7,7 +7,6 @@ use strict;
 use File::Next;
 
 my $start = shift or die;
-my $total = 0;
 
 use IO::Handle;
 pipe(FINDER, COUNTER);
@@ -38,5 +37,6 @@ else {
     while ( my $file = $iter->() ) {
         say COUNTER $file;
     }
+    warn "############ Child is done looking #############\n";
     exit 0;
 }
