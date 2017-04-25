@@ -11,7 +11,7 @@
 
     ($door->color() eq '#ff0000') && $door->paint( '#000000' );
 
-    $ chmod 700 this;
+    $ chown hammer this && chmod g-rwx,o-rwx !$
 
     for (id body in everybody)
         body.something.hidden = (body != self && body != self.monkey)
