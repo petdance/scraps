@@ -10,7 +10,17 @@ defmodule Euler002 do
 #
 # Answer: 4613732
 
-  def foo do
+  def fibseries(upto) do
+    fibseries( [ 1, 1 ], upto )
+  end
+
+  defp fibseries( fib, upto ) do
+    new = Enum.at(fib,-1) + Enum.at(fib,-2)
+    if new < upto do
+      fibseries( fib ++ [new], upto )
+    else
+      fib
+    end
   end
 
 end
