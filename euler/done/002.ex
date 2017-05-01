@@ -11,11 +11,10 @@ defmodule Euler002 do
 # Answer: 4613732
 
   def foo( upto ) do
-    total =
-      fibseries( upto )
-      |> Enum.filter( fn(n) -> rem(n,2) == 0 end )
-      |> Enum.sum
-    IO.puts total
+    fibseries( upto )
+    |> Enum.filter( fn(n) -> rem(n,2) == 0 end )
+    |> Enum.sum
+    |> IO.puts
   end
 
   defp fibseries( upto ) do
