@@ -22,9 +22,10 @@ defmodule Euler002 do
   end
 
   defp fibseries( upto, fib ) do
-    new = Enum.at(fib,-1) + Enum.at(fib,-2)
+    [ n1, n2 | _ ] = fib
+    new = n1 + n2
     if new < upto do
-      fibseries( upto, fib ++ [new] )
+      fibseries( upto, [new | fib] )
     else
       fib
     end
