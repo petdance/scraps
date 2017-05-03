@@ -5,7 +5,7 @@ defmodule Euler003 do
 
   def largest_prime_factor( n ) do
     factors = prime_factors( n )
-    [largest|_] = factors
+    [ largest | _ ] = factors
 
     IO.write 'Prime factors are '
     IO.inspect factors
@@ -25,7 +25,7 @@ defmodule Euler003 do
     factor_down( [ div(n,test_factor), test_factor | factors], test_factor )
   end
 
-  defp factor_down( [n | factors], test_factor ) do
-    factor_down( [n | factors], test_factor+1 )
+  defp factor_down( state, test_factor ) do
+    factor_down( state, test_factor+1 )
   end
 end
