@@ -22,13 +22,13 @@ defmodule Euler003 do
     factors
   end
 
-  defp factor_down( [n | factors], potential_factor ) do
-    if rem(n,potential_factor) == 0 do
-      n = div(n,potential_factor)
-      factor_down( [n, potential_factor | factors], potential_factor )
-    else
-      factor_down( [n | factors], potential_factor+1 )
-    end
+  defp factor_down( [n | factors], test_factor ) when rem(n,test_factor) == 0 do
+    n = div(n,test_factor)
+    factor_down( [n, test_factor | factors], test_factor )
+  end
+
+  defp factor_down( [n | factors], test_factor ) do
+    factor_down( [n | factors], test_factor+1 )
   end
 
 end
