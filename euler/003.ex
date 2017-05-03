@@ -13,18 +13,17 @@ defmodule Euler003 do
   end
 
   defp factor_down( [n | factors], potential_factor ) do
+    IO.puts ''
     IO.puts 'into factor_down'
     n |> IO.inspect
     factors |> IO.inspect
     #IO.inspect potential_factor
 
-    if n == 1 do
-      [ n | factors ]
-    end
-
     if rem(n,potential_factor) == 0 do
-      factor = n/potential_factor
-      factor_down( [factor | factors], potential_factor )
+      n = div(n,potential_factor)
+      IO.puts 'Got a factor'
+      IO.inspect potential_factor 
+      factor_down( [n, potential_factor | factors], potential_factor )
     else
       factor_down( [n | factors], potential_factor+1 )
     end
