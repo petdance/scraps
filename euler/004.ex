@@ -3,7 +3,13 @@ defmodule Euler004 do
   # A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
   # Find the largest palindrome made from the product of two 3-digit numbers.
 
-  def palindromic?( n ) do
+  def foo() do
+    palindromes = for x <- 1..999, y <- 1..999, is_palindromic?( x * y ), do: x*y
+    palindromes |> Enum.max
+  end
+
+
+  def is_palindromic?( n ) do
     digits = digits( n )
     digits == Enum.reverse( digits )
   end

@@ -54,7 +54,7 @@ defmodule Sum do
     [from]
   end
 
-  defp _span( from, to ) do
+  defp _span( from, to ) when from < to do
     [from | _span( from+1, to ) ]
   end
 
