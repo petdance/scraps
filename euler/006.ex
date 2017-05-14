@@ -14,10 +14,16 @@ defmodule Euler006 do
     square_of_sums( n ) - sum_of_squares( n )
   end
 
-  def square_of_sums( n ) do
+  def sum_of_squares( n ) do
+    1..n
+      |> Enum.map( &square/1 )
+      |> Enum.sum
   end
 
   def square_of_sums( n ) do
+    square( 1..n |> Enum.sum )
   end
+
+  defp square(x), do: x * x
 
 end
