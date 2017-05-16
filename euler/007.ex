@@ -5,4 +5,11 @@ defmodule Euler007 do
   #
   # What is the 10,001st prime number?
 
+  def nth_prime( n ) do
+  end
+
+  def is_prime?( n ) do
+    Stream.iterate(2, &(&1 + 1))
+  end
+
 end
