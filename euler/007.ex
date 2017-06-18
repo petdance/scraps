@@ -8,6 +8,10 @@ defmodule Euler007 do
   def nth_prime( n ) do
   end
 
+  def is_prime?( 2 ) do
+    true
+  end
+
   def is_prime?( n ) do
     Stream.iterate(2, &(&1 + 1))
   end
