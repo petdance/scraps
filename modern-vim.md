@@ -40,10 +40,14 @@ It came back with:
 I had just made a fresh install of vim8 and root owns that tags file.
 I `chmod`ded it and all was well.
 
-I didn't test this tip under Neovim because the pathing is all
-different.
+I didn't test this tip under Neovim because the pathing is all different.
 
-You said that you created a package called "bundle", but I think that
+You said that you created a package called `bundle`, but I think that
 will be confusing to people (like me) who already know "bundle" as a
 directory name to put bundles in.  As a vim 7.4+pathogen user, all my
 packages are in `~/.vim/bundle`.
+
+I think you need to explicitly explain what a package is.  Unless I
+look at `:help packages`, I don't know that a package is a directory
+that groups plugins.  Is there any more to a package than just being
+a directory?
