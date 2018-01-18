@@ -4,6 +4,8 @@ use strict;
 use warnings;
 use 5.010;
 
+use Benchmark;
+
 sub every(\%) {
     my $hash = shift;
     my $id   = "$hash";
@@ -26,9 +28,18 @@ my %hash = ( foo => 1, bar => 2112, bat => 90125, this => 'bongo', that => 'bang
 my $n = 0;
 while ( my ($k,$v) = every %hash ) {
     say "$k -> $v";
-    $hash{$n++} = 'dummy';
 }
 
+
+%hash = map { ( $_ => $_ ) } ( 1 .. 10000 );
+
+
+timethese( 1000, {
+    each__ => sub { while ( my ($k,$v) = each %hash ) {} },
+    every_ => sub { while ( my ($k,$v) = every %hash ) {} },
+} );
+
+__END__
 say 'done';
 say '';
 say 'New hash';
