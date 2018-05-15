@@ -20,17 +20,13 @@ say "Bogosorted $size elements in $ntries tries.";
 exit 0;
 
 sub sorted {
-    my @array = @_;
+    return 1 if @_ < 1;
 
-    return 1 if @array < 2;
-
-    my $least = shift @array;
-    while ( my $next = shift @array ) {
+    my $least = shift;
+    while ( my $next = shift ) {
         return 0 if $next < $least;
         $least = $next;
     }
 
-
-    say "sorted: @_";
     return 1;
 }
