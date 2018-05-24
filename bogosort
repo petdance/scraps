@@ -1,0 +1,32 @@
+#!/bin/env perl
+
+use strict;
+use warnings;
+use 5.010;
+use List::Util qw( shuffle );
+
+my $size = shift || 2;
+
+my @array = ( 1 .. $size );
+
+my $ntries = 0;
+do {
+    ++$ntries;
+    @array = shuffle( @array );
+} while !sorted(@array);
+
+say "Bogosorted $size elements in $ntries tries.";
+
+exit 0;
+
+sub sorted {
+    return 1 if @_ < 1;
+
+    my $least = shift;
+    while ( my $next = shift ) {
+        return 0 if $next < $least;
+        $least = $next;
+    }
+
+    return 1;
+}
