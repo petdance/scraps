@@ -1,11 +1,8 @@
 # Headless Chrome Automated Testing
 
-# QUESTIONS
-
-* Will it do HTML validation?
-
-
 * Derek Binkley
+
+* https://speakerdeck.com/derekb/browser-automation-testing-with-headless-chrome-that-conference
 
 * Headless Chrome introduced June 2017
 * Full browser, but no GUI
