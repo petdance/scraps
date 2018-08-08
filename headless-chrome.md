@@ -1,5 +1,10 @@
 # Headless Chrome Automated Testing
 
+# QUESTIONS
+
+* Will it do HTML validation?
+
+
 * Derek Binkley
 
 * Headless Chrome introduced June 2017
@@ -15,6 +20,7 @@ when Headless Chrome was announced.
 * Mocha - Runs Test
 * Chai - Provides assertions
 
+* Can't test video with Headless Chrome.  Images are fine.
 
     // Setup
     before ( async function() {
@@ -27,6 +33,40 @@ when Headless Chrome was announced.
     // The assertion
     it ('should have the correct page title', async function () {
         expect( await page.title()).to.eql('Hello Campers');
-    });
+    } );
 
-* Can't test video with Headless Chrome.  Images are fine.
+# click()
+
+    // Uses plain ol' DOM functions
+    it ( 'dialog box should open on button click', async function () {
+        await page.click( '#modelbutton' );
+        const className = await page.evaluate( () =>
+                document.querySelector('body').className);
+        expect(className).to.eql('modal-open');
+    } );
+
+# screenshot()
+
+    await page.screenshot({ path: 'screen.png', fullpage: true });
+
+    Can tie this in to this.currentTest.state to see if it's passed or failed and save the screen.
+
+# pdf()
+
+    page.pdf( {path: 'page.pdf' } );
+
+
+    const noItems = await page.evaluate( () =>
+            document.querySelectorAll('li.resultItem').length
+            ) );
+
+
+Can test CSS.  `getComputedStyle`
+
+    expect(colorOfButton).to.eql('rgb(108,117,125)');
+
+    page.setViewport( {width:300, height: 200, deviceScaleFactor: 1} );
+
+* device descriptors
+
+    page.emulate( devices['iPhone X'] );
