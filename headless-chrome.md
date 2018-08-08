@@ -49,7 +49,7 @@ when Headless Chrome was announced.
 
     await page.screenshot({ path: 'screen.png', fullpage: true });
 
-    Can tie this in to this.currentTest.state to see if it's passed or failed and save the screen.
+Can tie this in to `this.currentTest.state` to see if it's passed or failed and save the screen.
 
 # pdf()
 
@@ -57,16 +57,31 @@ when Headless Chrome was announced.
 
 
     const noItems = await page.evaluate( () =>
-            document.querySelectorAll('li.resultItem').length
-            ) );
+        document.querySelectorAll('li.resultItem').length
+    ) );
 
 
-Can test CSS.  `getComputedStyle`
+# Can test CSS.
+
+    getComputedStyle
 
     expect(colorOfButton).to.eql('rgb(108,117,125)');
 
     page.setViewport( {width:300, height: 200, deviceScaleFactor: 1} );
 
-* device descriptors
+# device descriptors
 
     page.emulate( devices['iPhone X'] );
+
+# waitForNavigation()
+
+    await page.click('#login');
+    await page.waitForNavigation( {waitUtil:'load'} );
+
+# Interactions
+
+    page.focus('#myselector');
+    page.mouse.move(x,y,[options]);
+    page.mouse.click(x,y,[options]);
+    page.keyboard.press('Tab');
+    page.touchscren.tap(x,y);
