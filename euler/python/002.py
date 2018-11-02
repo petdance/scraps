@@ -16,11 +16,11 @@ not exceed four million, find the sum of the even-valued terms.
 """
 
 sum = 0
-fibs = [1,1]
+fibs = [1, 1]
 while fibs[-1] < 4000000:
     n = fibs[-2] + fibs[-1]
-    fibs.append( n )
-    if (n%2 == 0):
+    fibs.append(n)
+    if (n % 2 == 0):
         sum += n
 
 print sum

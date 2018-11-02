@@ -4,12 +4,14 @@
 
 from math import sqrt
 
-def factors_of( n ):
-    for i in range( 2, int(sqrt(n))+1 ):
-        if ( n % i == 0 ):
-            return [ i ] + factors_of(n/i)
-    return [ n ]
 
-factors = factors_of( 600851475143 )
+def factors_of(n):
+    for i in range(2, int(sqrt(n))+1):
+        if (n % i == 0):
+            return [i] + factors_of(n/i)
+    return [n]
+
+
+factors = factors_of(600851475143)
 print factors
 print max(factors)

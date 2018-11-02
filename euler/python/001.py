@@ -11,4 +11,4 @@ Answer: 233168
 
 """
 
-print sum ( [ i for i in range(1000) if i%5 == 0 or i%3 == 0 ] )
+print sum([i for i in range(1000) if i % 5 == 0 or i % 3 == 0])
