@@ -69,4 +69,4 @@ the awareness of the person who has decided to do this anyway. All that is
 added by helpful criticism in such a case is the information that others
 are standing by, expecting the worst.
 
--- Judith Martin, Miss Manners' Guide For The Turn-Of-The-Millenium 
+-- Judith Martin, Miss Manners' Guide For The Turn-Of-The-Millennium
