@@ -4,16 +4,18 @@ use warnings;
 use strict;
 use 5.010;
 
+use List::Util qw( sum );
+
 
 my $score = 0;
 
-$score = run( $score, 200, 400, 600, 800, 1000 ) for 1..3;
-$score = run( $score,      400, 600, 800, 1000 ) for 4..5;
-$score = dd( $score ) for 1..2;
+$score = run( $score, 200, 400, 600, 800, 1000 ) for 1..5;
+$score = run( $score,      400, 600, 800, 1000 ) for 6..6;
+$score = dd( $score );
 say "End of J, score = $score";
 
-$score = run( $score, 400, 800, 1200, 1600, 2000 ) for 1..3;
-$score = run( $score,      800, 1200, 1600, 2000 ) for 4..5;
+$score = run( $score, 400, 800, 1200, 1600, 2000 ) for 1..4;
+$score = run( $score,      800, 1200, 1600, 2000 ) for 5..6;
 $score = dd( $score ) for 1..2;
 say "End of DJ, score = $score";
 
@@ -22,13 +24,8 @@ say "End of FJ, score = $score";
 
 sub run {
     my $score = shift;
-    my @clues = @_;
 
-    for my $clue ( @clues ) {
-        $score += $clue;
-    }
-
-    return $score;
+    return $score + sum ( @_ );
 }
 
 sub dd {
