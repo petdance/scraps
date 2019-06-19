@@ -1,4 +1,4 @@
-Captured from [https://web.archive.org/web/20110213093451/http://xoa.petdance.com/Coding_horrors](archive of the original).  Thanks, Wayback Machine!
+Captured from [archive of the original](https://web.archive.org/web/20110213093451/http://xoa.petdance.com/Coding_horrors).  Thanks, Wayback Machine!
 
 ---
 
