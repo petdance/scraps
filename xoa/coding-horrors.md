@@ -28,7 +28,7 @@ Don't you hate it when you get a message like "You have 1 item(s) in your cart"?
 
 ---
 
-Mattoon is a city in downstate Illinois, and one of our customers is there. Never mind that each special customer gets their own variable flag, like $mattoon, $poughkeepsie, etc. Never mind that $mattoon is a global. They're just always out of luck here:
+Mattoon is a city in downstate Illinois, and one of our customers is there. Never mind that each special customer gets their own variable flag, like `$mattoon`, `$poughkeepsie`, etc. Never mind that `$mattoon` is a global. They're just always out of luck here:
 
     $mattoon=0;
     if(strtolower($state)=="il" && strtolower(substr($cust_name,0,7)) == "mattoon")
