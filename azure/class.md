@@ -5,8 +5,8 @@ Alex Ivanov
 aivanov@microsoft.com
 
 aka.ms/203Teams
-aka.ms/300Slides
-aka.ms/300Labs
+aka.ms/300slides
+aka.ms/300labs
 
 Azure Monitor Keeps logs for only 30 days You can query the logs in a
 SQL-like language.
@@ -21,3 +21,5 @@ without Tomcat doing the logging.
 Network Watcher has to be set up on a per-datacenter basis.
 
 EA Subscription = Enterprise Agreement
+
+RBAC = Role-based access control
