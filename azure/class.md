@@ -23,3 +23,6 @@ Network Watcher has to be set up on a per-datacenter basis.
 EA Subscription = Enterprise Agreement
 
 RBAC = Role-based access control
+
+We will probably want to look at the app firewall, which will route based
+on paths.  Also blocks known bad IP/FQDN.
