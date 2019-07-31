@@ -26,3 +26,6 @@ RBAC = Role-based access control
 
 We will probably want to look at the app firewall, which will route based
 on paths.  Also blocks known bad IP/FQDN.
+
+Immutable infrastructure -- Don't modify infrastructure after it's deployed
+to production.
