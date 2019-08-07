@@ -1,5 +1,7 @@
 # Cloud Scale Machine Learning: Seth Juarez, Cassie Breviu
 
+https://github.com/cloudscaleml/workshop
+
 * Supervised learning
 
     * How much / how many? (regression)
@@ -13,3 +15,10 @@
     * Is this weird? (anomaly detection)
 
     * Which option should I choose? (recommendation)
+
+A model is just a function.
+
+Train: 80% of data
+Test: 20% of data
+
+Identifying numbers is the "hello, world" of ML.
