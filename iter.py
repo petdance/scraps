@@ -1,22 +1,22 @@
+import sys
 
-
-
-class Ints:
-    def __init__(self, start, end):
-        self.end = end
-        self.n = start
+class LineIter:
+    def __init__(self, filename):
+        self.f = open(filename, 'rt')
 
     def __iter__(self):
         return self
 
     def __next__(self):
-        self.n += 1
-        if self.n > self.end:
-            raise StopIteration()
+        line = self.f.readline()
+        if line == '':
+            raise StopIteration
 
-        return self.n
+        line = line.upper()
 
+        return line
 
 if __name__ == '__main__':
-    for i in Ints(5, 10):
-        print(i)
+    filename = sys.argv[1]
+    for line in LineIter(filename):
+        print(line, end='')
