@@ -16,7 +16,6 @@ not exceed four million, find the sum of the even-valued terms.
 struct Fibonacci {
     curr: u32,
     next: u32,
-    max: u32,
 }
 
 impl Iterator for Fibonacci {
@@ -34,24 +33,20 @@ impl Iterator for Fibonacci {
         self.next = new_next;
 
         // Since there's no endpoint, the `Iterator` will never return `None`.
-        if self.curr > self.max {
-            return None;
-        }
-        else {
-            return Some(self.curr);
-        }
+        return Some(self.curr);
     }
 }
 
 fn fibonacci() -> Fibonacci {
-    Fibonacci { curr: 0, next: 1, max: 4_000_000 }
+    Fibonacci { curr: 0, next: 1 }
 }
 
 fn main() {
     let seq = fibonacci();
 
     let sum: u32 = seq
-        .filter(|x| x % 2 == 0 )
+        .take_while(|x| x <= &4_000_000)
+        .filter(|x| x % 2 == 0)
         .sum();
 
     println!("{:?}", sum);
