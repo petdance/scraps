@@ -23,4 +23,4 @@ while fibs[-1] < 4000000:
     if (n % 2 == 0):
         sum += n
 
-print sum
+print(sum)
