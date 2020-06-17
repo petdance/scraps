@@ -12,7 +12,7 @@ numbers.
 
 
 fn is_palindromic(n: u32) -> bool {
-    let s: String = n.to_string();
+    let s = n.to_string();
 
     let rev: String = s.chars().rev().collect();
 
@@ -23,8 +23,8 @@ fn is_palindromic(n: u32) -> bool {
 fn main() {
     let mut max: u32 = 0;
 
-    for x in 1..1000 {
-        for y in 1..1000 {
+    for x in 100..=999 {
+        for y in 100..=999 {
             let n = x * y;
             if is_palindromic(n) {
                 if n > max {
