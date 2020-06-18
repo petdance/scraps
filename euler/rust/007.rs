@@ -18,8 +18,36 @@ fn is_prime(n: u64) -> bool {
     return true;
 }
 
-fn main() {
-    let n = 430;
+struct Primes {
+    curr: u64,
+}
 
-    println!("is_prime({}) = {}", n, is_prime(n));
+impl Primes {
+    fn new() -> Primes {
+        Primes { curr: 1 }
+    }
+}
+
+impl Iterator for Primes {
+    type Item = u64;
+
+    fn next(&mut self) -> Option<Self::Item> {
+        loop {
+            self.curr += 1;
+            if is_prime(self.curr) {
+                return Some(self.curr);
+            }
+        }
+    }
+}
+
+fn main() {
+    let mut primes = Primes::new();
+
+    for i in 1..=10001 {
+        match primes.next() {
+            Some(n) => println!("#{} = {}", i, n),
+            None => break,
+        };
+    }
 }
