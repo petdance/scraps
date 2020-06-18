@@ -11,7 +11,7 @@ all of the numbers from 1 to 20?
 */
 
 
-fn divisible_up_to(n: u32, max_divisor: u32) -> bool {
+fn divisible_up_to(n: u64, max_divisor: u64) -> bool {
     for i in 2..=max_divisor {
         if n % i > 0 {
             return false;
@@ -20,17 +20,23 @@ fn divisible_up_to(n: u32, max_divisor: u32) -> bool {
     return true;
 }
 
-fn main() {
-    let max_divisor = 20;
-    let step = 2520;  /* We know the number has to be divisible by 210: divisible by 7, 8, 9 and 10 */
+fn smallest_multiple_of(max_divisor: u64, step: u64) -> u64 {
     let mut maybe = step;
 
     loop {
         if divisible_up_to(maybe, max_divisor) {
-            println!("{} is divisible up to {}", maybe, max_divisor);
-            break;
+            return maybe;
         }
         maybe = maybe + step;  /* No point in checking the odd numbers */
+    }
+}
+
+fn main() {
+    let mut step = 1;
+    for max_divisor in 1..=46 {
+        let smo = smallest_multiple_of(max_divisor, step);
+        println!("smallest multiple of 1..{} is {}", max_divisor, smo);
+        step = smo;
     }
 }
 
