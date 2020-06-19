@@ -6,21 +6,19 @@
 
 use std::vec;
 
-
 fn factors_of(n: u64) -> Vec<u64> {
     let int_sqrt = (n as f64).sqrt() as u64;
 
     if n < 2 {
         return vec![];
     }
-    for i in 2 .. int_sqrt+1 {
+    for i in 2..int_sqrt + 1 {
         if n % i == 0 {
-            return [vec![i], factors_of(n/i)].concat();
+            return [vec![i], factors_of(n / i)].concat();
         }
     }
     return vec![n];
 }
-
 
 fn main() {
     let factors = factors_of(600851475143);
@@ -28,10 +26,9 @@ fn main() {
     println!("{:?}", factors);
     match factors.iter().max() {
         Some(n) => println!("Result: {}", n),
-        None    => println!("Couldn't find max"),
+        None => println!("Couldn't find max"),
     }
 }
-
 
 /*
 from math import sqrt
