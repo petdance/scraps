@@ -10,7 +10,6 @@ all of the numbers from 1 to 20?
 
 */
 
-
 fn divisible_up_to(n: u64, max_divisor: u64) -> bool {
     for i in 2..=max_divisor {
         if n % i > 0 {
@@ -27,7 +26,7 @@ fn smallest_multiple_of(max_divisor: u64, step: u64) -> u64 {
         if divisible_up_to(maybe, max_divisor) {
             return maybe;
         }
-        maybe = maybe + step;  /* No point in checking the odd numbers */
+        maybe = maybe + step; /* No point in checking the odd numbers */
     }
 }
 
@@ -39,7 +38,6 @@ fn main() {
         step = smo;
     }
 }
-
 
 /*
 def divisible_up_to( n, top_divisor )

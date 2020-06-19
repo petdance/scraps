@@ -10,7 +10,6 @@ numbers.
 
 */
 
-
 fn is_palindromic(n: u32) -> bool {
     let s = n.to_string();
 
@@ -18,7 +17,6 @@ fn is_palindromic(n: u32) -> bool {
 
     return s == rev;
 }
-
 
 fn main() {
     let mut max: u32 = 0;
