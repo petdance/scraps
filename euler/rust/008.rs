@@ -29,6 +29,8 @@ Find the thirteen adjacent digits in the 1000-digit number that have the greates
 
 */
 
+// Implementation taken from https://github.com/gifnksm/ProjectEulerRust/blob/master/src/bin/p008.rs
+
 
 const INPUT: &'static str = r"
 73167176531330624919225119674426574742355349194934
@@ -55,20 +57,35 @@ const INPUT: &'static str = r"
 
 
 fn main() {
-
     let digits = get_digits();
 
-    println!("{:?}", digits);
+
+    let seqlen = 4;
+
+    let n = largest_digit_product(&digits, 4);
+
+    println!("{}", n);
+
+    let n = largest_digit_product(&digits, 13);
+
+    println!("{}", n);
 }
 
 
+fn largest_digit_product(v: &Vec<usize>, len: usize) -> usize {
+    return v
+        .windows(len)
+        .map(|win| win.iter().fold(1usize, |p, &n| p * n))
+        .max()
+        .unwrap();
+}
 
-// Stole the digit vector extraction from https://github.com/gifnksm/ProjectEulerRust/blob/master/src/bin/p008.rs
-fn get_digits() -> Vec<u8> {
+
+fn get_digits() -> Vec<usize> {
     return INPUT
         .chars()
         .filter_map(|c| c.to_digit(10))
-        .map(|n| n as u8)
+        .map(|n| n as usize)
         .collect::<Vec<_>>()
     ;
 }
