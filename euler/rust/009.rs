@@ -17,14 +17,19 @@ Find the product abc.
 
 
 fn main() {
-
-    let x = is_triplet(3,4,5);
-
-    println!("{}", x);
-
-    let y = is_triplet(3,4,6);
-
-    println!("{}", y);
+    for c in 3..=1000 {
+        for b in 2..=c-1 {
+            for a in 1..=b-1 {
+                if is_triplet(a,b,c) {
+                    println!("{} {} {}", a, b, c);
+                    if a+b+c == 1000 {
+                        println!("DING! {}", a*b*c);
+                        return;
+                    }
+                }
+            }
+        }
+    }
 }
 
 
