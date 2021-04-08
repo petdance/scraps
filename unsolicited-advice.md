@@ -35,7 +35,7 @@ go on to explain in detail how you can do things the way they do them. In
 other words, the right way.
 
 Miss Manners would like gently to propose that everyone just cut out all
-this helpfulness right now. She suggest this first as a matter of manners.
+this helpfulness right now. She suggests this first as a matter of manners.
 It is rude to call people's attention to their shortcomings, no matter how
 much you have their welfare at heart. It is rude to assume that anyone
 other than minors in your custody is less capable than you are of making
