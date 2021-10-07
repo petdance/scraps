@@ -2,6 +2,7 @@
 
 use strict;
 use warnings;
+use 5.010;
 use Benchmark 'cmpthese';
 use feature 'signatures';
 no warnings 'experimental::signatures';
@@ -22,6 +23,7 @@ sub no_check_assign {
     my ($var) = @_;
 }
 
+say "Perl $]";
 cmpthese(-5, {
     native_assignment => sub { native_assignment(1) },
     native_signature  => sub { native_signature(1) },
