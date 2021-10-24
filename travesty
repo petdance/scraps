@@ -1,6 +1,0 @@
-#!/usr/local/bin/perl -w
-
-use strict;
-use Games::Dissociate;
-
-dissociate_filter;
