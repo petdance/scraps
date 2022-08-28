@@ -42,22 +42,20 @@ def getwords(n):
         if n % 10 == 0:
             return words[n]
 
-        return getwords(n//10*10) + "-" + getwords(n%10)
+        return getwords(n // 10 * 10) + "-" + getwords(n % 10)
 
-    hundreds = n//100
-    s = getwords(hundreds) + ' hundred'
+    hundreds = n // 100
+    s = getwords(hundreds) + " hundred"
 
     remainder = n % 100
     if remainder > 0:
-        s = s + ' and ' + getwords(remainder)
+        s = s + " and " + getwords(remainder)
 
     return s
 
-print(10, getwords(10))
-print(19, getwords(19))
-print(42, getwords(42))
-print(242, getwords(242))
-print(319, getwords(319))
-print(500, getwords(500))
-print(999, getwords(999))
-print(1000, getwords(1000))
+def lettercount(s):
+    return len([i for i in s if i >= 'a' and i <= 'z'])
+
+words = [getwords(i) for i in range(1,1001)]
+counts = [lettercount(i) for i in words]
+print(sum(counts))
