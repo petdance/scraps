@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+import string
+
 
 def getwords(n):
     words = {
@@ -53,9 +55,9 @@ def getwords(n):
 
     return s
 
-def lettercount(s):
-    return len([i for i in s if i >= 'a' and i <= 'z'])
 
-words = [getwords(i) for i in range(1,1001)]
-counts = [lettercount(i) for i in words]
-print(sum(counts))
+def lettercount(s):
+    return len([c for c in s if c in string.ascii_lowercase])
+
+
+print(sum([lettercount(getwords(i)) for i in range(1, 1001)]))
