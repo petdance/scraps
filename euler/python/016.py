@@ -4,5 +4,5 @@
 
 n = pow(2, 1000)
 s = "%s" % n
-digits = [ord(i) - ord('0') for i in list(s)]
+digits = [ord(i) - ord("0") for i in list(s)]
 print(sum(digits))

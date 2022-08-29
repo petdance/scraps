@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 
 
-SMALL_TRIANGLE = '''
+SMALL_TRIANGLE = """
 3
 7 4
 2 4 6
 8 5 9 3
-'''
+"""
 
 TRIANGLE = """
 75
@@ -26,9 +26,11 @@ TRIANGLE = """
 04 62 98 27 23 09 70 98 73 93 38 53 60 04 23
 """
 
+
 def get_rows(triangle):
     """Breaks the triangle into an array of arrays of numbers"""
-    return [list(map(int,s.split(' '))) for s in triangle.splitlines() if s != ""]
+    return [list(map(int, s.split(" "))) for s in triangle.splitlines() if s != ""]
+
 
 def best_path_starting_at(rows, row, col):
     nextrow = row + 1
@@ -36,7 +38,7 @@ def best_path_starting_at(rows, row, col):
         return [rows[row][col]]
 
     left = best_path_starting_at(rows, nextrow, col)
-    right = best_path_starting_at(rows, nextrow, col+1)
+    right = best_path_starting_at(rows, nextrow, col + 1)
 
     if sum(left) > sum(right):
         best = left

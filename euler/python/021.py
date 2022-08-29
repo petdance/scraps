@@ -16,11 +16,11 @@ def divisors(n):
 
 
 d = dict()
-for i in range(1,10000):
+for i in range(1, 10000):
     d[i] = sum(divisors(i))
 
 amicable = []
-for i in range(1,10000):
+for i in range(1, 10000):
     s = d[i]
     if (s in d) and (d[s] == i) and (s != i):
         # Only add one, because its partner will come along soon.
