@@ -15,14 +15,16 @@ def divisors(n):
     return divisors
 
 
-def d(n):
-    return sum(divisors(n))
+d = dict()
+for i in range(1,10000):
+    d[i] = sum(divisors(i))
 
+amicable = []
+for i in range(1,10000):
+    s = d[i]
+    if (s in d) and (d[s] == i) and (s != i):
+        # Only add one, because its partner will come along soon.
+        amicable.append(i)
 
-print(divisors(73))
-print(divisors(63))
-print(divisors(64))
-
-
-print(d(220))
-print(d(284))
+print(amicable)
+print(sum(amicable))
