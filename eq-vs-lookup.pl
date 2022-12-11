@@ -27,6 +27,16 @@ cmpthese(100000, {
             $namespace = $element if exists $sections{$element};
         }
     },
+    regex_lookup1 => sub {
+        foreach my $element (@elements) {
+            $namespace = $element if $element =~ /^(?:somestring3|somestring4)$/;
+        }
+    },
+    regex_lookup2 => sub {
+        foreach my $element (@elements) {
+            $namespace = $element if $element =~ /^somestring[34]$/;
+        }
+    },
     string_cmp => sub {
         foreach my $element (@elements) {
             $namespace = $element if (
