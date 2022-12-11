@@ -1,11 +1,10 @@
+# From https://stackoverflow.com/questions/1423782/is-a-string-comparison-or-a-hash-lookup-faster-in-perl
 use 5.010;
 use strict;
 use warnings;
 use Benchmark qw'cmpthese';
 
 my %sections = (
-    somestring1 => 1,
-    somestring2 => 1,
     somestring3 => 1,
     somestring4 => 1
 );
