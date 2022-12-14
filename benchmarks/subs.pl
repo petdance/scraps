@@ -28,4 +28,5 @@ sub runit {
     $_[0]->();
 }
 
-{use Data::Dumper; local $Data::Dumper::Sortkeys=1; warn Dumper( \%totals)}
+say "All counts in the hash should be $COUNT";
+{use Data::Dumper; local $Data::Dumper::Sortkeys=1; say Dumper( \%totals)}
