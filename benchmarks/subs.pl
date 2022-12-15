@@ -15,13 +15,13 @@ cmpthese( $COUNT, {
     inline => sub {
         runit( sub { ++$totals{inline} } );
     },
-    my_sub => sub {
-        my $fn = sub { ++$totals{my_sub} };
-        runit($fn);
-    },
     state_sub => sub {
         state $fn = sub { ++$totals{state_sub} };
         runit($fn);
+    },
+    cached => sub {
+        state $cache = {};
+        runit( $cache->{arbitrary_key} //= sub { ++$totals{cached} } );
     },
 } );
 
@@ -31,3 +31,6 @@ sub runit {
 
 say "All counts in the hash should be $COUNT";
 {use Data::Dumper; local $Data::Dumper::Sortkeys=1; say Dumper(\%totals)}
+for ( values %totals ) {
+    die unless $_ == $COUNT;
+}
