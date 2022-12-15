@@ -1,0 +1,99 @@
+#!/var/perl/bin/perl
+
+use 5.010;
+use strict;
+use warnings;
+use experimental 'signatures';
+
+use Carp::Assert::More;
+use Benchmark ':all';
+use HTML::Entities;
+use Template;
+
+my $COUNT = 100_000;
+
+
+my $tt_slow = Template->new(
+    FILTERS => {
+        encoded_max_width => [ \&_encoded_max_width, 1 ],
+    },
+);
+my $tt_fast = Template->new(
+    FILTERS => {
+        encoded_max_width => [ \&_fast_encoded_max_width, 1 ],
+    },
+);
+
+my $template = 'thing = "[% longstring | encoded_max_width(20) %]" longer = "[% longstring | encoded_max_width(100) %]"';
+my $vars = {
+    longstring => 'abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz',
+};
+
+
+# Verify we get proper results.
+for my $tt ( $tt_slow, $tt_fast ) {
+    my $output;
+    $tt->process( \$template, $vars, \$output ) or die $Template::ERROR;
+    assert_is( $output, 'thing = "abcdefghijklmnopqrst&hellip;" longer = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"' );
+}
+
+cmpthese( $COUNT,
+    {
+        slow => sub {
+            my $output;
+            $tt_slow->process( \$template, $vars, \$output ) or die $Template::ERROR;
+        },
+        fast => sub {
+            my $output;
+            $tt_fast->process( \$template, $vars, \$output ) or die $Template::ERROR;
+        },
+    }
+);
+
+
+exit 0;
+
+
+# Encode the string, but first truncate it to the given length.
+# If the string is truncated, a HTML ellipsis is appended.
+sub _encoded_max_width {
+    my $tt_context = shift; ## no critic ( ProhibitUnusedVarsStricter )
+    my $width      = shift;
+
+    return sub {
+        my $str = shift;
+
+        my $trunc = ($width > 0) && (length($str) > $width);
+        if ( $trunc ) {
+            $str = substr( $str, 0, $width );
+        }
+        $str = HTML::Entities::encode_entities( $str );
+        if ( $trunc ) {
+            $str .= '&hellip;';
+        }
+
+        return $str;
+    };
+}
+
+
+sub _fast_encoded_max_width {
+    my $tt_context = shift; ## no critic ( ProhibitUnusedVarsStricter )
+    my $width      = shift;
+
+    state $subs = {};
+    return $subs->{$width} //= sub {
+        my $str = shift;
+
+        my $trunc = ($width > 0) && (length($str) > $width);
+        if ( $trunc ) {
+            $str = substr( $str, 0, $width );
+        }
+        $str = HTML::Entities::encode_entities( $str );
+        if ( $trunc ) {
+            $str .= '&hellip;';
+        }
+
+        return $str;
+    };
+}
