@@ -6,8 +6,9 @@ use warnings;
 
 use Benchmark ':all';
 
-
 my $COUNT = 10_000_000;
+
+say "$COUNT iterations under $^V";
 
 my %totals;
 cmpthese( $COUNT, {
