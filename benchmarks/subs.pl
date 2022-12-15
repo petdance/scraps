@@ -12,6 +12,9 @@ say "$COUNT iterations under $^V";
 
 my %totals;
 cmpthese( $COUNT, {
+    inline => sub {
+        runit( sub { ++$totals{inline} } );
+    },
     my_sub => sub {
         my $fn = sub { ++$totals{my_sub} };
         runit($fn);
@@ -20,9 +23,6 @@ cmpthese( $COUNT, {
         state $fn = sub { ++$totals{state_sub} };
         runit($fn);
     },
-    inline => sub {
-        runit( sub { ++$totals{inline} } );
-    },
 } );
 
 sub runit {
@@ -30,4 +30,4 @@ sub runit {
 }
 
 say "All counts in the hash should be $COUNT";
-{use Data::Dumper; local $Data::Dumper::Sortkeys=1; say Dumper( \%totals)}
+{use Data::Dumper; local $Data::Dumper::Sortkeys=1; say Dumper(\%totals)}
