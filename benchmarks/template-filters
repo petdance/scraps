@@ -3,15 +3,15 @@
 use 5.010;
 use strict;
 use warnings;
-use experimental 'signatures';
 
 use Carp::Assert::More;
 use Benchmark ':all';
 use HTML::Entities;
 use Template;
 
-my $COUNT = 100_000;
+my $COUNT = 50_000;
 
+say "Running $COUNT under $^V";
 
 my $tt_slow = Template->new(
     FILTERS => {
