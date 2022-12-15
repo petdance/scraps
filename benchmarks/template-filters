@@ -11,7 +11,7 @@ use Template;
 
 my $COUNT = 50_000;
 
-say "Running $COUNT under $^V";
+say "Running $COUNT under $^V and TT $Template::VERSION";
 
 my $tt_slow = Template->new(
     FILTERS => {
