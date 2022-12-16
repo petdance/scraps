@@ -12,6 +12,9 @@ say "$COUNT iterations under $^V";
 
 my %totals;
 cmpthese( $COUNT, {
+    declared => sub {
+        runit( \&_declared );
+    },
     inline => sub {
         runit( sub { ++$totals{inline} } );
     },
@@ -24,6 +27,10 @@ cmpthese( $COUNT, {
         runit( $cache->{arbitrary_key} //= sub { ++$totals{cached} } );
     },
 } );
+
+sub _declared {
+    ++$totals{declared};
+}
 
 sub runit {
     $_[0]->();
