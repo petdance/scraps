@@ -17,6 +17,21 @@ my $str = join( "\n", <DATA> );
 
 my $n = 20_000_000;
 
+my $test_string = <<EOF;
+Here is some code
+And here is a /regex/ that does not go out to here / at the end
+and some more text.
+EOF
+
+$test_string =~ /$classed/ or die;
+$1 eq 'regex' or die $1;
+
+$test_string =~ /$literal/ or die;
+$1 eq 'regex' or die $1;
+
+$test_string =~ /$hooked/ or die;
+$1 eq 'regex' or die $1;
+
 say "Running Perl $^V";
 timethese( $n, {
     classed => sub { $str =~ /$classed/o },
