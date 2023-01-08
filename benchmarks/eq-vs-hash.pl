@@ -24,7 +24,7 @@ package main;
 
 my $x = Thing->new;
 
-my $COUNT = 10000000;
+my $COUNT = 5000000;
 
 cmpthese( $COUNT, {
     eq_2 => sub {
@@ -36,23 +36,31 @@ cmpthese( $COUNT, {
     eq_4 => sub {
         return $x->content eq 'this' || $x->content eq 'that' || $x->content eq 'other' || $x->content eq 'bongo';
     },
+    my_eq_2 => sub {
+        my $thing = $x->content;
+        return $thing eq 'this' || $thing eq 'that';
+    },
+    my_eq_3 => sub {
+        my $thing = $x->content;
+        return $thing eq 'this' || $thing eq 'that' || $thing eq 'other';
+    },
+    my_eq_4 => sub {
+        my $thing = $x->content;
+        return $thing eq 'this' || $thing eq 'that' || $thing eq 'other' || $thing eq 'bongo';
+    },
     any_2 => sub {
         return any { $x->content eq $_ } qw( this that );
     },
     any_3 => sub {
         return any { $x->content eq $_ } qw( this that other );
     },
-    loop_2 => sub {
-        for ( qw( this that ) ) {
-            return 1 if $x->content eq $_;
-        }
-        return;
+    my_any_2 => sub {
+        my $thing = $x->content;
+        return any { $thing eq $_ } qw( this that );
     },
-    loop_3 => sub {
-        for ( qw( this that other ) ) {
-            return 1 if $x->content eq $_;
-        }
-        return;
+    my_any_3 => sub {
+        my $thing = $x->content;
+        return any { $thing eq $_ } qw( this that other );
     },
     hash_lookup => sub {
         state $lookup = { this => 1, that => 2, bongo => 3 };
