@@ -9,40 +9,54 @@ use Benchmark ':all';
 
 use List::SomeUtils qw( any );
 
+package Thing;
+
+sub new {
+    return bless {}, 'Thing';
+}
+
+sub content {
+    return 'not';
+}
+
+
+package main;
+
+my $x = Thing->new;
+
 my $COUNT = 10000000;
 
-my $x ='not';
 cmpthese( $COUNT, {
     eq_2 => sub {
-        return $x eq 'this' || $x eq 'that';
+        return $x->content eq 'this' || $x->content eq 'that';
     },
     eq_3 => sub {
-        return $x eq 'this' || $x eq 'that' || $x eq 'other';
+        return $x->content eq 'this' || $x->content eq 'that' || $x->content eq 'other';
     },
     eq_4 => sub {
-        return $x eq 'this' || $x eq 'that' || $x eq 'other' || $x eq 'bongo';
+        return $x->content eq 'this' || $x->content eq 'that' || $x->content eq 'other' || $x->content eq 'bongo';
     },
     any_2 => sub {
-        return any { $x eq $_ } qw( this that );
+        return any { $x->content eq $_ } qw( this that );
     },
     any_3 => sub {
-        return any { $x eq $_ } qw( this that other );
+        return any { $x->content eq $_ } qw( this that other );
     },
     loop_2 => sub {
         for ( qw( this that ) ) {
-            return 1 if $x eq $_;
+            return 1 if $x->content eq $_;
         }
         return;
     },
     loop_3 => sub {
         for ( qw( this that other ) ) {
-            return 1 if $x eq $_;
+            return 1 if $x->content eq $_;
         }
         return;
     },
     hash_lookup => sub {
         state $lookup = { this => 1, that => 2, bongo => 3 };
-        return exists $lookup->{$x};
+        return exists $lookup->{$x->content};
     },
 } );
 
