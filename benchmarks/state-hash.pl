@@ -5,11 +5,22 @@ use strict;
 use warnings;
 use experimental 'signatures';
 
+use Readonly;
 use Benchmark ':all';
+
+say "Perl $^V";
 
 my $COUNT = 100000000;
 
-my %values = (
+Readonly::Hash my %readonly_values => (
+    this => 1,
+    that => 2,
+    other => 3,
+    bingo => 4,
+    bongo => 5,
+);
+
+my %outside_values = (
     this => 1,
     that => 2,
     other => 3,
@@ -20,27 +31,30 @@ my %values = (
 my $x = 15;
 cmpthese( $COUNT, {
     outside_hash => sub {
-        return !!$values{$x};
+        return !!$outside_values{$x};
+    },
+    readonly_hash => sub {
+        return !!$readonly_values{$x};
     },
     my_hash => sub {
-        my %values = (
+        my %my_values = (
             this => 1,
             that => 2,
             other => 3,
             bingo => 4,
             bongo => 5,
         );
-        return !!$values{$x};
+        return !!$my_values{$x};
     },
     state_hash => sub {
-        state $values = {
+        state $state_values = {
             this => 1,
             that => 2,
             other => 3,
             bingo => 4,
             bongo => 5,
         };
-        return !!$values->{$x};
+        return !!$state_values->{$x};
     },
 } );
 
