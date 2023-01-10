@@ -14,7 +14,10 @@ my $str = 'Who knows what evil lurks in the hearts of men?';
 my $pattern = 'in\s+the';
 
 cmpthese( $COUNT, {
-    match => sub {
+    noninterpolated => sub {
+        return $str =~ /lurks in\s+the/;
+    },
+    interpolated => sub {
         return $str =~ /lurks $pattern/;
     },
     slasho => sub {
