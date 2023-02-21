@@ -1,0 +1,5 @@
+[% hiddens_html(
+    foo => foo,
+    bar => bar,
+    bat => bat,
+) %]
