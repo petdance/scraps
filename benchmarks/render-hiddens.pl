@@ -21,9 +21,10 @@ sub hiddens_html( $hiddens ) {
     my $out = '';
 
     if ( $hiddens ) { # Skips undefs and empty strings, which is how TT sends undefs.
-        # assert_hashref($hiddens);
+        assert_hashref($hiddens);
         for my $k ( sort keys %{$hiddens} ) {   # Keep rendering deterministic.
-            $out .= hidden_html( $k, $hiddens->{$k} );
+            #$out .= hidden_html( $k, $hiddens->{$k} );
+            $out .= '<input type="hidden" name="' . encode_entities($k) . '" value="' . encode_entities($hiddens->{$k} // '') . '">' . "\n";
         }
     }
 
@@ -31,6 +32,8 @@ sub hiddens_html( $hiddens ) {
 }
 
 my $tt = Template->new(
+    COMPILE_EXT => '.pl',
+    COMPILE_DIR => '/tmp/tt/',
     VARIABLES => {
         hiddens_html => \&hiddens_html,
     }
@@ -41,6 +44,7 @@ my $vars = {
     foo => 'Foo & Thing',
     bar => 2112,
     bat => undef,
+    quux => 'Flippity floppity blah blah blah',
 };
 
 my $COUNT = 100000;
