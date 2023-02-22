@@ -1,0 +1,4 @@
+<span id="at-foo-[% count %]">[% foo | html_entity %]</span>
+<span id="at-bar-[% count %]">[% bar | html_entity %]</span>
+<span id="at-bat-[% count %]">[% bat | html_entity %]</span>
+<span id="at-quux-[% count %]">[% quux | html_entity %]</span>

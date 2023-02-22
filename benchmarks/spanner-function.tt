@@ -1,0 +1,4 @@
+[% spanner( 'at-foo', count, foo ) %]
+[% spanner( 'at-bar', count, bar ) %]
+[% spanner( 'at-bat', count, bat ) %]
+[% spanner( 'at-quux', count, quux ) %]
