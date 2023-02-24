@@ -1,4 +1,0 @@
-<input type="hidden" name="foo" value="[% foo | html_entity %]" />
-<input type="hidden" name="bar" value="[% bar | html_entity %]" />
-<input type="hidden" name="bat" value="[% bat | html_entity %]" />
-<input type="hidden" name="quux" value="[% quux | html_entity %]" />
