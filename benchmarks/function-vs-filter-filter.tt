@@ -1,0 +1,29 @@
+[% foo | html_entity %]
+[% bar | html_entity %]
+[% bat | html_entity %]
+[% some_undef_value | html_entity %]
+
+[% foo | html_entity %]
+[% bar | html_entity %]
+[% bat | html_entity %]
+[% some_undef_value | html_entity %]
+
+[% foo | html_entity %]
+[% bar | html_entity %]
+[% bat | html_entity %]
+[% some_undef_value | html_entity %]
+
+[% foo | html_entity %]
+[% bar | html_entity %]
+[% bat | html_entity %]
+[% some_undef_value | html_entity %]
+
+[% foo | html_entity %]
+[% bar | html_entity %]
+[% bat | html_entity %]
+[% some_undef_value | html_entity %]
+
+[% foo | html_entity %]
+[% bar | html_entity %]
+[% bat | html_entity %]
+[% some_undef_value | html_entity %]

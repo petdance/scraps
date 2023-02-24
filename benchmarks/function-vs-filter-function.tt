@@ -1,0 +1,29 @@
+[% encode_entities(foo) %]
+[% encode_entities(bar) %]
+[% encode_entities(bat) %]
+[% encode_entities(some_undef_value) %]
+
+[% encode_entities(foo) %]
+[% encode_entities(bar) %]
+[% encode_entities(bat) %]
+[% encode_entities(some_undef_value) %]
+
+[% encode_entities(foo) %]
+[% encode_entities(bar) %]
+[% encode_entities(bat) %]
+[% encode_entities(some_undef_value) %]
+
+[% encode_entities(foo) %]
+[% encode_entities(bar) %]
+[% encode_entities(bat) %]
+[% encode_entities(some_undef_value) %]
+
+[% encode_entities(foo) %]
+[% encode_entities(bar) %]
+[% encode_entities(bat) %]
+[% encode_entities(some_undef_value) %]
+
+[% encode_entities(foo) %]
+[% encode_entities(bar) %]
+[% encode_entities(bat) %]
+[% encode_entities(some_undef_value) %]
