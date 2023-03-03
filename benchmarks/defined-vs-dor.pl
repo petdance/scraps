@@ -5,14 +5,14 @@ use 5.010;
 
 use Benchmark ':all';
 
-say "Running Perl $]";
+my $n = 50_000_000;
 
-my $n = 100_000_000;
+say "Running $n iterations under Perl $]";
 
 my $x;
 my $y;
 
-timethese( $n, {
+cmpthese( $n, {
     defined => sub {
         $x = defined($y) ? $y : 10;
     },
@@ -22,7 +22,7 @@ timethese( $n, {
 } );
 
 
-timethese( $n, {
+cmpthese( $n, {
     defined_unless => sub {
         $x = 10 unless defined($x);
     },
