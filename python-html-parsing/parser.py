@@ -13,7 +13,5 @@ class ImgFinder(HTMLParser):
 # Create an instance of your custom parser
 finder = ImgFinder()
 
-
-with open("sample.html") as f:
-    for line in f:
-        finder.feed(line)
+with open('sample.html', 'r') as file:
+    finder.feed(file.read())
