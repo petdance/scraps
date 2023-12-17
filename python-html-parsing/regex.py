@@ -4,7 +4,7 @@ import re
 
 imgfinder = re.compile(r'<img src="(.+)"')
 
-with open("sample.html") as f:
+with open("everywhere.html") as f:
     for line in f:
         match = imgfinder.search(line)
         if match:
